@@ -220,6 +220,21 @@ $(document).ready(function() {
 		
 	});
 
+	var check_menu = 0;
+
+	$('.menu_mobile ul').hide();
+	$('.menu_mobile').click(function() {
+		if(check_menu == 0) {
+			$('.menu_mobile ul').slideDown();
+			$(this).css('height', 'auto');
+			check_menu = 1;
+		} else {
+			$('.menu_mobile ul').slideUp();
+			$(this).css('height', 'auto');
+			check_menu = 0;
+		}
+	});
+
 });
 
 

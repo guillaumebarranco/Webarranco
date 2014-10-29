@@ -31,6 +31,17 @@
 					<li class="li-top"><a class="link-nav link-about" href="/Webarranco/About">A Propos</a></li>
 					<li><a class="link-nav link-contact" href="/Webarranco/Contact">Contact</a></li>
 				</ul>
+				<div class="menu_mobile">
+					<div class="div-menu">Menu</div>
+					<ul class="list-menu">
+						<li><a class="link-nav link-home" href="/Webarranco/">Accueil</a></li>
+						<li class="li-top"><a class="link-nav link-blog" href="/Webarranco/Blog">Blog</a></li>
+						<li class="li-bottom"><a class="link-nav link-skills" href="/Webarranco/Skills">Compétences</a></li>
+						<li class="li-bottom"><a class="link-nav link-projects" href="/Webarranco/Projects">Projets</a></li>
+						<li class="li-top"><a class="link-nav link-about" href="/Webarranco/About">A Propos</a></li>
+						<li><a class="link-nav link-contact" href="/Webarranco/Contact">Contact</a></li>
+					</ul>
+				</div>
 			</nav>
 		</header>
 

@@ -101,15 +101,6 @@ ul li {
 				-moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
 				transform: translateX(-50%) translateY(-50%) scale(0.8);
 			}
-
-			&:hover {
-				&:before, &:after {
-					opacity: 1;
-					-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
-					-moz-transform: translateX(-50%) translateY(-50%) scale(1);
-					transform: translateX(-50%) translateY(-50%) scale(1);
-				}
-			}
 		}
 
 	}
@@ -199,24 +190,6 @@ ul li {
 	opacity: 1;
 }
 
-.myPicture {
-	@include transition(0.4s);
-	filter: blur(5px);
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-
-    &:hover {
-    	@include transition(0.4s);
-    	filter: blur(0px);
-	    -webkit-filter: blur(0px);
-	    -moz-filter: blur(0px);
-	    -o-filter: blur(0px);
-	    -ms-filter: blur(0px);
-    }
-}
-
 .graphic {
 	border-left: solid black 1px;
 	padding-left: 3px;
@@ -268,29 +241,10 @@ ul li {
 			background: grey;
 			padding: 0 14px;
 			@include border-radius(50px);
-			&:hover {
-				@include transition(0.4s);
-				@include rotate(360deg);
-			}
 		}
 	}
 	li:first-child {
 		margin-left: 0;
-	}
-	.facebook a:hover {
-		background: #3b5998;
-	}
-	.twitter a:hover {
-		background: #55acee;
-	}
-	.linkedin a:hover {
-		background: #1c6ca2;
-	}
-	.deezer a:hover {
-		background: #111;
-	}
-	.github a:hover {
-		background: black;
 	}
 }
 
@@ -487,12 +441,6 @@ ul li {
 	font-family: 'Verdana';
 	padding: 5px 0px;
 	font-size: 14px;
-	
-	&:hover {
-		@include transition(0.4s);
-		background : #0078a0;
-		color: white;
-	}
 }
 
 .right {
@@ -541,12 +489,6 @@ ul li {
 		cursor: pointer;
 		padding: 10px 16px;
 		font-size: 14px;
-
-		&:hover {
-			@include transition(0.4s);
-			background : $blanc;
-			color: $noir;
-		}
 	}
 
 	label {
@@ -603,15 +545,6 @@ ul li {
 		@include border-radius(6px);
 		display: none;
 		text-align: center;
-	}
-
-	&:hover {
-		@include transition(0.4s);
-		/*-webkit-box-shadow: 0px 0px 2px 16px #bbb inset;*/
-
-		.bubble {
-			display: block;
-		}
 	}
 }
 
@@ -742,6 +675,36 @@ ul li {
 	tranform:skew(-20deg);
 }
 
+.menu_mobile {
+	display: none;
+	text-align: center;
+	background: black;
+	margin: 0;
+	padding : 15px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 15;
+
+	.div-menu {
+		cursor: pointer;
+	}
+
+	ul {
+		margin: 0;
+		li {
+			a {
+				display: block;
+				padding: 10px 0px;
+
+				&:hover {
+					color: $blanc;
+					background: $noir;
+				}
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 1000px) {
 	.bloc {
 		height: auto;
@@ -755,6 +718,9 @@ ul li {
   .menu {
   	display: none;
   }
+  .menu_mobile {
+  	display: block;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -764,3 +730,95 @@ ul li {
     }
   }
 }
+
+@media only screen and (min-width: 1000px) {
+	.socials {
+		li {
+			a {
+				&:hover {
+						@include transition(0.4s);
+						@include rotate(360deg);
+				}
+			}
+		}
+		.facebook a:hover {
+			background: #3b5998;
+		}
+		.twitter a:hover {
+			background: #55acee;
+		}
+		.linkedin a:hover {
+			background: #1c6ca2;
+		}
+		.deezer a:hover {
+			background: #111;
+		}
+		.github a:hover {
+			background: black;
+		}
+	}
+
+	.menu {
+		li {
+			.link-nav {
+				&:hover {
+					&:before, &:after {
+						opacity: 1;
+						-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+						-moz-transform: translateX(-50%) translateY(-50%) scale(1);
+						transform: translateX(-50%) translateY(-50%) scale(1);
+					}
+				}
+			}
+		}
+	}
+
+	.myPicture {
+		@include transition(0.4s);
+		filter: blur(5px);
+	    -webkit-filter: blur(5px);
+	    -moz-filter: blur(5px);
+	    -o-filter: blur(5px);
+	    -ms-filter: blur(5px);
+
+	    &:hover {
+	    	@include transition(0.4s);
+	    	filter: blur(0px);
+		    -webkit-filter: blur(0px);
+		    -moz-filter: blur(0px);
+		    -o-filter: blur(0px);
+		    -ms-filter: blur(0px);
+	    }
+	}
+
+	.btn_article {
+		&:hover {
+			@include transition(0.4s);
+			background : #0078a0;
+			color: white;
+		}
+	}
+
+	.style-input {
+		input[type=submit] {
+			&:hover {
+				@include transition(0.4s);
+				background : $blanc;
+				color: $noir;
+			}
+		}
+	}
+
+	.timeline-circle {
+		&:hover {
+			@include transition(0.4s);
+			/*-webkit-box-shadow: 0px 0px 2px 16px #bbb inset;*/
+
+			.bubble {
+				display: block;
+			}
+		}
+	}
+
+
+} /* END MEDIA QUERY */
