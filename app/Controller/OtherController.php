@@ -36,6 +36,10 @@ class OtherController extends AppController {
         ));
 	}
 
+	public function zelda() {
+		
+	}
+
 }
 
 ?>

@@ -9,6 +9,9 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Découvrez le Portefolio d'un développeur passionné par son métier qui cherche sans cesse à parfaire sa curiosité Web !" />
+		<meta property="og:title" content="Portefolio d'un Développeur Full Stack - Guillaume Barranco" />
+		<meta name="twitter:creator" content="@Webarranco"/>
 
 		<?= $this->Html->css('foundation') ?>
 		<?= $this->Html->css('foundation-icons/foundation-icons') ?>

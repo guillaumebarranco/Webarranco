@@ -1,7 +1,7 @@
 $(document).ready(function() {
-	var position;
 
-	console.log(document.location.href);
+	// Gère les classes actives des liens du menu en fonction de la page courant
+
 	if($('.page-about').length != 0) {
 		$('.link-about').addClass('active');
 
@@ -21,8 +21,7 @@ $(document).ready(function() {
 		$('.link-blog').addClass('active');
 	}
 
-
-
+	// Déclenche l'animation des graphiques de compétences au scroll de la page
 
 	$(window).off('scroll');
 	$(window).on('scroll', function() {
@@ -33,6 +32,9 @@ $(document).ready(function() {
 		setTimeout(function(){$('.graphic-bar-sql').width(130);}, 800);
 		setTimeout(function(){$('.graphic-bar-curieux').width(220);}, 1000);
 	});
+
+	// Fonction utilisée par la réussite du Cheat Code
+
 	var letexte = '~ Vous venez d\'entrer dans la Warp Zone ~';
 	var cmpt = 0;
 	var koko = 0;
@@ -57,9 +59,9 @@ $(document).ready(function() {
 
 	}
 
-	var cheat = 0;
-
 	// CHEAT CODE
+
+	var cheat = 0;
 
 	$(document).keydown(function(e) {
 		if(cheat === 1) {
@@ -148,10 +150,6 @@ $(document).ready(function() {
 
 	   		$('.warp-zone').fadeIn(800);
 	   		typewriter();
-	   		//letexte = '~ Kokokokokokokokoko ~';
-			//koko = 0;
-			//typewriter();
-
 
 	   		//TweenLite.to($('.warp-zone h1'), 2, {text:"~ Vous venez d\'entrer dans la Warp Zone ~", ease:Linear.easeNone});
 
@@ -164,30 +162,7 @@ $(document).ready(function() {
 	   	}
 	});
 
-	var mousein = 0;
-	var x;
-
-	$('.bloc-one').on('mouseover', function(e) {
-
-		if(mousein === 0) {
-			//console.log('x', e.clientX);
-			x = e.clientX;
-			mousein = 1;
-		} else if(mousein === 1) {
-			//console.log('x2', e.clientX);
-			if(e.clientX > x) {
-				//console.log('ok');
-				$('.circle-background').css('background-position', e.clientX - x+'px 0px');
-			} else if(e.clientX < x) {
-				//console.log('ok2');
-				$('.circle-background').css('background-position', x - e.clientX+'px 0px');
-			}
-			x = e.clientX;
-		}
-	});
-
-
-	// ABOUT
+	// Page About, gère les couleurs du W
 
 	console.log($('.bloc-about-manga').length);
 
@@ -205,6 +180,8 @@ $(document).ready(function() {
 		$('.bloc-about-jeux:eq('+i+')').css('background', '#8'+(i+1)+'2');
 	};
 
+	// Gère les clicks sur les éléments du W en fonction de leur type
+
 	$('.type-about a').on('click', function(e) {
 		e.preventDefault();
 
@@ -219,6 +196,8 @@ $(document).ready(function() {
 		}
 		
 	});
+
+	// S'occupe de gérer les clicks sur le menu mobile
 
 	var check_menu = 0;
 
@@ -236,6 +215,3 @@ $(document).ready(function() {
 	});
 
 });
-
-
-

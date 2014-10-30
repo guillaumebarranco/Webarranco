@@ -2,4 +2,6 @@
    RewriteEngine on
    RewriteRule    ^$ app/webroot/    [L]
    RewriteRule    (.*) app/webroot/$1 [L]
+   RewriteCond %{HTTP_HOST} ^www\.webarranco\.fr [NC]
+   ErrorDocument 404 /404-not-found
 </IfModule>

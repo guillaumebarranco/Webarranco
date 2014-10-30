@@ -15,9 +15,12 @@ class BlogController extends AppController {
         ));
 	}
 
-	public function article($url_article) {
+	public function article($url_article = '') {
 
 		$article = $this->Article->findByUrl($url_article);
+		if (!$article) {
+	        throw new NotFoundException('Impossible de trouver cet article');
+	    }
 
 		$this->set(array(
             'article' => $article,
