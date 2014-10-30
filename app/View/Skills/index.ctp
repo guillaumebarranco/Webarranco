@@ -79,7 +79,8 @@
 			<img src="img/build/flaconbootstrap.png" width="100" class="sword fragment" style="background: none; border: none; box-shadow: none;"/>
 			<img src="img/build/flaconangular.png" width="100" class="sword fragment" style="background: none; border: none; box-shadow: none;"/>
 			<img src="img/build/flacongit.png" width="100" class="sword fragment" style="background: none; border: none; box-shadow: none;"/>
-			<p class="fragment">Zend Framework 2, CakePHP, Doctrine, SASS, Compass, Bootstrap, AngularJS, Git</p>
+			<img src="img/build/flacongrunt.png" width="100" class="sword fragment" style="background: none; border: none; box-shadow: none;"/>
+			<p class="fragment">Zend Framework 2, CakePHP, Doctrine, SASS, Compass, Bootstrap, AngularJS, Git, Grunt</p>
 			
 		</section>				
 
