@@ -2,22 +2,22 @@ $(document).ready(function() {
 
 	// Gère les classes actives des liens du menu en fonction de la page courant
 
-	if($('.page-about').length != 0) {
+	if($('.page-about').length !== 0) {
 		$('.link-about').addClass('active');
 
-	} else if($('.page-home').length != 0) {
+	} else if($('.page-home').length !== 0) {
 		$('.link-home').addClass('active');
 
-	} else if($('.page-projects').length != 0) {
+	} else if($('.page-projects').length !== 0) {
 		$('.link-projects').addClass('active');
 
-	} else if($('.page-skills').length != 0) {
+	} else if($('.page-skills').length !== 0) {
 		$('.link-skills').addClass('active');
 
-	} else if($('.page-contact').length != 0) {
+	} else if($('.page-contact').length !== 0) {
 		$('.link-contact').addClass('active');
 
-	} else if($('.page-blog').length != 0) {
+	} else if($('.page-blog').length !== 0) {
 		$('.link-blog').addClass('active');
 	}
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
 		     }
 		  }
 		  cmpt++;
-		  setTimeout(function(){typewriter()},80);
+		  setTimeout(function(){typewriter();},80);
 
 	}
 
@@ -158,7 +158,7 @@ $(document).ready(function() {
 	   		$('.cheat-b').css('color', '#FAFA58');
 	   		$('.cheat-a').css('color', '#FAFA58');
 	   		
-	   		setTimeout(function() {$('.cheat').css('background', '#F4FA58'); $('.cheat').css('color', 'black');$('.cheat-a').css('background', '#2E64FE');$('.cheat-b').css('background', '#04B45F');}, 500)
+	   		setTimeout(function() {$('.cheat').css('background', '#F4FA58'); $('.cheat').css('color', 'black');$('.cheat-a').css('background', '#2E64FE');$('.cheat-b').css('background', '#04B45F');}, 500);
 	   	}
 	});
 
@@ -171,14 +171,14 @@ $(document).ready(function() {
 		$('.bloc-about-manga:eq('+i+')').css('background', '#8'+i+'2');
 		$('.bloc-about-musique:eq('+i+')').css('left', i*29+'px');
 		$('.bloc-about-musique:eq('+i+')').css('background', '#8'+i+'2');
-	};
+	}
 
-	for (var i = 0; i < $('.bloc-about-film').length; i++) {
-		$('.bloc-about-film:eq('+i+')').css('left', '-'+i*29+'px');
-		$('.bloc-about-film:eq('+i+')').css('background', '#8'+(i+1)+'2');
-		$('.bloc-about-jeux:eq('+i+')').css('left', '-'+i*29+'px');
-		$('.bloc-about-jeux:eq('+i+')').css('background', '#8'+(i+1)+'2');
-	};
+	for (var j = 0; j < $('.bloc-about-film').length; j++) {
+		$('.bloc-about-film:eq('+j+')').css('left', '-'+j*29+'px');
+		$('.bloc-about-film:eq('+j+')').css('background', '#8'+(j+1)+'2');
+		$('.bloc-about-jeux:eq('+j+')').css('left', '-'+j*29+'px');
+		$('.bloc-about-jeux:eq('+j+')').css('background', '#8'+(j+1)+'2');
+	}
 
 	// Gère les clicks sur les éléments du W en fonction de leur type
 
@@ -186,7 +186,7 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		var $this_type = $(this).attr('data-type');
-		if($this_type == 'all') {
+		if($this_type === 'all') {
 			$('.bloc-about').css('opacity', '1');
 			$('.separator').css('opacity', '1');
 		} else {
@@ -203,7 +203,7 @@ $(document).ready(function() {
 
 	$('.menu_mobile ul').hide();
 	$('.menu_mobile').click(function() {
-		if(check_menu == 0) {
+		if(check_menu === 0) {
 			$('.menu_mobile ul').slideDown();
 			$(this).css('height', 'auto');
 			check_menu = 1;

@@ -13,7 +13,7 @@ $(document).ready(function() {
 		$('.project-type li a').removeClass('active-project');
 		$(this).addClass('active-project');
 
-		if($(this).attr('data-display') == 0) {
+		if(parseInt($(this).attr('data-display')) === 0) {
 			$('.project-type li a').attr('data-display', 0);
 			$(this).attr('data-display', 1);
 			$('.timeline').empty();
@@ -42,26 +42,26 @@ $(document).ready(function() {
 					timeline_content =
 						'<div class="timeline-line"></div>' +
 						'<div class="timeline-circle" data-timeline="'+(t+1)+'">'+
-							'<img width="70" src="'+response.projects[t]['Project']['Cover'] +'" alt="'+response.projects[t]['Project']['Alt'] +'"/>' +
-							'<div class="bubble">'+response.projects[t]['Project']['Name'] +'</div>' +
+							'<img width="70" src="'+response.projects[t].Project.Cover +'" alt="'+response.projects[t].Project.Alt +'"/>' +
+							'<div class="bubble">'+response.projects[t].Project.Name +'</div>' +
 						'</div>' +
 						'<div class="timeline-line"></div>'
 					;
 
 					$('.timeline').append(timeline_content);
-				};
+				}
 
 				for (var p = 0; p < response.projects.length; p++) {
 					projects_content = 
 						'<div class="project" data-project="'+(p+1)+'">'+
 							'<div class="project-picture">' +
-								'<img width="300" src="'+response.projects[p]['Project']['Cover'] +'" alt="'+response.projects[p]['Project']['Alt'] +'" />' +
+								'<img width="300" src="'+response.projects[p].Project.Cover +'" alt="'+response.projects[p].Project.Alt +'" />' +
 							'</div>' +
 							'<div class="project-content">' +
-								'<h2 class="project-title">'+response.projects[p]['Project']['Name'] +'</h2>' +
+								'<h2 class="project-title">'+response.projects[p].Project.Name +'</h2>' +
 							
 								'<p class="project-description">' +
-									response.projects[p]['Project']['Content'] +
+									response.projects[p].Project.Content +
 								'</p>'+
 								'<a href="#" class="button">Voir le projet</a>' +
 							'</div>' +
@@ -69,7 +69,7 @@ $(document).ready(function() {
 						'</div>'
 					;
 					$('.all-projects').append(projects_content);
-				};
+				}
 			},
 
 			error: function(){

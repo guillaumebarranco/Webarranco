@@ -73,7 +73,7 @@
 		}
 		var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-		var image = 'img/marker.png';
+		var image = 'img/build/marker.png';
 
 		var marker = new google.maps.Marker({
 		    position: myLatlng,

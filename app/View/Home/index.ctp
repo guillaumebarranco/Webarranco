@@ -1,4 +1,4 @@
-<!--<img src="img/koko.jpg" class="theclip"/>-->
+<!--<img src="img/build/koko.jpg" class="theclip"/>-->
 <div class="page-home"></div>
 <div id="large-header" class="bloc-one">
 	<div class="index" style="color: white;">
@@ -16,7 +16,7 @@
 		<div class="bloc large-4 columns">
 			<h2>Qui suis-je ?</h2>
 			<div>
-				<img src="img/myPicture.jpg" alt="Photo de Guillaume Barranco" width="140" class="myPicture" />
+				<img src="img/build/myPicture.jpg" alt="Photo de Guillaume Barranco" width="140" class="myPicture" />
 			</div>
 			<p>
 				Un jeune développeur passionné par le web depuis des années et actuellement en Licence Chef de Projet Multimedia travaillant pour l'entreprise <a href="http://www.playapp.net">Playapp</a>. <br />
@@ -70,7 +70,7 @@
 				Lorsqu'on a appris sur le web, avec des tutoriels, des vidéos, des supers articles qu'on a vite gardé dans les favoris, on a envie de partager son évolution avec les autres. L'expérience, les avis professionnels peuvent aider bon nombre de jeunes développeurs. C'est ainsi qu'est né <a href="/Webarranco/Blog">mon Blog</a>, que vous pourrez observer se remplir au fur et à mesure.
 			</p>
 			<div>
-				<img src="img/linkou3.png" alt="Photo de moi version Link" width="200" />
+				<img src="img/build/linkou3.png" alt="Photo de moi version Link" width="200" />
 			</div>
 		</div>
 	</div>
@@ -81,7 +81,7 @@
 			<p>
 				Dernier projet en date : 
 				<a href="/Webarranco/Other/quizz" class="img-projet">
-					<img src="img/zelda.jpg" alt="Photo du dernier projet en date" width="200" />
+					<img src="img/build/zelda.jpg" alt="Photo du dernier projet en date" width="200" />
 				</a>
 				Je fais partie de ceux qui pensent que l'on fonctionne par projet. L'apprentissage d'un langage, d'un CMS, d'un framework sans son utilisation sur un projet concret ne dépassera jamais les 40% de pertinence. Se lancer un projet personnel ou professionnel, y'a que ça de vrai. Je vous invite donc à regarder <a href="/Webarranco/Projects">mon Portfolio</a>, en espérant qu'il vous amusera !
 			</p>
@@ -121,9 +121,9 @@
 				</li>
 			</ul>
 			<div class="myCV">
-				<img src="img/CV.jpg" width="100" alt="Miniature de mon CV"/>
+				<img src="img/build/CV.jpg" width="100" alt="Miniature de mon CV"/>
 			</div>
-			<a class="download_CV" href="img/CV_Barranco_Guillaume.pdf">Télécharger mon CV</a>
+			<a class="download_CV" href="img/build/CV_Barranco_Guillaume.pdf">Télécharger mon CV</a>
 		</div>
 
 		<div class="bloc large-4 columns">

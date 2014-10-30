@@ -98,6 +98,7 @@
 	</div>
 </div>
 
+<?= $this->Html->script('https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js') ?>
 <script type="text/javascript">
 var myApp = angular.module('myApp', []);
         myApp.controller("Qctrl", function($scope, $http) {
