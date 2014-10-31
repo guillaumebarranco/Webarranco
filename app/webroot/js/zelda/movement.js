@@ -1,483 +1,589 @@
-window.onload = function() {
+var _this = this;
+_this.data = {};
 
-	document.body.style.zoom = screen.width/1800;
-	var canvas = document.getElementById("canvas");
-	canvas.zoom
- 	var ctx = canvas.getContext("2d");
-	var line_x = 760;
-	var line_y = 940;
+window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	ctx.moveTo(line_x, line_y);
+this.canvas = document.getElementById("canvas");
+this.data.ctx = canvas.getContext("2d");
+this.data.line_y = 940;
+this.data.line_x = 760;
+this.data.x= 800;
+this.data.y = 900;
+this.data.has_sword = 0;
+this.data.start = null;
 
-	line_y = line_y - 30;
-	ctx.lineTo(line_x, line_y);
+this.data.emeraude_kokiri = 0;
+this.data.rubis_goron = 0;
+this.data.saphir_zora = 0;
+this.data.triforce = 0;
 
-	line_x = line_x - 200;
-	ctx.lineTo(line_x, line_y);
+this.data.stop_game = 0;
 
-	line_y = line_y - 270;
-	ctx.lineTo(line_x, line_y);
+this.moveUp = function(timestamp) {
+	var progress;
+	if (_this.data.start === null) _this.data.start = timestamp;
+	progress = timestamp - _this.data.start;
 
-	line_x = line_x - 250;
-	ctx.lineTo(line_x, line_y);
+	if(_this.data.has_sword === 0) {
+		_this.data.y = _this.data.y - Math.min(progress/10, 200);
+		_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x, _this.data.y+Math.min(progress/10, 200), 20, 26);
+		_this.data.ctx.drawImage(_this.data.link, 0, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
+	} else {
+		_this.data.y = _this.data.y - Math.min(progress/10, 200);
+		_this.data.ctx.drawImage(_this.data.black3, 0, 0, 40, 47, _this.data.x, _this.data.y+Math.min(progress/10, 200), 40, 47);
+		_this.data.ctx.drawImage(_this.data.link, 0, 0, 25, 47, _this.data.x, _this.data.y, 25, 47);
+	}
 
-	line_y = line_y - 200;
-	ctx.lineTo(line_x, line_y);
+	if (progress < 50) {
+	    requestAnimationFrame(moveUp);
+	} else {
+	  	_this.data.start = null;
+	}
+};
 
-	line_x = line_x - 30;
-	ctx.lineTo(line_x, line_y);
+this.moveDown = function(timestamp) {
+	var progress;
+	if (_this.data.start === null) _this.data.start = timestamp;
+	progress = timestamp - _this.data.start;
 
-	line_y = line_y + 180;
-	ctx.lineTo(line_x, line_y);
+	if(_this.data.has_sword === 0) {
+		_this.data.y = _this.data.y + Math.min(progress/10, 200);
+		_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x, _this.data.y-Math.min(progress/10, 200), 20, 26);
+		_this.data.ctx.drawImage(_this.data.link, 20, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
+	} else {
+		_this.data.y = _this.data.y + Math.min(progress/10, 200);
+		_this.data.ctx.drawImage(_this.data.black3, 0, 0, 40, 47, _this.data.x, _this.data.y-Math.min(progress/10, 200), 40, 47);
+		_this.data.ctx.drawImage(_this.data.link, 25, 0, 25, 47, _this.data.x, _this.data.y, 25, 47);
+	}
 
-	line_x = line_x - 250;
-	ctx.lineTo(line_x, line_y);
+	if (progress < 50) {
+	    requestAnimationFrame(moveDown);
+	} else {
+	  	_this.data.start = null;
+	}
+};
 
-	line_y = line_y - 350;
-	ctx.lineTo(line_x, line_y);
+this.moveLeft = function(timestamp) {
+	var progress;
+	if (_this.data.start === null) _this.data.start = timestamp;
+	progress = timestamp - _this.data.start;
 
-	line_x = line_x + 90;
-	ctx.lineTo(line_x, line_y);
+	if(_this.data.has_sword === 0) {
+		_this.data.x = _this.data.x - Math.min(progress/10, 200);
+		_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x+Math.min(progress/10, 200), _this.data.y, 20, 26);
+		_this.data.ctx.drawImage(_this.data.link, 40, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
+	} else {
+		_this.data.x = _this.data.x - Math.min(progress/10, 200); // Anciennement 47
+		_this.data.ctx.drawImage(_this.data.black3, 0, 0, 40, 47, _this.data.x+Math.min(progress/10, 200), _this.data.y, 40, 47);
+		_this.data.ctx.drawImage(_this.data.link, 50, 0, 40, 47, _this.data.x, _this.data.y, 40, 47);
+	}
+
+	if (progress < 50) {
+	    requestAnimationFrame(moveLeft);
+	} else {
+	  	_this.data.start = null;
+	}
+};
+
+this.moveRight = function(timestamp) {
+
+	var progress;
+	if (_this.data.start === null) _this.data.start = timestamp;
+	progress = timestamp - _this.data.start;
+	
+	if(_this.data.has_sword === 0) {
+		_this.data.x = _this.data.x + Math.min(progress/10, 200);
+		_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x-Math.min(progress/10, 200), _this.data.y, 20, 26);
+		_this.data.ctx.drawImage(_this.data.link, 60, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
+	} else {
+		_this.data.x = _this.data.x + Math.min(progress/10, 200);
+		_this.data.ctx.drawImage(_this.data.black3, 0, 0, 40, 47, _this.data.x-Math.min(progress/10, 200), _this.data.y, 40, 47);
+		_this.data.ctx.drawImage(_this.data.link, 90, 0, 40, 47, _this.data.x, _this.data.y, 40, 47);
+	}
+
+	if (progress < 50) {
+	    requestAnimationFrame(moveRight);
+	} else {
+	  	_this.data.start = null;
+	}
+};
+
+this.dessineTerrain = function() {
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_y = _this.data.line_y - 30;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_x = _this.data.line_x - 200;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_y = _this.data.line_y - 270;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_x = _this.data.line_x - 250;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_y = _this.data.line_y - 200;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_x = _this.data.line_x - 30;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_y = _this.data.line_y + 180;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_x = _this.data.line_x - 250;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_y = _this.data.line_y - 350;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_x = _this.data.line_x + 90;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
 	// Sortie de la zone verte
-	//console.log(line_x);
-	//console.log(line_y);
+	//console.log(_this.data.line_x);
+	//console.log(_this.data.line_y);
 
-	line_y = line_y - 80;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 80;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 350;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 350;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 250;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 250;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 550;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 550;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 20;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 20;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 200;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 200;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 200;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 200;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 300;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 300;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 450;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 450;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 300;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 300;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 150;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 150;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 20;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 20;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
 	// On vient de terminer l'arène finale
-	// console.log(line_x);
-	// console.log(line_y);
+	// console.log(_this.data.line_x);
+	// console.log(_this.data.line_y);
 
-	line_x = line_x + 180;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 180;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 50;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 50;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 250;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 250;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 300;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 300;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 50;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 50;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 250;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 250;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 250;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 250;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	// console.log(line_x);
-	// console.log(line_y);
+	// console.log(_this.data.line_x);
+	// console.log(_this.data.line_y);
 
 	// On vient de terminer l'arène rouge
 
-	line_y = line_y + 200;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 200;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 150;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 150;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 80;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 80;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 50;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 50;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 170;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 170;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 250;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 250;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 300;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 300;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 20;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 20;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
 	
 
 	// On vient de terminer l'arène n°3
 
-	line_x = line_x - 380;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 380;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 350;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 350;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 610;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 610;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 250;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 250;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 200;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 200;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
 
-	line_y = line_y + 50;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 50;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 50;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 50;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
 	// On vient de totalement finir la zone n°1
 
-	line_x = line_x + 70;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 70;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 210;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 210;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 250;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 250;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 250;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 250;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 160;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 160;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 30;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 30;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 80;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 80;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 15;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 15;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 20;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 20;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 215;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 215;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 80;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 80;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 100;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 200;
-	ctx.lineTo(line_x, line_y);
-
-
-	ctx.strokeStyle = "white";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.line_y = _this.data.line_y + 200;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
 
-	line_y = 500;
-	line_x = 1100;
+	_this.data.ctx.strokeStyle = "white";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	ctx.moveTo(line_x, line_y);
 
-	line_x = line_x + 120;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = 500;
+	_this.data.line_x = 1100;
 
-	line_y = line_y - 230;
-	ctx.lineTo(line_x, line_y);
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 230;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 120;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 120;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 230;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 70;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 230;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 140;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 120;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 130;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 70;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 220;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 140;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 150;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 130;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 10;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 220;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 120;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 150;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 50;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 10;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 320;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 120;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 310;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 50;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	ctx.strokeStyle = "white";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.line_x = _this.data.line_x - 320;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.line_y = _this.data.line_y - 310;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+	_this.data.ctx.strokeStyle = "white";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
 
 	// PORTES
 
 	// Porte Verte
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	line_y = 270;
-	line_x = 120;
-	ctx.moveTo(line_x, line_y);
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.line_y = 270;
+	_this.data.line_x = 120;
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 90;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 90;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	ctx.strokeStyle = "green";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.ctx.strokeStyle = "green";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
 	// Porte Rouge
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	line_y = 390;
-	line_x = 1600;
-	ctx.moveTo(line_x, line_y);
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.line_y = 390;
+	_this.data.line_x = 1600;
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 80;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 80;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	ctx.strokeStyle = "red";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.ctx.strokeStyle = "red";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
 	// Porte Bleue
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	line_y = 870;
-	line_x = 1400;
-	ctx.moveTo(line_x, line_y);
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.line_y = 870;
+	_this.data.line_x = 1400;
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 60;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 60;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	ctx.strokeStyle = "blue";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.ctx.strokeStyle = "blue";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
 	// Porte Jaune Finale
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	line_y = 320;
-	line_x = 920;
-	ctx.moveTo(line_x, line_y);
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.line_y = 320;
+	_this.data.line_x = 920;
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 100;
-	ctx.lineTo(line_x, line_y);
-	line_x = line_x + 100;
-	line_y = line_y + 1;
-	ctx.lineTo(line_x, line_y);
-	line_x = line_x - 100;
-	line_y = line_y + 1;
-	ctx.lineTo(line_x, line_y);
-	line_x = line_x + 100;
-	ctx.lineTo(line_x, line_y);
-	line_x = line_x - 100;
-	line_y = line_y + 1;
-	ctx.lineTo(line_x, line_y);
-	line_x = line_x + 100;
-	line_y = line_y + 1;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+	_this.data.line_x = _this.data.line_x + 100;
+	_this.data.line_y = _this.data.line_y + 1;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+	_this.data.line_x = _this.data.line_x - 100;
+	_this.data.line_y = _this.data.line_y + 1;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+	_this.data.line_x = _this.data.line_x + 100;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+	_this.data.line_x = _this.data.line_x - 100;
+	_this.data.line_y = _this.data.line_y + 1;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+	_this.data.line_x = _this.data.line_x + 100;
+	_this.data.line_y = _this.data.line_y + 1;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	ctx.strokeStyle = "yellow";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.ctx.strokeStyle = "yellow";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
 	//////////
 
 	// TRACAGE PROTECTION DE L'EMERAUDE KOKIRI
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	line_y = 620;
-	line_x = 100;
-	ctx.moveTo(line_x, line_y);
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.line_y = 620;
+	_this.data.line_x = 100;
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 160;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 160;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	ctx.strokeStyle = "white";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.ctx.strokeStyle = "white";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	line_y = 400;
-	line_x = 30;
-	ctx.moveTo(line_x, line_y);
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.line_y = 400;
+	_this.data.line_x = 30;
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x + 140;
-	ctx.lineTo(line_x, line_y);
-	line_y = line_y + 140;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x + 140;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+	_this.data.line_y = _this.data.line_y + 140;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	ctx.strokeStyle = "white";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.ctx.strokeStyle = "white";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	line_y = 620;
-	ctx.moveTo(line_x, line_y);
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.line_y = 620;
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y - 30;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y - 30;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	ctx.strokeStyle = "white";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.ctx.strokeStyle = "white";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
 	// FIN DU TRACAGE
 
 	// TRACAGE DE PROTECTION DU RUBIS GORON
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	line_y = 140;
-	line_x = 1610;
-	ctx.moveTo(line_x, line_y);
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.line_y = 140;
+	_this.data.line_x = 1610;
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-	line_y = line_y + 180;
-	ctx.lineTo(line_x, line_y);
-	line_x = line_x + 30;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_y = _this.data.line_y + 180;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+	_this.data.line_x = _this.data.line_x + 30;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	ctx.strokeStyle = "white";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.ctx.strokeStyle = "white";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
 	// FIN DU TRACAGE
 
 	// TRACAGE DE PROTECTION DU SAPHIR ZORA
 
-	ctx.beginPath();//On démarre un nouveau tracé
-	line_y = 830;
-	line_x = 1700;
-	ctx.moveTo(line_x, line_y);
+	_this.data.ctx.beginPath();//On démarre un nouveau tracé
+	_this.data.line_y = 830;
+	_this.data.line_x = 1700;
+	_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-	line_x = line_x - 180;
-	ctx.lineTo(line_x, line_y);
+	_this.data.line_x = _this.data.line_x - 180;
+	_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-	ctx.strokeStyle = "white";//On trace seulement les lignes.
-	ctx.stroke();//On trace seulement les lignes.
-	ctx.closePath();
+	_this.data.ctx.strokeStyle = "white";//On trace seulement les lignes.
+	_this.data.ctx.stroke();//On trace seulement les lignes.
+	_this.data.ctx.closePath();
 
-	var x= 800;
-	var y = 900;
+	
 
-	var has_sword = 0;
+	_this.data.link = new Image();
+	_this.data.link.src = '/Webarranco/img/zelda/sprite.png';
 
-	var link = new Image();
-			link.src = '/Webarranco/img/zelda/sprite.png';
+	_this.data.sword = new Image();
+	_this.data.sword.src = '/Webarranco/img/zelda/sword.png';
 
-			var sword = new Image();
-			sword.src = '/Webarranco/img/zelda/sword.png';
+	_this.data.joyaux = new Image();
+	_this.data.joyaux.src = '/Webarranco/img/zelda/sprite_joyaux.png';
+	_this.data.triforce = new Image();
+	_this.data.triforce.src = '/Webarranco/img/zelda/triforce.png';
 
-			var joyaux = new Image();
-			joyaux.src = '/Webarranco/img/zelda/sprite_joyaux.png';
-			var triforce = new Image();
-			triforce.src = '/Webarranco/img/zelda/triforce.png';
+	_this.data.black = new Image();
+	_this.data.black.src = '/Webarranco/img/zelda/black.png';
+	_this.data.black2 = new Image();
+	_this.data.black2.src = '/Webarranco/img/zelda/black2.png';
+	_this.data.black3 = new Image();
+	_this.data.black3.src = '/Webarranco/img/zelda/black3.png';
+};
 
-			var black = new Image();
-			black.src = '/Webarranco/img/zelda/black.png';
-			var black2 = new Image();
-			black2.src = '/Webarranco/img/zelda/black2.png';
-			var black3 = new Image();
-			black3.src = '/Webarranco/img/zelda/black3.png';
-			
 
-			link.onload = function(){
-				ctx.drawImage(link, 0, 0, 20, 26, x, y, 20, 26);
-			};
+window.onload = function() {
 
-			sword.onload = function(){
-				ctx.drawImage(sword, 0, 0, 20, 26, 700, 580, 20, 26);
-			};
+	document.body.style.zoom = screen.width/1800; // Adaptation de la taille d'écrans spécifique pour le jeu			
 
-			triforce.onload = function(){
-				ctx.drawImage(triforce, 0, 0, 282, 143, 710, 50, 282, 143);
-			};
+	_this.dessineTerrain();
 
-			joyaux.onload = function(){
-				ctx.drawImage(joyaux, 0, 0, 21, 27, 50, 580, 21, 27);
-				ctx.drawImage(joyaux, 21, 0, 21, 27, 1660, 160, 21, 27);
-				ctx.drawImage(joyaux, 42, 0, 29, 27, 1650, 850, 29, 27);
-			};
+	_this.data.link.onload = function(){
+		_this.data.ctx.drawImage(_this.data.link, 0, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
+	};
+
+	_this.data.sword.onload = function(){
+		_this.data.ctx.drawImage(_this.data.sword, 0, 0, 20, 26, 700, 580, 20, 26);
+	};
+
+	_this.data.triforce.onload = function(){
+		_this.data.ctx.drawImage(_this.data.triforce, 0, 0, 282, 143, 710, 50, 282, 143);
+	};
+
+	_this.data.joyaux.onload = function(){
+		_this.data.ctx.drawImage(_this.data.joyaux, 0, 0, 21, 27, 50, 580, 21, 27);
+		_this.data.ctx.drawImage(_this.data.joyaux, 21, 0, 21, 27, 1660, 160, 21, 27);
+		_this.data.ctx.drawImage(_this.data.joyaux, 42, 0, 29, 27, 1650, 850, 29, 27);
+	};
 
 
 	// FIN DU TRACAGE
@@ -492,203 +598,200 @@ window.onload = function() {
 		var e = event || window.event;
 		var key = e.which || e.keyCode;
 
-		// Gestion de la récupération de l'épée
-		if(y == 580 && x > 680 && x < 720) {
-			has_sword = 1;
-			link.src = '/Webarranco/img/zelda/sprite_sword.png';
-		}
-
-		// Gestion entrée zone bleue
-		if(y < 440 && y > 370 && x < 310 && x > 280) {
-			console.log('Vous venez d\'entrer dans la zone bleue');
-		}
-
-		// Triforce
-		if(y < 280 && y > 30 && x < 1000 && x > 610) {
-			h2.style.top = ($pos_top+50)+'px';
-			h2.style.left = '630px';
-			h2.innerHTML = 'Vous avez récupéré la Triforce';
-			setTimeout(function(){
-				window.location = '/Webarranco/';
-			}, 1500);
+		// EPEE
+		if(_this.data.y < 580 && _this.data.y > 560 && _this.data.x > 680 && _this.data.x < 720) {
 			
+			if(_this.data.has_sword === 0) {
+				_this.data.stop_game = 1;
+
+				h2.style.top = ($pos_top+600)+'px';
+				h2.style.left = '630px';
+				h2.innerHTML = 'Vous avez récupéré l\'épée !';
+				_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x, _this.data.y-5, 20, 26);
+				_this.data.ctx.drawImage(_this.data.link, 20, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
+
+				setTimeout(function(){h2.innerHTML = ''; _this.data.stop_game = 0;_this.data.has_sword = 1;_this.data.link.src = '/Webarranco/img/zelda/sprite_sword.png';}, 3000);
+			}
+				
 		}
 
 		// Emeraude Kokiri
-		if(y > 560 && y < 590 && x > 30 && x < 60) {
-			h2.style.top = ($pos_top+600)+'px';
-			h2.style.left = '70px';
-			h2.innerHTML = 'Vous avez récupéré l\'Emeraude Kokiri';
+		if(_this.data.y > 560 && _this.data.y < 590 && _this.data.x > 30 && _this.data.x < 60) {
+			if(_this.data.emeraude_kokiri === 0) {
+				_this.data.stop_game = 1;
 
-			setTimeout(function(){h2.innerHTML = ''}, 3000);
+				h2.style.top = ($pos_top+600)+'px';
+				h2.style.left = '70px';
+				h2.innerHTML = 'Vous avez récupéré l\'Emeraude Kokiri';
+				_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x, _this.data.y-5, 20, 26);
+				_this.data.ctx.drawImage(_this.data.link, 20, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
 
-			ctx.beginPath();//On démarre un nouveau tracé
-			line_y = 270;
-			line_x = 120;
-			ctx.moveTo(line_x, line_y);
+				setTimeout(function(){h2.innerHTML = '';_this.data.stop_game = 0;_this.data.emeraude_kokiri = 1;}, 3000);
+			}
+			
 
-			line_x = line_x + 90;
-			ctx.lineTo(line_x, line_y);
-			line_x = line_x - 100;
-			line_y = line_y + 1;
-			ctx.lineTo(line_x, line_y);
-			line_x = line_x + 100;
-			line_y = line_y - 2;
-			ctx.lineTo(line_x, line_y);
+			_this.data.ctx.beginPath();//On démarre un nouveau tracé
+			_this.data.line_y = 270;
+			_this.data.line_x = 120;
+			_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-			ctx.strokeStyle = "black";//On trace seulement les lignes.
-			ctx.stroke();//On trace seulement les lignes.
-			ctx.closePath();
+			_this.data.line_x = _this.data.line_x + 90;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+			_this.data.line_x = _this.data.line_x - 100;
+			_this.data.line_y = _this.data.line_y + 1;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+			_this.data.line_x = _this.data.line_x + 100;
+			_this.data.line_y = _this.data.line_y - 2;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+			_this.data.ctx.strokeStyle = "black";//On trace seulement les lignes.
+			_this.data.ctx.stroke();//On trace seulement les lignes.
+			_this.data.ctx.closePath();
 		}
 
 		// Rubis Goron
-		if(y > 150 && y < 180 && x > 1630 && x < 1670) {
-			h2.style.top = ($pos_top+200)+'px';
-			h2.style.left = '1500px';
-			h2.innerHTML = 'Vous avez récupéré le Rubis Goron';
+		if(_this.data.y > 150 && _this.data.y < 180 && _this.data.x > 1630 && _this.data.x < 1670) {
+			if(_this.data.rubis_goron === 0) {
+				_this.data.stop_game = 1;
 
-			setTimeout(function(){h2.innerHTML = ''}, 3000);
+				h2.style.top = ($pos_top+200)+'px';
+				h2.style.left = '1500px';
+				h2.innerHTML = 'Vous avez récupéré le Rubis Goron';
+				_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x, _this.data.y-5, 20, 26);
+				_this.data.ctx.drawImage(_this.data.link, 20, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
+
+				setTimeout(function(){h2.innerHTML = '';_this.data.stop_game = 0;_this.data.rubis_goron = 1;}, 3000);
+			}
 			
-			ctx.beginPath();//On démarre un nouveau tracé
+			_this.data.ctx.beginPath();//On démarre un nouveau tracé
 
-			line_y = 390;
-			line_x = 1600;
-			ctx.moveTo(line_x, line_y);
+			_this.data.line_y = 390;
+			_this.data.line_x = 1600;
+			_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-			line_x = line_x - 80;
-			ctx.lineTo(line_x, line_y);
+			_this.data.line_x = _this.data.line_x - 80;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-			line_x = line_x + 80;
-			line_y = line_y + 1;
-			ctx.lineTo(line_x, line_y);
-			line_x = line_x - 80;
-			line_y = line_y - 2;
-			ctx.lineTo(line_x, line_y);
+			_this.data.line_x = _this.data.line_x + 80;
+			_this.data.line_y = _this.data.line_y + 1;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+			_this.data.line_x = _this.data.line_x - 80;
+			_this.data.line_y = _this.data.line_y - 2;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-			ctx.strokeStyle = "black";//On trace seulement les lignes.
-			ctx.stroke();//On trace seulement les lignes.
-			ctx.closePath();
+			_this.data.ctx.strokeStyle = "black";//On trace seulement les lignes.
+			_this.data.ctx.stroke();//On trace seulement les lignes.
+			_this.data.ctx.closePath();
 		}
 
 		// Saphir Zora
-		if(y > 830 && y < 870 && x > 1620 && x < 1660) {
-			console.log('Vous avez récupéré le Saphir Zora');
-			console.log('Vous avez récupéré le Rubis Goron');
-			h2.style.top = ($pos_top+780)+'px';
-			h2.style.left = '1500px';
-			h2.innerHTML = 'Vous avez récupéré le Saphir Zora';
+		if(_this.data.y > 830 && _this.data.y < 870 && _this.data.x > 1620 && _this.data.x < 1660) {
+			if(_this.data.saphir_zora === 0) {
+				_this.data.stop_game = 1;
 
-			setTimeout(function(){h2.innerHTML = ''}, 3000);
+				h2.style.top = ($pos_top+780)+'px';
+				h2.style.left = '1500px';
+				h2.innerHTML = 'Vous avez récupéré le Saphir Zora';
+				_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x, _this.data.y-5, 20, 26);
+				_this.data.ctx.drawImage(_this.data.link, 20, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
 
-			ctx.beginPath();//On démarre un nouveau tracé
+				setTimeout(function(){h2.innerHTML = '';_this.data.stop_game = 0;_this.data.saphir_zora = 1;}, 3000);
+			}
 
-			line_y = 870;
-			line_x = 1400;
-			ctx.moveTo(line_x, line_y);
+			_this.data.ctx.beginPath();//On démarre un nouveau tracé
 
-			line_y = line_y - 60;
-			ctx.lineTo(line_x, line_y);
-			line_y = line_y + 60;
-			line_x = line_x + 1;
-			ctx.lineTo(line_x, line_y);
-			line_y = line_y - 60;
-			line_x = line_x - 2;
-			ctx.lineTo(line_x, line_y);
+			_this.data.line_y = 870;
+			_this.data.line_x = 1400;
+			_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-			ctx.strokeStyle = "black";//On trace seulement les lignes.
-			ctx.stroke();//On trace seulement les lignes.
-			ctx.closePath();
+			_this.data.line_y = _this.data.line_y - 60;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+			_this.data.line_y = _this.data.line_y + 60;
+			_this.data.line_x = _this.data.line_x + 1;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+			_this.data.line_y = _this.data.line_y - 60;
+			_this.data.line_x = _this.data.line_x - 2;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
 
-			ctx.beginPath();//On démarre un nouveau tracé
-			line_y = 320;
-			line_x = 920;
-			ctx.moveTo(line_x, line_y);
+			_this.data.ctx.strokeStyle = "black";//On trace seulement les lignes.
+			_this.data.ctx.stroke();//On trace seulement les lignes.
+			_this.data.ctx.closePath();
 
-			line_x = line_x - 100;
-			ctx.lineTo(line_x, line_y);
-			line_x = line_x + 100;
-			line_y = line_y + 1;
-			ctx.lineTo(line_x, line_y);
-			line_x = line_x - 100;
-			line_y = line_y + 1;
-			ctx.lineTo(line_x, line_y);
-			line_x = line_x + 100;
-			ctx.lineTo(line_x, line_y);
-			line_x = line_x - 100;
-			line_y = line_y + 1;
-			ctx.lineTo(line_x, line_y);
-			line_x = line_x + 100;
-			line_y = line_y + 1;
-			ctx.lineTo(line_x, line_y);
+			_this.data.ctx.beginPath();//On démarre un nouveau tracé
+			_this.data.line_y = 320;
+			_this.data.line_x = 920;
+			_this.data.ctx.moveTo(_this.data.line_x, _this.data.line_y);
 
-			ctx.strokeStyle = "black";//On trace seulement les lignes.
-			ctx.stroke();//On trace seulement les lignes.
-			ctx.closePath();
+			_this.data.line_x = _this.data.line_x - 100;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+			_this.data.line_x = _this.data.line_x + 100;
+			_this.data.line_y = _this.data.line_y + 1;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+			_this.data.line_x = _this.data.line_x - 100;
+			_this.data.line_y = _this.data.line_y + 1;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+			_this.data.line_x = _this.data.line_x + 100;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+			_this.data.line_x = _this.data.line_x - 100;
+			_this.data.line_y = _this.data.line_y + 1;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+			_this.data.line_x = _this.data.line_x + 100;
+			_this.data.line_y = _this.data.line_y + 1;
+			_this.data.ctx.lineTo(_this.data.line_x, _this.data.line_y);
+
+			_this.data.ctx.strokeStyle = "black";//On trace seulement les lignes.
+			_this.data.ctx.stroke();//On trace seulement les lignes.
+			_this.data.ctx.closePath();
 		}
 
+		// Triforce
+		if(_this.data.y < 280 && _this.data.y > 30 && _this.data.x < 1000 && _this.data.x > 610) {
+			if(_this.data.triforce === 0) {
+				_this.data.stop_game = 1;
+
+				h2.style.top = ($pos_top+100)+'px';
+				h2.style.left = '630px';
+				h2.innerHTML = 'Vous avez récupéré la Triforce';
+				_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x, _this.data.y-5, 20, 26);
+				_this.data.ctx.drawImage(_this.data.link, 20, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
+
+				setTimeout(function(){h2.innerHTML = '';window.location = '/Webarranco/';_this.data.triforce = 1;}, 3000);
+			}
+
+		}
+
+		
 	    switch(key) {
 			case 38 : case 122 : case 119 : case 90 : case 87 : // Flèche haut, z, w, Z, W
 				event.preventDefault();
-				//joueur.deplacer(DIRECTION.HAUT, map);
-				
-
-				if(has_sword == 0) {
-					y = y - 20;
-					ctx.drawImage(black, 0, 0, 20, 26, x, y+20, 20, 26);
-					ctx.drawImage(link, 0, 0, 20, 26, x, y, 20, 26);
-				} else {
-					y = y - 25;
-					ctx.drawImage(black3, 0, 0, 40, 47, x, y+40, 40, 47);
-					ctx.drawImage(link, 0, 0, 25, 47, x, y, 25, 47);
+				if(_this.data.stop_game === 0) {
+					requestAnimationFrame(moveUp);
 				}
-				
 				break;
+
 			case 40 : case 115 : case 83 : // Flèche bas, s, S
 				event.preventDefault();
-				if(has_sword == 0) {
-					y = y + 20;
-					ctx.drawImage(black, 0, 0, 20, 26, x, y-20, 20, 26);
-					ctx.drawImage(link, 20, 0, 20, 26, x, y, 20, 26);
-				} else {
-					y = y + 25;
-					ctx.drawImage(black3, 0, 0, 40, 47, x, y-40, 40, 47);
-					ctx.drawImage(link, 25, 0, 25, 47, x, y, 25, 47);
+				if(_this.data.stop_game === 0) {
+					requestAnimationFrame(moveDown);
 				}
-				
-				//joueur.deplacer(DIRECTION.BAS, map);
 				break;
+
 			case 37 : case 113 : case 97 : case 81 : case 65 : // Flèche gauche, q, a, Q, A
 				event.preventDefault();
-				//joueur.deplacer(DIRECTION.GAUCHE, map);
-				if(has_sword == 0) {
-					x = x - 26;
-					ctx.drawImage(black, 0, 0, 20, 26, x+26, y, 20, 26);
-					ctx.drawImage(link, 40, 0, 20, 26, x, y, 20, 26);
-				} else {
-					x = x - 20; // Anciennement 47
-					ctx.drawImage(black3, 0, 0, 40, 47, x+20, y, 40, 47);
-					ctx.drawImage(link, 50, 0, 40, 47, x, y, 40, 47);
+				if(_this.data.stop_game === 0) {
+					requestAnimationFrame(moveLeft);
 				}
-				
 				break;
+
 			case 39 : case 100 : case 68 : // Flèche droite, d, D
 				event.preventDefault();
-				//joueur.deplacer(DIRECTION.DROITE, map);
-				if(has_sword == 0) {
-					x = x + 26;
-					ctx.drawImage(black, 0, 0, 20, 26, x-26, y, 20, 26);
-					ctx.drawImage(link, 60, 0, 20, 26, x, y, 20, 26);
-				} else {
-					x = x + 20;
-					ctx.drawImage(black3, 0, 0, 40, 47, x-20, y, 40, 47);
-					ctx.drawImage(link, 90, 0, 40, 47, x, y, 40, 47);
+				if(_this.data.stop_game === 0) {
+					requestAnimationFrame(moveRight);
 				}
-				
 				break;
+
 			default : 
-				//alert(key);
-				// Si la touche ne nous sert pas, nous n'avons aucune raison de bloquer son comportement normal.
 				return true;
 		}
-	}
-}
+	};
+};

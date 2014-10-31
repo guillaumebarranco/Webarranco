@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		jshint: {
-			all : ['app/webroot/js/main.js', 'app/webroot/js/projects.js', 'app/webroot/js/bubbles.js' ]
+			all : ['app/webroot/js/main.js', 'app/webroot/js/projects.js', 'app/webroot/js/bubbles.js', 'app/webroot/js/zelda/movement.js' ]
 		},
 
 		cssmin: {
@@ -19,6 +19,11 @@ module.exports = function(grunt) {
 		    fusionJS: {
 				files: {
 					'app/webroot/js/build/min.js': ['app/webroot/js/jquery-1.11.1.js', 'app/webroot/js/main.js']
+				}
+		    },
+		    zeldaJS: {
+				files: {
+					'app/webroot/js/zelda/min.js' : ['app/webroot/js/zelda/movement.js']
 				}
 		    }
 		},

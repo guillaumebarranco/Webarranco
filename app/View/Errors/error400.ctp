@@ -14,7 +14,16 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<h2><?php echo $message; ?></h2>
+<?= $this->Html->css('zelda'); ?>
+<h1>Oups ! La page recherchée n'a pas été trouvée !</h1>
+<h3 style="color: blue;">
+	Vous pouvez revenir <a href="/Webarranco/">sur l'accueil</a> Ou bien <a class="launch">tenter un petit jeu !</a>
+</h3>
+<h2 id="msg"></h2>
+
+<canvas id="canvas" width="1700" height="940"></canvas>
+<?= $this->Html->script('zelda/movement'); ?>
+<!--<h2><?php echo $message; ?></h2>-->
 <!--<p class="error">
 	<strong><?php echo __d('cake', 'Error'); ?>: </strong>
 	<?php printf(
