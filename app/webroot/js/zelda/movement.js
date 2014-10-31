@@ -15,7 +15,7 @@ this.data.start = null;
 this.data.emeraude_kokiri = 0;
 this.data.rubis_goron = 0;
 this.data.saphir_zora = 0;
-this.data.triforce = 0;
+this.data.triforce_find = 0;
 
 this.data.stop_game = 0;
 
@@ -560,13 +560,7 @@ this.dessineTerrain = function() {
 	_this.data.black3.src = '/Webarranco/img/zelda/black3.png';
 };
 
-
-window.onload = function() {
-
-	document.body.style.zoom = screen.width/1800; // Adaptation de la taille d'écrans spécifique pour le jeu			
-
-	_this.dessineTerrain();
-
+this.onloadAll = function() {
 	_this.data.link.onload = function(){
 		_this.data.ctx.drawImage(_this.data.link, 0, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
 	};
@@ -584,7 +578,15 @@ window.onload = function() {
 		_this.data.ctx.drawImage(_this.data.joyaux, 21, 0, 21, 27, 1660, 160, 21, 27);
 		_this.data.ctx.drawImage(_this.data.joyaux, 42, 0, 29, 27, 1650, 850, 29, 27);
 	};
+}
 
+
+window.onload = function() {
+
+	$('body').css('zoom', screen.width/1800);
+
+	_this.dessineTerrain();
+	_this.onloadAll();
 
 	// FIN DU TRACAGE
 
@@ -593,8 +595,6 @@ window.onload = function() {
 		var h2 = document.getElementById('msg');
 
 		var $pos_top = $('#canvas').offset().top;
-		//console.log($pos_top);
-
 		var e = event || window.event;
 		var key = e.which || e.keyCode;
 
@@ -611,8 +611,7 @@ window.onload = function() {
 				_this.data.ctx.drawImage(_this.data.link, 20, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
 
 				setTimeout(function(){h2.innerHTML = ''; _this.data.stop_game = 0;_this.data.has_sword = 1;_this.data.link.src = '/Webarranco/img/zelda/sprite_sword.png';}, 3000);
-			}
-				
+			}	
 		}
 
 		// Emeraude Kokiri
@@ -746,7 +745,7 @@ window.onload = function() {
 
 		// Triforce
 		if(_this.data.y < 280 && _this.data.y > 30 && _this.data.x < 1000 && _this.data.x > 610) {
-			if(_this.data.triforce === 0) {
+			if(_this.data.triforce_find === 0) {
 				_this.data.stop_game = 1;
 
 				h2.style.top = ($pos_top+100)+'px';
@@ -757,9 +756,7 @@ window.onload = function() {
 
 				setTimeout(function(){h2.innerHTML = '';window.location = '/Webarranco/';_this.data.triforce = 1;}, 3000);
 			}
-
 		}
-
 		
 	    switch(key) {
 			case 38 : case 122 : case 119 : case 90 : case 87 : // Flèche haut, z, w, Z, W

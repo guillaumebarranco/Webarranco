@@ -127,19 +127,19 @@ $(document).ready(function() {
 	    }
 
 	    if(cheat === 1) {
-	    	console.log('one time');
+	    	//console.log('one time');
 	    	$('.cheat-1').css('background', 'black');
 	    } else if(cheat === 2) {
-	    	console.log('two times');
+	    	//console.log('two times');
 	    	$('.cheat-2').css('background', 'black');
 	    } else if(cheat === 3) {
-	    	console.log('three times');
+	    	//console.log('three times');
 	    	$('.cheat-3').css('background', 'black');
 	   	} else if(cheat === 4) {
-	   		console.log('four times');
+	   		//console.log('four times');
 	   		$('.cheat-4').css('background', 'black');
 	   	} else if(cheat === 5) {
-	   		console.log('five times');
+	   		//console.log('five times');
 	   		$('.cheat-a').css('background', 'black');
 	   		$('.cheat-a').css('color', '#FAFA58');
 	   	} else if(cheat === 6) {
@@ -163,8 +163,6 @@ $(document).ready(function() {
 	});
 
 	// Page About, gère les couleurs du W
-
-	console.log($('.bloc-about-manga').length);
 
 	for (var i = 0; i < $('.bloc-about-manga').length; i++) {
 		$('.bloc-about-manga:eq('+i+')').css('left', i*29+'px');
@@ -213,6 +211,8 @@ $(document).ready(function() {
 			check_menu = 0;
 		}
 	});
+
+	// PAGE ZELDA
 
 	$('.launch').click(function() {
 		var to = ($('html, body').offset().top) + $('html, body').height();

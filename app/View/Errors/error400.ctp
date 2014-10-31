@@ -16,9 +16,9 @@
 ?>
 <?= $this->Html->css('zelda'); ?>
 <h1>Oups ! La page recherchée n'a pas été trouvée !</h1>
-<h3 style="color: blue;">
+<p style="color: blue;">
 	Vous pouvez revenir <a href="/Webarranco/">sur l'accueil</a> Ou bien <a class="launch">tenter un petit jeu !</a>
-</h3>
+</p>
 <h2 id="msg"></h2>
 
 <canvas id="canvas" width="1700" height="940"></canvas>
