@@ -1,4 +1,5 @@
 window.onload = function() {
+
 	document.body.style.zoom = screen.width/1800;
 	var canvas = document.getElementById("canvas");
 	canvas.zoom
@@ -485,6 +486,9 @@ window.onload = function() {
 
 		var h2 = document.getElementById('msg');
 
+		var $pos_top = $('#canvas').offset().top;
+		//console.log($pos_top);
+
 		var e = event || window.event;
 		var key = e.which || e.keyCode;
 
@@ -501,15 +505,18 @@ window.onload = function() {
 
 		// Triforce
 		if(y < 280 && y > 30 && x < 1000 && x > 610) {
-			h2.style.top = '50px';
+			h2.style.top = ($pos_top+50)+'px';
 			h2.style.left = '630px';
 			h2.innerHTML = 'Vous avez récupéré la Triforce';
-			return false;
+			setTimeout(function(){
+				window.location = '/Webarranco/';
+			}, 1500);
+			
 		}
 
 		// Emeraude Kokiri
 		if(y > 560 && y < 590 && x > 30 && x < 60) {
-			h2.style.top = '500px';
+			h2.style.top = ($pos_top+600)+'px';
 			h2.style.left = '70px';
 			h2.innerHTML = 'Vous avez récupéré l\'Emeraude Kokiri';
 
@@ -536,7 +543,7 @@ window.onload = function() {
 
 		// Rubis Goron
 		if(y > 150 && y < 180 && x > 1630 && x < 1670) {
-			h2.style.top = '200px';
+			h2.style.top = ($pos_top+200)+'px';
 			h2.style.left = '1500px';
 			h2.innerHTML = 'Vous avez récupéré le Rubis Goron';
 
@@ -567,7 +574,7 @@ window.onload = function() {
 		if(y > 830 && y < 870 && x > 1620 && x < 1660) {
 			console.log('Vous avez récupéré le Saphir Zora');
 			console.log('Vous avez récupéré le Rubis Goron');
-			h2.style.top = '780px';
+			h2.style.top = ($pos_top+780)+'px';
 			h2.style.left = '1500px';
 			h2.innerHTML = 'Vous avez récupéré le Saphir Zora';
 

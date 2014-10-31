@@ -1,2 +1,2 @@
 User-agent: *
-#Sitemap: http://www.webarranco.fr/sitemap.xml
+Sitemap: http://www.webarranco.fr/sitemap.xml

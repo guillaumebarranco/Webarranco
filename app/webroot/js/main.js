@@ -214,4 +214,11 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.launch').click(function() {
+		var to = ($('html, body').offset().top) + $('html, body').height();
+		$('html, body')
+       .stop()
+       .animate({scrollTop: to}, 1000 );
+	});
+
 });

@@ -95,27 +95,27 @@
 			</a>
 			<ul class="socials">
 				<li class="facebook">
-					<a href="#">
+					<a href="https://www.facebook.com/profile.php?id=100004351216740" target="_blank">
 						<i class="fi-social-facebook size-34"></i>
 					</a>
 				</li>
 				<li class="twitter">
-					<a href="#">
+					<a href="https://twitter.com/Webarranco" target="_blank">
 						<i class="fi-social-twitter size-34"></i>
 					</a>
 				</li>
 				<li class="deezer">
-					<a href="#">
+					<a href="#" target="_blank">
 						<i class="fi-sound size-34"></i>
 					</a>
 				</li>
 				<li class="linkedin">
-					<a href="#">
+					<a href="https://www.linkedin.com/profile/view?id=224191169&trk=nav_responsive_tab_profile" target="_blank">
 						<i class="fi-social-linkedin size-34"></i>
 					</a>
 				</li>
 				<li class="github">
-					<a href="#">
+					<a href="https://github.com/guillaumebarranco/" target="_blank">
 						<i class="fi-social-github size-34"></i>
 					</a>
 				</li>

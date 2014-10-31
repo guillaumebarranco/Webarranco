@@ -16,6 +16,9 @@
 		<?= $this->Html->css('foundation') ?>
 		<?= $this->Html->css('foundation-icons/foundation-icons') ?>
 		<?= $this->Html->css('index') ?>
+		<!--<?= $this->Html->script('build/min') ?>-->
+		<?= $this->Html->script('jquery-1.11.1') ?>
+		<?= $this->Html->script('main') ?>
 		<?= $this->Html->script('build/min') ?>
 
 	</head>
