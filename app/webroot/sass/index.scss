@@ -1,4 +1,11 @@
-@import 'compass';
+@import "compass";
+
+// @font-face {
+// 	src: "font/Oswald.otf";
+// 	font-family: "Oswald";
+// }
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
 
 $color-triangle : #FACC2E;
 $blanc : #bbb;
@@ -14,7 +21,7 @@ body {
 	padding: 0;
 	background: $noir;
 	color: $blanc;
-	font-family: 'Verdana';
+	font-family: "Open Sans";
 	font-size: 14px;
 }
 
@@ -24,7 +31,7 @@ p {
 
 h1, h2 {
 	color: $bleu_fonce;
-	font-family: 'Oswald';
+	font-family: "Oswald";
 }
 ul li {
 	list-style: none;
@@ -45,7 +52,7 @@ ul li {
 }
 
 .menu {
-	width: 600px;
+	width: 800px;
 	margin: 0 auto;
 	position: relative;
 
@@ -57,11 +64,12 @@ ul li {
 		.link-nav {
 			display: block;
 			color: $blanc;
-			font-weight: bold;
-			font-family: 'Century Gothic';
-			font-size: 16px;
+			font-weight: normal;
+			font-family: "SF Cosmic Age";
+			font-size: 20px;
+			text-transform: lowercase;
 
-			&.active {
+			/*&.active {
 				&:before, &:after {
 					opacity: 1;
 					-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
@@ -78,7 +86,7 @@ ul li {
 				height: 50px;
 				border: 2px solid $blanc;
 				border-radius: 50%;
-				content: '';
+				content: "";
 				opacity: 0;
 				-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
 				-moz-transition: -moz-transform 0.3s, opacity 0.3s;
@@ -93,17 +101,16 @@ ul li {
 				-webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
 				-moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
 				transform: translateX(-50%) translateY(-50%) scale(0.8);
-			}
+			}*/
 		}
-
 	}
 
-	.li-top {
+	/*.li-top {
 		top:  -20px;
 	}
 	.li-bottom {
 		top: 50px;
-	}
+	}*/
 
 	.logo {
 		top: 0;
@@ -197,9 +204,11 @@ ul li {
 }
 
 .socials {
-	margin: 0 auto;
-	width: 333px;
+	margin: 0;
 	margin-bottom: 20px;
+	text-align: center;
+	padding: 0;
+
 	li {
 		display: inline-block;
 		margin-left: 10px;
@@ -232,6 +241,7 @@ ul li {
 	margin: 0 auto;
 	width: 100px;
 	cursor: pointer;
+	display: block;
 }
 
 .download_CV {
@@ -734,20 +744,8 @@ ul li {
 	}
 
 	.myPicture {
-		@include transition(0.4s);
-		filter: blur(5px);
-	    -webkit-filter: blur(5px);
-	    -moz-filter: blur(5px);
-	    -o-filter: blur(5px);
-	    -ms-filter: blur(5px);
 
 	    &:hover {
-	    	@include transition(0.4s);
-	    	filter: blur(0px);
-		    -webkit-filter: blur(0px);
-		    -moz-filter: blur(0px);
-		    -o-filter: blur(0px);
-		    -ms-filter: blur(0px);
 	    }
 	}
 
@@ -780,3 +778,137 @@ ul li {
 	}
 
 } /* END MEDIA QUERY */
+
+
+
+
+
+
+.cbutton {
+	position: relative;
+	display: inline-block;
+	margin: 1em;
+	padding: 0;
+	border: none;
+	background: none;
+	color: #286aab;
+	font-size: 1.4em;
+	overflow: visible;
+	-webkit-transition: color 0.7s;
+	transition: color 0.7s;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+	&:after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -35px 0 0 -35px;
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		content: '';
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&.cbutton--effect-milan {
+		&:before, &:after {
+			border: 4px solid rgba(111,148,182,0.2);
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -35px 0 0 -35px;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		&.cbutton--click {
+			&:before, &:after {
+				-webkit-animation-duration: 8s, 2s;
+				animation-duration: 8s, 2s;
+				-webkit-animation-iteration-count: infinite, infinite;
+				animation-iteration-count: infinite, infinite;
+				-webkit-animation-timing-function: ease, linear;
+				animation-timing-function: ease, linear;
+				-webkit-animation-fill-mode: forwards;
+				animation-fill-mode: forwards;
+			}
+			&:before {
+				-webkit-animation-name: anim-effect-milan-3, anim-effect-milan-2;
+				animation-name: anim-effect-milan-3, anim-effect-milan-2;
+			}
+			&:after {
+				-webkit-animation-name: anim-effect-milan-3, anim-effect-milan-1;
+				animation-name: anim-effect-milan-3, anim-effect-milan-1;
+			}
+		}
+	}
+}
+
+@-webkit-keyframes anim-effect-milan-1 {
+	0% {
+		-webkit-transform: perspective(1000px) rotate3d(1, 1, 1, 0deg);
+		transform: perspective(1000px) rotate3d(1, 1, 1, 0deg);
+	}
+	100% {
+		-webkit-transform: perspective(1000px) rotate3d(1, 1, 1, 360deg);
+		transform: perspective(1000px) rotate3d(1, 1, 1, 360deg);
+	}
+}
+
+@keyframes anim-effect-milan-1 {
+	0% {
+		-webkit-transform: perspective(1000px) rotate3d(1, 1, 1, 0deg);
+		transform: perspective(1000px) rotate3d(1, 1, 1, 0deg);
+	}
+	100% {
+		-webkit-transform: perspective(1000px) rotate3d(1, 1, 1, 360deg);
+		transform: perspective(1000px) rotate3d(1, 1, 1, 360deg);
+	}
+}
+
+@-webkit-keyframes anim-effect-milan-2 {
+	0% {
+		-webkit-transform: perspective(1000px) rotate3d(-1, -1, -1, 0deg);
+		transform: perspective(1000px) rotate3d(-1, -1, -1, 0deg);
+	}
+	100% {
+		-webkit-transform: perspective(1000px) rotate3d(-1, -1, -1, 360deg);
+		transform: perspective(1000px) rotate3d(-1, -1, -1, 360deg);
+	}
+}
+
+@keyframes anim-effect-milan-2 {
+	0% {
+		-webkit-transform: perspective(1000px) rotate3d(1, -1, 1, 0deg);
+		transform: perspective(1000px) rotate3d(1, -1, 1, 0deg);
+	}
+	100% {
+		-webkit-transform: perspective(1000px) rotate3d(1, -1, 1, 360deg);
+		transform: perspective(1000px) rotate3d(1, -1, 1, 360deg);
+	}
+}
+
+@-webkit-keyframes anim-effect-milan-3 {
+	0%, 100% {
+		opacity: 0;
+	}
+	25%, 75% {
+		opacity: 1;
+	}
+}
+
+@keyframes anim-effect-milan-3 {
+	0%, 100% {
+		opacity: 0;
+	}
+	25%, 75% {
+		opacity: 1;
+	}
+}

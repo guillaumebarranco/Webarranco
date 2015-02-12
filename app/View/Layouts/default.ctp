@@ -16,10 +16,15 @@
 		<?= $this->Html->css('foundation') ?>
 		<?= $this->Html->css('foundation-icons/foundation-icons') ?>
 		<?= $this->Html->css('index') ?>
+		<?= $this->Html->css('lightbox') ?>
+
 		<!--<?= $this->Html->script('build/min') ?>-->
+
+		<?= $this->Html->script('modernizr.custom') ?>
+
 		<?= $this->Html->script('jquery-1.11.1') ?>
 		<?= $this->Html->script('main') ?>
-		<?= $this->Html->script('build/min') ?>
+		<?= $this->Html->script('lightbox.min') ?>
 
 	</head>
 
@@ -28,13 +33,27 @@
 		<header id="header">
 			<nav id="navigation">
 				<ul class="menu">
-					<li><a class="link-nav link-home" href="/Webarranco/">Accueil</a></li>
-					<li class="li-top"><a class="link-nav link-blog" href="/Webarranco/Blog">Blog</a></li>
-					<li class="li-bottom"><a class="link-nav link-skills" href="/Webarranco/Skills">Compétences</a></li>
-					<li class="logo"><a href="/Webarranco/Home"><img src="/Webarranco/img/build/link2.png"  width="130" alt="Logo du site" /></a></li>
-					<li class="li-bottom"><a class="link-nav link-projects" href="/Webarranco/Projects">Projets</a></li>
-					<li class="li-top"><a class="link-nav link-about" href="/Webarranco/About">A Propos</a></li>
-					<li><a class="link-nav link-contact" href="/Webarranco/Contact">Contact</a></li>
+					<li>
+						<a class="link-nav link-home cbutton cbutton--effect-milan" href="#">Accueil</a>
+					</li>
+					<li class="li-top">
+						<a class="link-nav link-blog cbutton cbutton--effect-milan" href="/Webarranco/Blog">Blog</a>
+					</li>
+					<li class="li-bottom">
+						<a class="link-nav link-skills cbutton cbutton--effect-milan" href="/Webarranco/Skills">Compétences</a>
+					</li>
+					<li class="logo">
+						<a href="/Webarranco/Home"><img src="/Webarranco/img/build/link2.png"  width="130" alt="Logo du site" /></a>
+					</li>
+					<li class="li-bottom">
+						<a class="link-nav link-projects cbutton cbutton--effect-milan" href="/Webarranco/Projects">Projets</a>
+					</li>
+					<li class="li-top">
+						<a class="link-nav link-about cbutton cbutton--effect-milan" href="/Webarranco/About">A Propos</a>
+					</li>
+					<li>
+						<a class="link-nav link-contact cbutton cbutton--effect-milan" href="/Webarranco/Contact">Contact</a>
+					</li>
 				</ul>
 				<div class="menu_mobile">
 					<div class="div-menu">Menu</div>
@@ -55,10 +74,26 @@
 		<footer id="footer">
 		</footer>
 
-		<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/plugins/CSSPlugin.min.js"></script>-->
-		<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/easing/EasePack.min.js"></script>-->
-		<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenLite.min.js"></script>-->
+		<?= $this->Html->script('classie') ?>
 
+		<script>
+			(function() {
+
+				/*var support = { animations : Modernizr.cssanimations },
+					animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
+					animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];*/
+
+				[].slice.call( document.querySelectorAll( '.cbutton' ) ).forEach( function(el) {
+					el.addEventListener( 'mouseenter', function(ev) {
+						classie.add( el, 'cbutton--click' );
+					});
+					el.addEventListener( 'mouseleave', function(ev) {
+						classie.remove( el, 'cbutton--click' );
+					});
+				});
+
+			})();
+		</script>
 	</body>
 
 </html>

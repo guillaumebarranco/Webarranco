@@ -9,6 +9,7 @@
 			Rien n'est impossible ! N'hésitez pas à <a href="/Webarranco/Contact">me contacter</a> pour n'importe quelle demande que ce soit !
 		</p>
 	</div>
+	
 	<canvas id="demo-canvas" style="position: absolute;left: 0;top: 0;"></canvas>
 </div>
 <section class="wrapper">
@@ -94,19 +95,9 @@
 				<i class="fi-mail size-80"></i>
 			</a>
 			<ul class="socials">
-				<li class="facebook">
-					<a href="https://www.facebook.com/profile.php?id=100004351216740" target="_blank">
-						<i class="fi-social-facebook size-34"></i>
-					</a>
-				</li>
 				<li class="twitter">
 					<a href="https://twitter.com/Webarranco" target="_blank">
 						<i class="fi-social-twitter size-34"></i>
-					</a>
-				</li>
-				<li class="deezer">
-					<a href="#" target="_blank">
-						<i class="fi-sound size-34"></i>
 					</a>
 				</li>
 				<li class="linkedin">
@@ -120,9 +111,9 @@
 					</a>
 				</li>
 			</ul>
-			<div class="myCV">
+			<a href="img/build/CV.jpg" data-lightbox="roadtrip" class="myCV">
 				<img src="img/build/CV.jpg" width="100" alt="Miniature de mon CV"/>
-			</div>
+			</a>
 			<a class="download_CV" href="img/build/CV_Barranco_Guillaume.pdf">Télécharger mon CV</a>
 		</div>
 
