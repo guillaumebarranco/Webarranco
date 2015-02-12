@@ -164,18 +164,54 @@ $(document).ready(function() {
 
 	// Page About, gère les couleurs du W
 
+	var bloc_width = 150;
+	var bloc_width_41 = bloc_width + 70;
+
+	var toomuch = 0;
+
+	$('.bloc-about-film').css('left', bloc_width);
+	$('.bloc-about-musique').css('left', bloc_width*2);
+	$('.bloc-about-jeux').css('left', bloc_width*3);
+
 	for (var i = 0; i < $('.bloc-about-manga').length; i++) {
-		$('.bloc-about-manga:eq('+i+')').css('left', i*29+'px');
-		$('.bloc-about-manga:eq('+i+')').css('background', '#8'+i+'2');
-		$('.bloc-about-musique:eq('+i+')').css('left', i*29+'px');
-		$('.bloc-about-musique:eq('+i+')').css('background', '#8'+i+'2');
+
+		if((i*bloc_width_41)+bloc_width_41 < $('.w').height()) {
+			$('.bloc-about-manga:eq('+i+')').css('top', i*bloc_width_41+'px');
+			$('.bloc-about-musique:eq('+i+')').css('top', i*bloc_width_41+'px');
+		} else {
+
+			$('.bloc-about-manga:eq('+i+')').css('left', bloc_width*4+'px');
+			$('.bloc-about-manga:eq('+i+')').css('top', toomuch*bloc_width_41+'px');
+			toomuch = toomuch+1;
+
+			$('.bloc-about-musique:eq('+i+')').css('left', bloc_width*4+'px');
+			$('.bloc-about-musique:eq('+i+')').css('top', toomuch*bloc_width_41+'px');
+			toomuch = toomuch+1;
+			
+		}
+		
+		$('.bloc-about-manga:eq('+i+')').css('background-color', '#8'+i+'2');
+		$('.bloc-about-musique:eq('+i+')').css('background-color', '#8'+i+'2');
 	}
 
 	for (var j = 0; j < $('.bloc-about-film').length; j++) {
-		$('.bloc-about-film:eq('+j+')').css('left', '-'+j*29+'px');
-		$('.bloc-about-film:eq('+j+')').css('background', '#8'+(j+1)+'2');
-		$('.bloc-about-jeux:eq('+j+')').css('left', '-'+j*29+'px');
-		$('.bloc-about-jeux:eq('+j+')').css('background', '#8'+(j+1)+'2');
+
+		if(105+(j*bloc_width_41)+bloc_width_41 < $('.w').height()) {
+			$('.bloc-about-film:eq('+j+')').css('top', 105+j*bloc_width_41+'px');
+			$('.bloc-about-jeux:eq('+j+')').css('top', 105+j*bloc_width_41+'px');
+		} else {
+			$('.bloc-about-film:eq('+j+')').css('left', bloc_width*4+'px');
+			$('.bloc-about-film:eq('+j+')').css('top', toomuch*bloc_width_41+'px');
+			toomuch = toomuch+1;
+
+			$('.bloc-about-jeux:eq('+j+')').css('left', bloc_width*4+'px');
+			$('.bloc-about-jeux:eq('+j+')').css('top', toomuch*bloc_width_41+'px');
+			toomuch = toomuch+1;
+		}
+
+		$('.bloc-about-film:eq('+j+')').css('background-color', '#8'+(j+1)+'2');
+		
+		$('.bloc-about-jeux:eq('+j+')').css('background-color', '#8'+(j+1)+'2');
 	}
 
 	// Gère les clicks sur les éléments du W en fonction de leur type
@@ -194,6 +230,86 @@ $(document).ready(function() {
 		}
 		
 	});
+
+	var previous = '';
+	var new_class;
+
+	$('.bloc-about').hover(
+		function() {
+			if(previous !== '') {
+
+				// Si on vient d'un bloc en dessous
+				if(
+					$('.bloc-about[data-name='+previous+']').offset().top > $(this).offset().top &&
+					$('.bloc-about[data-name='+previous+']').offset().left == $(this).offset().left
+				) {
+					new_class = 'y_moins_150';
+
+				// Quand on vient d'un bloc au-dessus
+				} else if(
+					$('.bloc-about[data-name='+previous+']').offset().top < $(this).offset().top &&
+					$('.bloc-about[data-name='+previous+']').offset().left == $(this).offset().left
+				) {
+					new_class = 'y_plus_150';
+
+				// Quand on vient d'un bloc pile à gauche
+				} else if(
+					$('.bloc-about[data-name='+previous+']').offset().top == $(this).offset().top &&
+					$('.bloc-about[data-name='+previous+']').offset().left > $(this).offset().left
+				) {
+					new_class = 'x_moins_150';
+
+				// Quand on vient d'un bloc pile à droite
+				} else if(
+					$('.bloc-about[data-name='+previous+']').offset().top == $(this).offset().top &&
+					$('.bloc-about[data-name='+previous+']').offset().left < $(this).offset().left
+				) {
+					new_class = 'x_plus_150';
+
+				// Quand on vient d'un bloc en-dessous et à gauche
+				} else if(
+					$('.bloc-about[data-name='+previous+']').offset().top > $(this).offset().top &&
+					$('.bloc-about[data-name='+previous+']').offset().left < $(this).offset().left
+				) {
+					new_class = 'xy_moins_150';
+
+				// Quand on vient d'un bloc au-dessus et à gauche
+				} else if(
+					$('.bloc-about[data-name='+previous+']').offset().top < $(this).offset().top &&
+					$('.bloc-about[data-name='+previous+']').offset().left < $(this).offset().left
+				) {
+					new_class = 'xy_plus_150';
+
+				// Quand on vient d'un bloc en-dessous et à droite
+				} else if(
+					$('.bloc-about[data-name='+previous+']').offset().top > $(this).offset().top &&
+					$('.bloc-about[data-name='+previous+']').offset().left > $(this).offset().left
+				) {
+					new_class = 'yx_plus_150';
+
+				// Quand on vient d'un bloc en-dessous et à droite
+				} else if(
+					$('.bloc-about[data-name='+previous+']').offset().top < $(this).offset().top &&
+					$('.bloc-about[data-name='+previous+']').offset().left > $(this).offset().left
+				) {
+					new_class = 'yx_moins_150';
+				}
+
+
+
+
+			} else {
+				new_class = 'y_moins_150';
+			}
+
+			$(this).find('div').addClass(new_class);
+		},
+
+		function() {
+			previous = $(this).attr('data-name');
+			$(this).find('div').removeClass(new_class);
+		}
+	);
 
 	// S'occupe de gérer les clicks sur le menu mobile
 

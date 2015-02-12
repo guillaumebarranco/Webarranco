@@ -9,7 +9,7 @@
 			Rien n'est impossible ! N'hésitez pas à <a href="/Webarranco/Contact">me contacter</a> pour n'importe quelle demande que ce soit !
 		</p>
 	</div>
-	
+
 	<canvas id="demo-canvas" style="position: absolute;left: 0;top: 0;"></canvas>
 </div>
 <section class="wrapper">
@@ -114,7 +114,7 @@
 			<a href="img/build/CV.jpg" data-lightbox="roadtrip" class="myCV">
 				<img src="img/build/CV.jpg" width="100" alt="Miniature de mon CV"/>
 			</a>
-			<a class="download_CV" href="img/build/CV_Barranco_Guillaume.pdf">Télécharger mon CV</a>
+			<a class="download_CV" target="_blank" href="img/CV_Barranco_Guillaume.pdf">Télécharger mon CV</a>
 		</div>
 
 		<div class="bloc large-4 columns">

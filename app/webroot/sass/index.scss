@@ -13,6 +13,12 @@ $noir : #222;
 $bleu_fonce : #25645d;
 $bleu_clair : #008cba;
 
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
 html {
 	overflow-x : hidden;
 }
@@ -22,11 +28,11 @@ body {
 	background: $noir;
 	color: $blanc;
 	font-family: "Open Sans";
-	font-size: 14px;
+	font-size: em(14);
 }
 
 p {
-	font-size: 14px;
+	font-size: em(16);
 }
 
 h1, h2 {
@@ -35,7 +41,7 @@ h1, h2 {
 }
 ul li {
 	list-style: none;
-	font-size: 14px;
+	font-size: em(14);
 }
 
 ::-webkit-scrollbar-button {
@@ -52,7 +58,7 @@ ul li {
 }
 
 .menu {
-	width: 800px;
+	width: 900px;
 	margin: 0 auto;
 	position: relative;
 
@@ -66,42 +72,13 @@ ul li {
 			color: $blanc;
 			font-weight: normal;
 			font-family: "SF Cosmic Age";
-			font-size: 20px;
+			font-size: em(24);
 			text-transform: lowercase;
 
-			/*&.active {
-				&:before, &:after {
-					opacity: 1;
-					-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
-					-moz-transform: translateX(-50%) translateY(-50%) scale(1);
-					transform: translateX(-50%) translateY(-50%) scale(1);
-				}
+			&.active {
+				padding: 5px;
+				border: solid 1px white;
 			}
-
-			&:before, &:after {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				width: 100px;
-				height: 50px;
-				border: 2px solid $blanc;
-				border-radius: 50%;
-				content: "";
-				opacity: 0;
-				-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-				-moz-transition: -moz-transform 0.3s, opacity 0.3s;
-				transition: transform 0.3s, opacity 0.3s;
-				-webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
-				-moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
-				transform: translateX(-50%) translateY(-50%) scale(0.2);
-			}
-			&:after {
-				width: 50px;
-				height: 100px;
-				-webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
-				-moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
-				transform: translateX(-50%) translateY(-50%) scale(0.8);
-			}*/
 		}
 	}
 
@@ -319,11 +296,11 @@ ul li {
 
 	.cheat-a {
 		background: #2E64FE;
-		font-size: 23px;
+		font-size: em(23);
 	}
 	.cheat-b {
 		background: #04B45F;
-		font-size: 23px;
+		font-size: em(23);
 	}
 }
 
@@ -415,9 +392,9 @@ ul li {
 	width: 102px;
 	position: relative;
 	border: none;
-	font-family: 'Verdana';
+	font-family: "Verdana";
 	padding: 5px 0px;
-	font-size: 14px;
+	font-size: em(14);
 }
 
 .right {
@@ -426,54 +403,59 @@ ul li {
 .div-contact {
 	position: relative;
 	margin-bottom: 50px;
-
-	.wrapper {
-		position: absolute;
-		top: 0;
-		left: 100px;
-		background: rgba(255,255,255,0.6);
-		padding: 13px;
-	}
-}
-
-#map-canvas {
 	width: 100%;
-	height: 571px;
+	max-width: 800px;
+	margin: 0 auto;
+	background-color: #333;
+	padding: 30px;
+	box-sizing: border-box;
+	margin-bottom: 50px;
 }
-
 .infos-contact {
 	color: black;
-	font-family: 'Oswald';
-	font-size: 16px;
+	font-family: "Oswald";
+	font-size: em(20);
 }
 
 .style-input {
 	width: 100%;
 	margin: 0 auto;
+
+	&.style-submit {
+		text-align: center;
+		margin-top: 25px;
+	}
+
 	input[type=text], input[type=email], textarea {
-		background: lighten(rgba(34,34,34, 0.7), 15%);
+		background-color: lighten(rgba(150,150,150, 0.7), 15%);
 		color: white;
 		border: none;
-		font-family: 'Century Gothic';
+		font-family: "Oswald";
 	}
 	
 	label {
 		display: block;
 		width: 100px;
 		cursor: text;
-		font-size: 18px;
+		font-size: em(18);
 		color: $bleu_fonce;
 		margin-bottom: 5px;
 	}
 	input[type=submit] {
 		@include transition(0.4s);
-		background: $noir;
+		background-color: $noir;
+		font-family: "Oswald";
 		color: $blanc;
-		border: none;
-		padding: 5px;
+		border: solid 1px $noir;
 		cursor: pointer;
-		padding: 10px 16px;
-		font-size: 14px;
+		text-transform: uppercase;
+		padding: 20px 45px;
+		font-size: em(20);
+
+		&:hover {
+			background-color: $blanc;
+			color: $noir;
+		}
 	}
 	textarea {
 		resize: none;
@@ -552,97 +534,153 @@ ul li {
 	}
 }
 
+$width_bloc : 150px;
+
 /* 
 * 
 * ABOUT */
 .type-about {
 	display: inline-block;
 }
+
+.w {
+	margin-bottom: 50px;
+	width: $width_bloc*5;
+	height: $width_bloc*6;
+	margin: 0 auto;
+	position:relative;
+}
+
 .bloc-about {
 	display: block;
-	vertical-align: top;
-	position: relative;
-	width:150px;
-	height:80px;
 	cursor: pointer;
 	z-index: 0;
+	width: $width_bloc;
+	height: $width_bloc;
+	position: absolute;
 	@include transition(0.4s);
+	left:0px;
+	-webkit-transform:rotate(45deg);
 
 	div {
 		@include transition(0.4s);
 		display: block;
 		text-align: center;
 		padding-top: 20px;
-	}
-	img {
-		@include transition(0.4s);
-		display: none;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-image: none;
 	}
 
 	&:hover {
 		z-index: 2;
 		div {
 			@include transition(0.4s);
-			display: none;
+			display: block;
+			text-align: center;
+			padding-top: 20px;
+			width: 100%;
+			height: 100%;
+	
+			// Straight classes
+			&.x_plus_150 {
+				background-position-x : 150px;
+				background-position-y : -150px;
+			}
+			&.x_moins_150 {
+				background-position-x : -150px;
+				background-position-y : 150px;
+			}
+			&.y_plus_150 {
+				background-position-y : 150px;
+				background-position-x : 150px;
+			}
+			&.y_moins_150 {
+				background-position-y : -150px;
+				background-position-x : -150px;
+			}
+
+			// Diagonales classes
+
+			&.xy_moins_150 {
+				background-position-y : -150px;
+			}
+			&.xy_plus_150 {
+				background-position-x : 150px;
+			}
+			&.yx_moins_150 {
+				background-position-y : 150px;
+			}
+			&.yx_plus_150 {
+				background-position-x : -150px;
+			}
+
+			// Individual classes
+
+			&.bloc-onepiece {
+				background-image : url('../img/about/onepiece.jpg');
+			}
+			&.bloc-kenshin {
+				background-image : url('../img/about/kenshin.jpg');
+			}
+			&.bloc-deathnote {
+				background-image : url('../img/about/deathnote.jpg');
+			}
+			&.bloc-eyeshield {
+				background-image : url('../img/about/eyeshield.jpg');
+			}
+			&.bloc-toriko {
+				background-image : url('../img/about/toriko.jpg');
+			}
+			&.bloc-asterix {
+				background-image : url('../img/about/asterix.jpg');
+			}
+			&.bloc-irobot {
+				background-image : url('../img/about/irobot.jpg');
+			}
+			&.bloc-meninblack {
+				background-image : url('../img/about/mib.jpg');
+			}
+			&.bloc-vendetta {
+				background-image : url('../img/about/v.jpg');
+			}
+			&.bloc-disiz {
+				background-image : url('../img/about/disiz.jpg');
+			}
+			&.bloc-orelsan {
+				background-image : url('../img/about/orelsan.jpg');
+			}
+			&.bloc-tryo {
+				background-image : url('../img/about/tryo.jpg');
+			}
+			&.bloc-eminem {
+				background-image : url('../img/about/smackthat.jpg');
+			}
+			&.bloc-erb {
+				background-image : url('../img/about/erb.jpg');
+			}
+			&.bloc-zelda {
+				background-image : url('../img/about/zelda.jpg');
+			}
+			&.bloc-metroid {
+				background-image : url('../img/about/metroid.jpg');
+			}
+			&.bloc-pokemon {
+				background-image : url('../img/about/pokemon.jpg');
+			}
+			&.bloc-infamous {
+				background-image : url('../img/about/infamous.jpg');
+			}
+
+			span {
+				display: none;
+			}
 		}
 		img {
-			@include transition(0.4s);
 			display: block;
 		}
 	}	
-}
-
-.w {
-	margin-bottom: 50px;
-	width: 1145px;
-	margin: 0 auto;
-}
-
-.about-manga, .about-film, .about-musique, .about-jeux {
-	width: 300px;
-	display: inline-block;
-	vertical-align: top;
-}
-
-.about-musique {
-	margin-left: -277px;
-}
-.about-jeux {
-	margin-left: -10px;
-}
-.about-film {
-	margin-left: -10px;
-}
-
-.separator{
-	display: inline-block;
-	vertical-align: bottom;
-	width: 100px;
-	height: 1px;
-	border: 1px solid #069;
-	border-color: rgb(136, 68, 34) transparent transparent transparent;
-	position: relative;
-	top: 100px;
-	left: -133px;
-	transform: skew(-41deg);
-	border-left-width: 100px;
-	border-right-width: 0px;
-	border-bottom-width: 100px;
-	border-top-width: 80px;
-	z-index: -1;
-}
-
-.bloc-about-manga, .bloc-about-musique {
-	-webkit-transform:skew(20deg);
-	-moz-transform:skew(20deg);
-	-o-transform:skew(20deg);
-	tranform:skew(20deg);
-}
-.bloc-about-film, .bloc-about-jeux {
-	-webkit-transform:skew(-20deg);
-	-moz-transform:skew(-20deg);
-	-o-transform:skew(-20deg);
-	tranform:skew(-20deg);
 }
 
 .menu_mobile {
