@@ -4,6 +4,7 @@ $(document).ready(function() {
 	var data_type;
 	var projects_content;
 	var timeline_content;
+	var tab_dates = new Array();
 
 	displayProjects('Personnel');
 
@@ -26,9 +27,29 @@ $(document).ready(function() {
 
 	$(document).off('click', '.timeline-circle');
 	$(document).on('click', '.timeline-circle', function() {
-		$('.project').hide();
-		data_id = $(this).attr('data-timeline');
-		$('.project[data-project='+data_id+']').show(800);
+
+		var that = $(this);
+
+		$('.project[data-project='+data_id+']').animate({
+		    left: "+=1000"
+		  }, 500, function() {
+
+		  	$('.project[data-project='+data_id+']').hide();
+		  	$('.project[data-project='+data_id+']').css('left', '-1000px');
+
+		  	$('.timeline-circle').removeClass('circle_active');
+			that.addClass('circle_active');
+
+			data_id = that.attr('data-timeline');
+
+			$('.project[data-project='+data_id+']').show();
+			$('.project[data-project='+data_id+']').animate({
+			    left: "+=1000"
+			  }, 500, function() {
+			});
+
+		});
+		
 	});
 
 	function displayProjects(type, callback) {
@@ -36,22 +57,11 @@ $(document).ready(function() {
 			type : "POST",
 			url : "/Webarranco/Projects/view/"+type,
 			success: function(response){
-				console.log(response);
 
-				for (var t = 0; t < response.projects.length; t++) {
-					timeline_content =
-						'<div class="timeline-line"></div>' +
-						'<div class="timeline-circle" data-timeline="'+(t+1)+'">'+
-							'<img width="70" src="'+response.projects[t].Project.Cover +'" alt="'+response.projects[t].Project.Alt +'"/>' +
-							'<div class="bubble">'+response.projects[t].Project.Name +'</div>' +
-						'</div>' +
-						'<div class="timeline-line"></div>'
-					;
-
-					$('.timeline').append(timeline_content);
-				}
+				var tab_dates = new Array();
 
 				for (var p = 0; p < response.projects.length; p++) {
+
 					projects_content = 
 						'<div class="project" data-project="'+(p+1)+'">'+
 							'<div class="project-picture">' +
@@ -63,13 +73,51 @@ $(document).ready(function() {
 								'<p class="project-description">' +
 									response.projects[p].Project.Content +
 								'</p>'+
+
+								'<div class="project-technos">' +
+									response.projects[p].Project.technos +
+								'</div>'+
+								'<br />' +
 								'<a href="#" class="button">Voir le projet</a>' +
 							'</div>' +
 							
 						'</div>'
 					;
+
 					$('.all-projects').append(projects_content);
+
+					timeline_content =
+						'<div class="timeline-line">'
+					;
+
+					if(tab_dates.indexOf(response.projects[p].Project.date) == -1) {
+						tab_dates.push(response.projects[p].Project.date);
+						timeline_content +=
+							'<div class="timeline-date">' +
+								'<span class="date">'+response.projects[p].Project.date +'</span>' +
+							'</div>'
+						;
+					}					
+
+					timeline_content +=
+						'</div>' +
+
+						'<div class="timeline-circle" data-timeline="'+(p+1)+'">'+
+							'<img width="70" src="'+response.projects[p].Project.Cover +'" alt="'+response.projects[p].Project.Alt +'"/>' +
+							'<div class="bubble">'+response.projects[p].Project.Name +'</div>' +
+						'</div>' +
+						'<div class="timeline-line"></div>'
+					;
+
+					$('.timeline').append(timeline_content);
 				}
+				data_id = 1;
+
+				$('.project[data-project='+data_id+']').show();
+				$('.project[data-project='+data_id+']').animate({
+				    left: "+=1000"
+				  }, 500, function() {
+				});
 			},
 
 			error: function(){

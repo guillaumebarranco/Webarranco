@@ -214,7 +214,9 @@ $(document).ready(function() {
 		$('.bloc-about-jeux:eq('+j+')').css('background-color', '#8'+(j+1)+'2');
 	}
 
-	// Gère les clicks sur les éléments du W en fonction de leur type
+	/*
+	*	ABOUT
+	*/
 
 	$('.type-about a').on('click', function(e) {
 		e.preventDefault();
@@ -294,9 +296,6 @@ $(document).ready(function() {
 				) {
 					new_class = 'yx_moins_150';
 				}
-
-
-
 
 			} else {
 				new_class = 'y_moins_150';

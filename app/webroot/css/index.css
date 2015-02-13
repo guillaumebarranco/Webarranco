@@ -518,15 +518,17 @@ ul li {
 .project {
   display: none;
   margin-top: 20px;
+  position: relative;
+  left: -1000px;
 }
 
-/* line 475, ../sass/index.scss */
+/* line 477, ../sass/index.scss */
 .timeline {
   width: 100%;
   margin: 0 auto;
 }
 
-/* line 480, ../sass/index.scss */
+/* line 482, ../sass/index.scss */
 .timeline-circle {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
@@ -540,14 +542,26 @@ ul li {
   vertical-align: top;
   cursor: pointer;
 }
-/* line 490, ../sass/index.scss */
+/* line 493, ../sass/index.scss */
+.timeline-circle.circle_active img {
+  box-shadow: 5px 5px 13px 3px black;
+}
+/* line 498, ../sass/index.scss */
 .timeline-circle img {
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 50px;
 }
-/* line 494, ../sass/index.scss */
+/* line 503, ../sass/index.scss */
 .timeline-circle .bubble {
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   position: absolute;
   top: -56px;
   left: -40px;
@@ -561,7 +575,7 @@ ul li {
   text-align: center;
 }
 
-/* line 507, ../sass/index.scss */
+/* line 517, ../sass/index.scss */
 .timeline-line {
   width: 7%;
   height: 3px;
@@ -570,27 +584,42 @@ ul li {
   vertical-align: -20px;
   margin-right: -8px;
   margin-left: -8px;
+  position: relative;
+}
+/* line 527, ../sass/index.scss */
+.timeline-line .timeline-date {
+  position: absolute;
+  height: 20px;
+  width: 4px;
+  background-color: white;
+  top: -10px;
+}
+/* line 534, ../sass/index.scss */
+.timeline-line .timeline-date span.date {
+  position: absolute;
+  top: -30px;
+  left: 0px;
 }
 
-/* line 517, ../sass/index.scss */
+/* line 544, ../sass/index.scss */
 .all-projects {
   margin-bottom: 50px;
 }
 
-/* line 521, ../sass/index.scss */
+/* line 548, ../sass/index.scss */
 .project-picture {
   vertical-align: top;
   display: inline-block;
   width: 315px;
 }
 
-/* line 527, ../sass/index.scss */
+/* line 554, ../sass/index.scss */
 .project-content {
   vertical-align: top;
   display: inline-block;
   width: 500px;
 }
-/* line 532, ../sass/index.scss */
+/* line 559, ../sass/index.scss */
 .project-content .project-description {
   text-align: justify;
 }
@@ -598,12 +627,12 @@ ul li {
 /* 
 * 
 * ABOUT */
-/* line 542, ../sass/index.scss */
+/* line 569, ../sass/index.scss */
 .type-about {
   display: inline-block;
 }
 
-/* line 546, ../sass/index.scss */
+/* line 573, ../sass/index.scss */
 .w {
   margin-bottom: 50px;
   width: 750px;
@@ -612,7 +641,7 @@ ul li {
   position: relative;
 }
 
-/* line 554, ../sass/index.scss */
+/* line 581, ../sass/index.scss */
 .bloc-about {
   display: block;
   cursor: pointer;
@@ -627,7 +656,7 @@ ul li {
   left: 0px;
   -webkit-transform: rotate(45deg);
 }
-/* line 565, ../sass/index.scss */
+/* line 592, ../sass/index.scss */
 .bloc-about div {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
@@ -641,11 +670,11 @@ ul li {
   background-size: cover;
   background-image: none;
 }
-/* line 576, ../sass/index.scss */
+/* line 603, ../sass/index.scss */
 .bloc-about:hover {
   z-index: 2;
 }
-/* line 578, ../sass/index.scss */
+/* line 605, ../sass/index.scss */
 .bloc-about:hover div {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
@@ -657,124 +686,124 @@ ul li {
   width: 100%;
   height: 100%;
 }
-/* line 587, ../sass/index.scss */
+/* line 614, ../sass/index.scss */
 .bloc-about:hover div.x_plus_150 {
   background-position-x: 150px;
   background-position-y: -150px;
 }
-/* line 591, ../sass/index.scss */
+/* line 618, ../sass/index.scss */
 .bloc-about:hover div.x_moins_150 {
   background-position-x: -150px;
   background-position-y: 150px;
 }
-/* line 595, ../sass/index.scss */
+/* line 622, ../sass/index.scss */
 .bloc-about:hover div.y_plus_150 {
   background-position-y: 150px;
   background-position-x: 150px;
 }
-/* line 599, ../sass/index.scss */
+/* line 626, ../sass/index.scss */
 .bloc-about:hover div.y_moins_150 {
   background-position-y: -150px;
   background-position-x: -150px;
 }
-/* line 606, ../sass/index.scss */
+/* line 633, ../sass/index.scss */
 .bloc-about:hover div.xy_moins_150 {
   background-position-y: -150px;
 }
-/* line 609, ../sass/index.scss */
+/* line 636, ../sass/index.scss */
 .bloc-about:hover div.xy_plus_150 {
   background-position-x: 150px;
 }
-/* line 612, ../sass/index.scss */
+/* line 639, ../sass/index.scss */
 .bloc-about:hover div.yx_moins_150 {
   background-position-y: 150px;
 }
-/* line 615, ../sass/index.scss */
+/* line 642, ../sass/index.scss */
 .bloc-about:hover div.yx_plus_150 {
   background-position-x: -150px;
 }
-/* line 621, ../sass/index.scss */
+/* line 648, ../sass/index.scss */
 .bloc-about:hover div.bloc-onepiece {
   background-image: url("../img/about/onepiece.jpg");
 }
-/* line 624, ../sass/index.scss */
+/* line 651, ../sass/index.scss */
 .bloc-about:hover div.bloc-kenshin {
   background-image: url("../img/about/kenshin.jpg");
 }
-/* line 627, ../sass/index.scss */
+/* line 654, ../sass/index.scss */
 .bloc-about:hover div.bloc-deathnote {
   background-image: url("../img/about/deathnote.jpg");
 }
-/* line 630, ../sass/index.scss */
+/* line 657, ../sass/index.scss */
 .bloc-about:hover div.bloc-eyeshield {
   background-image: url("../img/about/eyeshield.jpg");
 }
-/* line 633, ../sass/index.scss */
+/* line 660, ../sass/index.scss */
 .bloc-about:hover div.bloc-toriko {
   background-image: url("../img/about/toriko.jpg");
 }
-/* line 636, ../sass/index.scss */
+/* line 663, ../sass/index.scss */
 .bloc-about:hover div.bloc-asterix {
   background-image: url("../img/about/asterix.jpg");
 }
-/* line 639, ../sass/index.scss */
+/* line 666, ../sass/index.scss */
 .bloc-about:hover div.bloc-irobot {
   background-image: url("../img/about/irobot.jpg");
 }
-/* line 642, ../sass/index.scss */
+/* line 669, ../sass/index.scss */
 .bloc-about:hover div.bloc-meninblack {
   background-image: url("../img/about/mib.jpg");
 }
-/* line 645, ../sass/index.scss */
+/* line 672, ../sass/index.scss */
 .bloc-about:hover div.bloc-vendetta {
   background-image: url("../img/about/v.jpg");
 }
-/* line 648, ../sass/index.scss */
+/* line 675, ../sass/index.scss */
 .bloc-about:hover div.bloc-disiz {
   background-image: url("../img/about/disiz.jpg");
 }
-/* line 651, ../sass/index.scss */
+/* line 678, ../sass/index.scss */
 .bloc-about:hover div.bloc-orelsan {
   background-image: url("../img/about/orelsan.jpg");
 }
-/* line 654, ../sass/index.scss */
+/* line 681, ../sass/index.scss */
 .bloc-about:hover div.bloc-tryo {
   background-image: url("../img/about/tryo.jpg");
 }
-/* line 657, ../sass/index.scss */
+/* line 684, ../sass/index.scss */
 .bloc-about:hover div.bloc-eminem {
   background-image: url("../img/about/smackthat.jpg");
 }
-/* line 660, ../sass/index.scss */
+/* line 687, ../sass/index.scss */
 .bloc-about:hover div.bloc-erb {
   background-image: url("../img/about/erb.jpg");
 }
-/* line 663, ../sass/index.scss */
+/* line 690, ../sass/index.scss */
 .bloc-about:hover div.bloc-zelda {
   background-image: url("../img/about/zelda.jpg");
 }
-/* line 666, ../sass/index.scss */
+/* line 693, ../sass/index.scss */
 .bloc-about:hover div.bloc-metroid {
   background-image: url("../img/about/metroid.jpg");
 }
-/* line 669, ../sass/index.scss */
+/* line 696, ../sass/index.scss */
 .bloc-about:hover div.bloc-pokemon {
   background-image: url("../img/about/pokemon.jpg");
 }
-/* line 672, ../sass/index.scss */
+/* line 699, ../sass/index.scss */
 .bloc-about:hover div.bloc-infamous {
   background-image: url("../img/about/infamous.jpg");
 }
-/* line 676, ../sass/index.scss */
+/* line 703, ../sass/index.scss */
 .bloc-about:hover div span {
   display: none;
 }
-/* line 680, ../sass/index.scss */
+/* line 707, ../sass/index.scss */
 .bloc-about:hover img {
   display: block;
 }
 
-/* line 686, ../sass/index.scss */
+/* line 713, ../sass/index.scss */
 .menu_mobile {
   display: none;
   text-align: center;
@@ -785,54 +814,54 @@ ul li {
   width: 100%;
   z-index: 15;
 }
-/* line 696, ../sass/index.scss */
+/* line 723, ../sass/index.scss */
 .menu_mobile .div-menu {
   cursor: pointer;
 }
-/* line 700, ../sass/index.scss */
+/* line 727, ../sass/index.scss */
 .menu_mobile ul {
   margin: 0;
 }
-/* line 703, ../sass/index.scss */
+/* line 730, ../sass/index.scss */
 .menu_mobile ul li a {
   display: block;
   padding: 10px 0px;
 }
-/* line 707, ../sass/index.scss */
+/* line 734, ../sass/index.scss */
 .menu_mobile ul li a:hover {
   color: #bbb;
   background: #222;
 }
 
 @media only screen and (max-width: 1000px) {
-  /* line 717, ../sass/index.scss */
+  /* line 744, ../sass/index.scss */
   .bloc {
     height: auto;
   }
-  /* line 719, ../sass/index.scss */
+  /* line 746, ../sass/index.scss */
   .bloc:first-child {
     margin-top: 30px;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 726, ../sass/index.scss */
+  /* line 753, ../sass/index.scss */
   .menu {
     display: none;
   }
 
-  /* line 729, ../sass/index.scss */
+  /* line 756, ../sass/index.scss */
   .menu_mobile {
     display: block;
   }
 }
 @media only screen and (max-width: 550px) {
-  /* line 736, ../sass/index.scss */
+  /* line 763, ../sass/index.scss */
   .index p {
     display: none;
   }
 }
 @media only screen and (min-width: 1000px) {
-  /* line 746, ../sass/index.scss */
+  /* line 773, ../sass/index.scss */
   .socials li a:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
@@ -843,28 +872,28 @@ ul li {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-  /* line 752, ../sass/index.scss */
+  /* line 779, ../sass/index.scss */
   .socials .facebook a:hover {
     background: #3b5998;
   }
-  /* line 755, ../sass/index.scss */
+  /* line 782, ../sass/index.scss */
   .socials .twitter a:hover {
     background: #55acee;
   }
-  /* line 758, ../sass/index.scss */
+  /* line 785, ../sass/index.scss */
   .socials .linkedin a:hover {
     background: #1c6ca2;
   }
-  /* line 761, ../sass/index.scss */
+  /* line 788, ../sass/index.scss */
   .socials .deezer a:hover {
     background: #111;
   }
-  /* line 764, ../sass/index.scss */
+  /* line 791, ../sass/index.scss */
   .socials .github a:hover {
     background: black;
   }
 
-  /* line 773, ../sass/index.scss */
+  /* line 800, ../sass/index.scss */
   .menu li .link-nav:hover:before, .menu li .link-nav:hover:after {
     opacity: 1;
     -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
@@ -872,7 +901,7 @@ ul li {
     transform: translateX(-50%) translateY(-50%) scale(1);
   }
 
-  /* line 791, ../sass/index.scss */
+  /* line 818, ../sass/index.scss */
   .btn_article:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
@@ -882,7 +911,7 @@ ul li {
     color: white;
   }
 
-  /* line 800, ../sass/index.scss */
+  /* line 827, ../sass/index.scss */
   .style-input input[type=submit]:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
@@ -892,20 +921,28 @@ ul li {
     color: #222;
   }
 
-  /* line 809, ../sass/index.scss */
+  /* line 835, ../sass/index.scss */
+  .timeline-circle {
+    box-sizing: border-box;
+  }
+  /* line 837, ../sass/index.scss */
   .timeline-circle:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-  /* line 812, ../sass/index.scss */
+  /* line 840, ../sass/index.scss */
+  .timeline-circle:hover img {
+    box-shadow: 5px 5px 13px 3px black;
+  }
+  /* line 844, ../sass/index.scss */
   .timeline-circle:hover .bubble {
     display: block;
   }
 }
 /* END MEDIA QUERY */
-/* line 825, ../sass/index.scss */
+/* line 857, ../sass/index.scss */
 .cbutton {
   position: relative;
   display: inline-block;
@@ -920,7 +957,7 @@ ul li {
   transition: color 0.7s;
   -webkit-tap-highlight-color: transparent;
 }
-/* line 839, ../sass/index.scss */
+/* line 871, ../sass/index.scss */
 .cbutton:after {
   position: absolute;
   top: 50%;
@@ -933,11 +970,11 @@ ul li {
   opacity: 0;
   pointer-events: none;
 }
-/* line 853, ../sass/index.scss */
+/* line 885, ../sass/index.scss */
 .cbutton.cbutton--effect-milan:before, .cbutton.cbutton--effect-milan:after {
   border: 4px solid rgba(111, 148, 182, 0.2);
 }
-/* line 856, ../sass/index.scss */
+/* line 888, ../sass/index.scss */
 .cbutton.cbutton--effect-milan:before {
   content: "";
   position: absolute;
@@ -950,7 +987,7 @@ ul li {
   opacity: 0;
   pointer-events: none;
 }
-/* line 870, ../sass/index.scss */
+/* line 902, ../sass/index.scss */
 .cbutton.cbutton--effect-milan.cbutton--click:before, .cbutton.cbutton--effect-milan.cbutton--click:after {
   -webkit-animation-duration: 8s, 2s;
   animation-duration: 8s, 2s;
@@ -961,12 +998,12 @@ ul li {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* line 880, ../sass/index.scss */
+/* line 912, ../sass/index.scss */
 .cbutton.cbutton--effect-milan.cbutton--click:before {
   -webkit-animation-name: anim-effect-milan-3, anim-effect-milan-2;
   animation-name: anim-effect-milan-3, anim-effect-milan-2;
 }
-/* line 884, ../sass/index.scss */
+/* line 916, ../sass/index.scss */
 .cbutton.cbutton--effect-milan.cbutton--click:after {
   -webkit-animation-name: anim-effect-milan-3, anim-effect-milan-1;
   animation-name: anim-effect-milan-3, anim-effect-milan-1;

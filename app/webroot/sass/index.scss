@@ -470,6 +470,8 @@ ul li {
 .project {
 	display: none;
 	margin-top: 20px;
+	position: relative;
+	left: -1000px;
 }
 
 .timeline {
@@ -487,11 +489,19 @@ ul li {
 	vertical-align: top;
 	cursor: pointer;
 
+	&.circle_active {
+		img {
+			box-shadow: 5px 5px 13px 3px black;
+		}
+	}
+
 	img {
+		@include transition(0.4s);
 		@include border-radius(50px);
 	}
 
 	.bubble {
+		@include transition(0.4s);
 		position: absolute;
 		top: -56px;
 		left: -40px;
@@ -512,7 +522,24 @@ ul li {
 	vertical-align: -20px;
 	margin-right: -8px;
 	margin-left: -8px;
+	position: relative;
+
+	.timeline-date {
+		position: absolute;
+		height: 20px;
+		width: 4px;
+		background-color: white;
+		top: -10px;
+
+		span.date {
+			position: absolute;
+			top: -30px;
+			left: 0px;
+		}
+	}
 }
+
+
 
 .all-projects {
 	margin-bottom: 50px;
@@ -806,8 +833,13 @@ $width_bloc : 150px;
 	}
 
 	.timeline-circle {
+		box-sizing: border-box;
 		&:hover {
 			@include transition(0.4s);
+			
+			img {
+				box-shadow: 5px 5px 13px 3px black;
+			}
 
 			.bubble {
 				display: block;

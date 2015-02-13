@@ -6,9 +6,10 @@
 	</ul>
 
 	<div class="projects">
-		<div class="timeline"></div>
 		
 		<div class="all-projects"></div>
+		
+		<div class="timeline"></div>
 	</div>
 
 </div>

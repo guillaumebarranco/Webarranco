@@ -6,7 +6,7 @@
 
 		<div class="article">
 			<div class="cover">
-				<img src="<?= $content[$n]['Blog']['cover'] ?>" width="200" alt="<?= $content[$n]['Blog']['Alt'] ?>" />
+				<img src="<?= $content[$n]['Blog']['cover'] ?>" width="200" alt="<?= $content[$n]['Blog']['alt'] ?>" />
 			</div>
 			<div class="article-preview">
 				<h2><?= $content[$n]['Blog']['Title'] ?></h2>
