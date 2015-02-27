@@ -78,7 +78,7 @@ $(document).ready(function() {
 									response.projects[p].Project.technos +
 								'</div>'+
 								'<br />' +
-								'<a href="#" class="button">Voir le projet</a>' +
+								'<a href="'+response.projects[p].Project.link_website +'" target="_blank" class="button">Voir le projet</a>' +
 							'</div>' +
 							
 						'</div>'
