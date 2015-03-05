@@ -8,8 +8,11 @@
 	<div class="projects">
 		
 		<div class="all-projects"></div>
-		
+		<div class="previous">previous</div>
+		<div class="next">next</div>
+		<br>
 		<div class="timeline"></div>
+
 	</div>
 
 </div>

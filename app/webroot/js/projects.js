@@ -52,6 +52,40 @@ $(document).ready(function() {
 		
 	});
 
+	$('.timeline-circle[data-timeline=1]').css('margin-left', '0px');
+
+	$('.next').hide();
+
+	$('.previous').on('click', function() {
+		var block = $('.timeline-circle[data-timeline=1]');
+		//if(block.css('margin-left') != '0px') {
+			$(block).animate({
+			    marginLeft: "-=220"
+			  }, 500, function() {
+			});	
+		//}
+
+		if($('.next').css('display') === 'none') {
+			$('.next').fadeIn();
+		}
+	});
+
+	$('.next').on('click', function() {
+		var block = $('.timeline-circle[data-timeline=1]');
+
+		var block_ml = parseInt(block.css('margin-left').replace('px', ""));
+
+		if(block_ml < -5) {
+			$(block).animate({
+			    marginLeft: "+=220"
+			  }, 500, function() {
+			  	if(block_ml > -225) {
+			  		$('.next').fadeOut();
+			  	}
+			});	
+		}
+	});
+
 	function displayProjects(type, callback) {
 		$.ajax({
 			type : "POST",
@@ -124,13 +158,6 @@ $(document).ready(function() {
 				console.log('error');
             }
 		});
-
-		/*$('.timeline-circle').off('click');
-		$('.timeline-circle').on('click', function() {
-			$('.project').hide();
-			data_id = $(this).attr('data-timeline');
-			$('.project[data-project='+data_id+']').show(800);
-		});*/
 
 		if(callback) callback();
 	}
