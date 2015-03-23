@@ -67,6 +67,9 @@
 					</ul>
 				</div>
 			</nav>
+			<a href="/Webarranco/Home" class="logo_mobile">
+				<img src="/Webarranco/img/build/link2.png"  width="70" alt="Logo du site" />
+			</a>
 		</header>
 
 			<?= $this->fetch('content'); ?>

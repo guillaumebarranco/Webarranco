@@ -1,10 +1,19 @@
 <div class="page-contact"></div>
-<div class="div-contact">
+<section class="wrapper">
 
-	<section class="wrapper">
+	<h1>Contactez-moi</h1>
+
+	<div class="div-contact">
+
 		<div class="infos-contact">Guillaume Barranco - Développeur Web</div>
 		<div class="infos-contact">10 Allée des Hautes tiges, 93160 Noisy Le Grand</div>
-		<div class="infos-contact">06-33-08-68-83</div>
+		<div class="infos-contact infos-contact-tel">06 33 08 68 83</div>
+
+		<div class="call">
+			Vous êtes sur téléphone, pourquoi ne pas m'appeller ?
+			<a href="tel:+33633086883">06 33 08 68 83</a>
+		</div>
+
 		<br />
 		<ul class="socials">
 			<li class="twitter">

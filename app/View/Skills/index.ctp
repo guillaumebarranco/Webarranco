@@ -2,7 +2,7 @@
 <div class="page-skills"></div>
 
 <section class="wrapper">
-	<h2>Le développeur Full Stack : Un couteau suisse</h2>
+	<h1>Le développeur Full Stack : Un couteau suisse</h1>
 
 	<h3 style="color:white;">HTML/CSS</h3>
 	<ul>
