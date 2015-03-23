@@ -72,6 +72,13 @@
 			<?= $this->fetch('content'); ?>
 
 		<footer id="footer">
+			<div>© Copyright Webarranco 2015</div>
+			
+			<div class="separator"></div>
+
+			<div class="footer-contact">
+				<a href="/contact">Contact</a>
+			</div>
 		</footer>
 
 		<?= $this->Html->script('classie') ?>

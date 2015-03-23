@@ -1,9 +1,10 @@
 @import "compass";
 
-// @font-face {
-// 	src: "font/Oswald.otf";
-// 	font-family: "Oswald";
-// }
+@font-face {
+    font-family: "SF Cosmic Age";
+    src: url(font/SFCosmicAge.otf);
+}
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 
@@ -16,12 +17,17 @@ $bleu_clair : #008cba;
 $browser-context: 16; // Default
 
 @function em($pixels, $context: $browser-context) {
-  @return #{$pixels/$context}em
+  @return #{$pixels/$context}em;
 }
+
+/*
+*	GENERAL
+*/
 
 html {
 	overflow-x : hidden;
 }
+
 body {
 	margin: 0;
 	padding: 0;
@@ -82,13 +88,6 @@ ul li {
 		}
 	}
 
-	/*.li-top {
-		top:  -20px;
-	}
-	.li-bottom {
-		top: 50px;
-	}*/
-
 	.logo {
 		top: 0;
 		margin: 5px 20px 0 20px;
@@ -99,6 +98,30 @@ ul li {
 	max-width: 1200px;
 	margin: 0 auto;
 }
+
+footer {
+	border-top: solid 1px white;
+	padding: 20px;
+	box-sizing: border-box;
+
+	div {
+		display: inline-block;
+		vertical-align: top;
+		width: 20%;
+
+		&.separator {
+			width: 58%;
+		}
+
+		&.footer-contact {
+			text-align: right;
+		}
+	}
+}
+
+/*
+*	HOME
+*/
 
 .bloc {
 	padding: 10px;

@@ -1,5 +1,49 @@
 <?= $this->Html->css('build/reveal_default') ?>
 <div class="page-skills"></div>
+
+<section class="wrapper">
+	<h2>Le développeur Full Stack : Un couteau suisse</h2>
+
+	<h3 style="color:white;">HTML/CSS</h3>
+	<ul>
+		<li>HTML5/CSS3</li>
+		<li>Préprocesseurs : SASS(Compass) / LESS</li>
+		<li>Frameworks ! Zurb Foundation / Bootstrap</li>
+		<li>Compatibilité IE / Responsive</li>
+	</ul>
+
+	<h3 style="color:white;">Javascript</h3>
+	<ul>
+		<li>Librairies : JQuery / Underscore.js</li>
+		<li>Frameworks : Angular JS / Node.js</li>
+		<li>Outils : Grunt/Gulp/Bower</li>
+		<li>WebGL : Three.js (experiments)</li>
+	</ul>
+
+	<h3 style="color:white;">PHP / SQL</h3>
+	<ul>
+		<li>POO / PHP5</li>
+		<li>Frameworks : ZF2 / CakePHP / Symfony2</li>
+		<li>Doctrine</li>
+		<li>MySQL / NoSQL (experiments)</li>
+	</ul>
+
+	<h3 style="color:white;">Outils</h3>
+	<ul>
+		<li>Git (Github / Bitbucket)</li>
+		<li>Trello / Redmine</li>
+		<li>Windows / Linux</li>
+		<li>Sublime Text</li>
+		<li>Bonus : Suite Adobe CS5+</li>
+	</ul>
+
+</section>
+
+
+
+
+
+<!--
 <style>
 	.reveal {
 		background: url('img/build/a.png');
@@ -115,4 +159,4 @@
 				]
 			});
 
-		</script>
+		</script>-->
