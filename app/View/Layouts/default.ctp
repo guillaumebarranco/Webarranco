@@ -5,8 +5,8 @@
 	
 		<title>Porfolio Guillaume Barranco - Développeur Web Full Stack</title>
 
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/> 
-		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="img/favicon.ico.png" type="image/x-icon"/> 
+		<link rel="icon" href="img/favicon.ico.png" type="image/x-icon"/>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Découvrez le Portefolio d'un développeur passionné par son métier qui cherche sans cesse à parfaire sa curiosité Web !" />
