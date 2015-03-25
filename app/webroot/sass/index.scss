@@ -1,9 +1,10 @@
 @import "compass";
 
-// @font-face {
-// 	src: "font/Oswald.otf";
-// 	font-family: "Oswald";
-// }
+@font-face {
+    font-family: "SF Cosmic Age";
+    src: url(font/SFCosmicAge.otf);
+}
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 
@@ -16,12 +17,17 @@ $bleu_clair : #008cba;
 $browser-context: 16; // Default
 
 @function em($pixels, $context: $browser-context) {
-  @return #{$pixels/$context}em
+  @return #{$pixels/$context}em;
 }
+
+/*
+*	GENERAL
+*/
 
 html {
 	overflow-x : hidden;
 }
+
 body {
 	margin: 0;
 	padding: 0;
@@ -57,6 +63,10 @@ ul li {
 	height: 200px;
 }
 
+.logo_mobile {
+	display: none;
+}
+
 .menu {
 	width: 900px;
 	margin: 0 auto;
@@ -82,13 +92,6 @@ ul li {
 		}
 	}
 
-	/*.li-top {
-		top:  -20px;
-	}
-	.li-bottom {
-		top: 50px;
-	}*/
-
 	.logo {
 		top: 0;
 		margin: 5px 20px 0 20px;
@@ -98,7 +101,35 @@ ul li {
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
+
+	h1 {
+		text-align: center;
+	}
 }
+
+footer {
+	border-top: solid 1px white;
+	padding: 20px;
+	box-sizing: border-box;
+
+	div {
+		display: inline-block;
+		vertical-align: top;
+		width: 20%;
+
+		&.separator {
+			width: 58%;
+		}
+
+		&.footer-contact {
+			text-align: right;
+		}
+	}
+}
+
+/*
+*	HOME
+*/
 
 .bloc {
 	padding: 10px;
@@ -364,6 +395,10 @@ ul li {
 	display: inline-block;
 	width: 200px;
 	vertical-align: top;
+
+	img {
+		max-width: 100%;
+	}
 }
 
 .article-preview {
@@ -414,6 +449,9 @@ ul li {
 	color: black;
 	font-family: "Oswald";
 	font-size: em(20);
+}
+.call {
+	display: none;
 }
 
 .style-input {
@@ -603,6 +641,7 @@ $width_bloc : 150px;
 	@include transition(0.4s);
 	left:0px;
 	-webkit-transform:rotate(45deg);
+	opacity: 0.3;
 
 	div {
 		@include transition(0.4s);
@@ -615,114 +654,120 @@ $width_bloc : 150px;
 		background-image: none;
 	}
 
-	&:hover {
-		z-index: 2;
-		div {
-			@include transition(0.4s);
-			display: block;
-			text-align: center;
-			padding-top: 20px;
-			width: 100%;
-			height: 100%;
+	&.bloc-about-selected {
+		opacity: 1;
+
+		&:hover {
+			z-index: 2;
+			div {
+				@include transition(0.4s);
+				display: block;
+				text-align: center;
+				padding-top: 20px;
+				width: 100%;
+				height: 100%;
+		
+				// Straight classes
+				&.x_plus_150 {
+					background-position-x : 150px;
+					background-position-y : -150px;
+				}
+				&.x_moins_150 {
+					background-position-x : -150px;
+					background-position-y : 150px;
+				}
+				&.y_plus_150 {
+					background-position-y : 150px;
+					background-position-x : 150px;
+				}
+				&.y_moins_150 {
+					background-position-y : -150px;
+					background-position-x : -150px;
+				}
+
+				// Diagonales classes
+
+				&.xy_moins_150 {
+					background-position-y : -150px;
+				}
+				&.xy_plus_150 {
+					background-position-x : 150px;
+				}
+				&.yx_moins_150 {
+					background-position-y : 150px;
+				}
+				&.yx_plus_150 {
+					background-position-x : -150px;
+				}
+
+				// Individual classes
+
+				&.bloc-onepiece {
+					background-image : url('../img/about/onepiece.jpg');
+				}
+				&.bloc-kenshin {
+					background-image : url('../img/about/kenshin.jpg');
+				}
+				&.bloc-deathnote {
+					background-image : url('../img/about/deathnote.jpg');
+				}
+				&.bloc-eyeshield {
+					background-image : url('../img/about/eyeshield.jpg');
+				}
+				&.bloc-toriko {
+					background-image : url('../img/about/toriko.jpg');
+				}
+				&.bloc-asterix {
+					background-image : url('../img/about/asterix.jpg');
+				}
+				&.bloc-irobot {
+					background-image : url('../img/about/irobot.jpg');
+				}
+				&.bloc-meninblack {
+					background-image : url('../img/about/mib.jpg');
+				}
+				&.bloc-vendetta {
+					background-image : url('../img/about/v.jpg');
+				}
+				&.bloc-disiz {
+					background-image : url('../img/about/disiz.jpg');
+				}
+				&.bloc-orelsan {
+					background-image : url('../img/about/orelsan.jpg');
+				}
+				&.bloc-tryo {
+					background-image : url('../img/about/tryo.jpg');
+				}
+				&.bloc-eminem {
+					background-image : url('../img/about/smackthat.jpg');
+				}
+				&.bloc-erb {
+					background-image : url('../img/about/erb.jpg');
+				}
+				&.bloc-zelda {
+					background-image : url('../img/about/zelda.jpg');
+				}
+				&.bloc-metroid {
+					background-image : url('../img/about/metroid.jpg');
+				}
+				&.bloc-pokemon {
+					background-image : url('../img/about/pokemon.jpg');
+				}
+				&.bloc-infamous {
+					background-image : url('../img/about/infamous.jpg');
+				}
+
+				span {
+					display: none;
+				}
+			}
+			img {
+				display: block;
+			}
+		}	
+	}
+
 	
-			// Straight classes
-			&.x_plus_150 {
-				background-position-x : 150px;
-				background-position-y : -150px;
-			}
-			&.x_moins_150 {
-				background-position-x : -150px;
-				background-position-y : 150px;
-			}
-			&.y_plus_150 {
-				background-position-y : 150px;
-				background-position-x : 150px;
-			}
-			&.y_moins_150 {
-				background-position-y : -150px;
-				background-position-x : -150px;
-			}
-
-			// Diagonales classes
-
-			&.xy_moins_150 {
-				background-position-y : -150px;
-			}
-			&.xy_plus_150 {
-				background-position-x : 150px;
-			}
-			&.yx_moins_150 {
-				background-position-y : 150px;
-			}
-			&.yx_plus_150 {
-				background-position-x : -150px;
-			}
-
-			// Individual classes
-
-			&.bloc-onepiece {
-				background-image : url('../img/about/onepiece.jpg');
-			}
-			&.bloc-kenshin {
-				background-image : url('../img/about/kenshin.jpg');
-			}
-			&.bloc-deathnote {
-				background-image : url('../img/about/deathnote.jpg');
-			}
-			&.bloc-eyeshield {
-				background-image : url('../img/about/eyeshield.jpg');
-			}
-			&.bloc-toriko {
-				background-image : url('../img/about/toriko.jpg');
-			}
-			&.bloc-asterix {
-				background-image : url('../img/about/asterix.jpg');
-			}
-			&.bloc-irobot {
-				background-image : url('../img/about/irobot.jpg');
-			}
-			&.bloc-meninblack {
-				background-image : url('../img/about/mib.jpg');
-			}
-			&.bloc-vendetta {
-				background-image : url('../img/about/v.jpg');
-			}
-			&.bloc-disiz {
-				background-image : url('../img/about/disiz.jpg');
-			}
-			&.bloc-orelsan {
-				background-image : url('../img/about/orelsan.jpg');
-			}
-			&.bloc-tryo {
-				background-image : url('../img/about/tryo.jpg');
-			}
-			&.bloc-eminem {
-				background-image : url('../img/about/smackthat.jpg');
-			}
-			&.bloc-erb {
-				background-image : url('../img/about/erb.jpg');
-			}
-			&.bloc-zelda {
-				background-image : url('../img/about/zelda.jpg');
-			}
-			&.bloc-metroid {
-				background-image : url('../img/about/metroid.jpg');
-			}
-			&.bloc-pokemon {
-				background-image : url('../img/about/pokemon.jpg');
-			}
-			&.bloc-infamous {
-				background-image : url('../img/about/infamous.jpg');
-			}
-
-			span {
-				display: none;
-			}
-		}
-		img {
-			display: block;
-		}
-	}	
 }
 
 .menu_mobile {
@@ -770,6 +815,65 @@ $width_bloc : 150px;
 	}
 	.menu_mobile {
 		display: block;
+	}
+	#navigation {
+		height: 70px;
+	}
+	.logo_mobile {
+		display: block;
+		margin: 20px 0;
+		text-align: center;
+	}
+	canvas {
+		display: none;
+	}
+	.bloc-one {
+		background: none;
+	}
+
+	/*
+	*	BLOG
+	*/
+
+	.article-preview {
+		p {
+			display: none;
+		}
+	}
+
+	.cover {
+		display: inline-block;
+		width: 150px;
+		vertical-align: top;
+	}
+
+	/*
+	*	CONTACT
+	*/
+	.div-contact {
+		width: 90%;
+	}
+	.infos-contact-tel {
+		display: none;
+	}
+	.call {
+		display: block;
+	}
+
+	/*
+	*	FOOTER
+	*/	
+
+	footer {
+		div {
+			display: inline-block;
+			vertical-align: top;
+			width: 100%;
+
+			&.separator {
+				width: 0%;
+			}
+		}
 	}
 }
 

@@ -67,11 +67,21 @@
 					</ul>
 				</div>
 			</nav>
+			<a href="/Webarranco/Home" class="logo_mobile">
+				<img src="/Webarranco/img/build/link2.png"  width="70" alt="Logo du site" />
+			</a>
 		</header>
 
 			<?= $this->fetch('content'); ?>
 
 		<footer id="footer">
+			<div>© Copyright Webarranco 2015</div>
+			
+			<div class="separator"></div>
+
+			<div class="footer-contact">
+				<a href="/contact">Contact</a>
+			</div>
 		</footer>
 
 		<?= $this->Html->script('classie') ?>

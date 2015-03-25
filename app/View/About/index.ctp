@@ -1,3 +1,7 @@
+<div class="wrapper">
+	<h1>A propos</h1>
+</div>
+
 <div class="page-about"></div>
 <div class="type-about">
 	<a href="#" data-type="manga">Mangas </a>|
