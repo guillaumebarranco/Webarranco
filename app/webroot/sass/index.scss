@@ -501,6 +501,31 @@ footer {
 }
 
 /**************************************/
+/*				SKILLS:  			  */
+/**************************************/
+
+.txt_skill {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.all_skills {
+	text-align: center;
+	margin-bottom: 40px;
+
+	.skill {
+		//text-align: left;
+		display: inline-block;
+		vertical-align: top;
+		width: 40%;
+		margin-top: 40px;
+	}
+}
+
+
+/**************************************/
 /*				PROJETS 			  */
 /**************************************/
 

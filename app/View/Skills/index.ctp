@@ -2,41 +2,57 @@
 <div class="page-skills"></div>
 
 <section class="wrapper">
+
 	<h1>Le développeur Full Stack : Un couteau suisse</h1>
 
-	<h3 style="color:white;">HTML/CSS</h3>
-	<ul>
-		<li>HTML5/CSS3</li>
-		<li>Préprocesseurs : SASS(Compass) / LESS</li>
-		<li>Frameworks ! Zurb Foundation / Bootstrap</li>
-		<li>Compatibilité IE / Responsive</li>
-	</ul>
+	<p class="txt_skill">
+		Des technologies les plus basiques à d'autres plus complexes, la curiosité d'un développeur ne souffre d'aucune limite. Voici la liste des Technologies sur lesquelles j'ai pu travailler, de manière personnelle ou professionnelle.
+	</p>
 
-	<h3 style="color:white;">Javascript</h3>
-	<ul>
-		<li>Librairies : JQuery / Underscore.js</li>
-		<li>Frameworks : Angular JS / Node.js</li>
-		<li>Outils : Grunt/Gulp/Bower</li>
-		<li>WebGL : Three.js (experiments)</li>
-	</ul>
+	<ul class="all_skills">
+		<li class="skill">
+			<h3 style="color:white;">HTML/CSS</h3>
+			<ul>
+				<li>HTML5/CSS3</li>
+				<li>Préprocesseurs : SASS(Compass) / LESS</li>
+				<li>Frameworks ! Zurb Foundation / Bootstrap</li>
+				<li>Compatibilité IE / Responsive</li>
+			</ul>
+		</li>
 
-	<h3 style="color:white;">PHP / SQL</h3>
-	<ul>
-		<li>POO / PHP5</li>
-		<li>Frameworks : ZF2 / CakePHP / Symfony2</li>
-		<li>Doctrine</li>
-		<li>MySQL / NoSQL (experiments)</li>
-	</ul>
+		<li class="skill">
+			<h3 style="color:white;">Javascript</h3>
+			<ul>
+				<li>Librairies : JQuery / Underscore.js</li>
+				<li>Frameworks : Angular JS / Node.js</li>
+				<li>Outils : Grunt/Gulp/Bower</li>
+				<li>WebGL : Three.js (experiments)</li>
+			</ul>
+		</li>
 
-	<h3 style="color:white;">Outils</h3>
-	<ul>
-		<li>Git (Github / Bitbucket)</li>
-		<li>Trello / Redmine</li>
-		<li>Windows / Linux</li>
-		<li>Sublime Text</li>
-		<li>Bonus : Suite Adobe CS5+</li>
-	</ul>
+		<li class="skill">
+			<h3 style="color:white;">PHP / SQL</h3>
+			<ul>
+				<li>POO / PHP5</li>
+				<li>Modèle MVC</li>
+				<li>Frameworks : ZF2 / CakePHP / Symfony2</li>
+				<li>Doctrine</li>
+				<li>MySQL / NoSQL (experiments)</li>
+			</ul>
+		</li>
 
+		<li class="skill">
+			<h3 style="color:white;">Outils</h3>
+			<ul>
+				<li>Git (Github / Bitbucket)</li>
+				<li>Trello / Redmine</li>
+				<li>Windows / Linux</li>
+				<li>Sublime Text</li>
+				<li>Bonus : Suite Adobe CS5+</li>
+			</ul>
+		</li>
+	</ul>
+	
 </section>
 
 

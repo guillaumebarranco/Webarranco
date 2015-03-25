@@ -551,15 +551,39 @@ footer div.footer-contact {
 }
 
 /**************************************/
-/*				PROJETS 			  */
+/*				SKILLS:  			  */
 /**************************************/
 /* line 507, ../sass/index.scss */
+.txt_skill {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* line 514, ../sass/index.scss */
+.all_skills {
+  text-align: center;
+  margin-bottom: 40px;
+}
+/* line 518, ../sass/index.scss */
+.all_skills .skill {
+  display: inline-block;
+  vertical-align: top;
+  width: 40%;
+  margin-top: 40px;
+}
+
+/**************************************/
+/*				PROJETS 			  */
+/**************************************/
+/* line 532, ../sass/index.scss */
 .projects {
   width: 90%;
   margin: 0 auto;
 }
 
-/* line 511, ../sass/index.scss */
+/* line 536, ../sass/index.scss */
 .project {
   display: none;
   margin-top: 20px;
@@ -567,7 +591,7 @@ footer div.footer-contact {
   left: -1000px;
 }
 
-/* line 518, ../sass/index.scss */
+/* line 543, ../sass/index.scss */
 .timeline {
   width: 100%;
   margin: 0 auto;
@@ -578,7 +602,7 @@ footer div.footer-contact {
   margin-bottom: 50px;
 }
 
-/* line 528, ../sass/index.scss */
+/* line 553, ../sass/index.scss */
 .timeline-circle {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
@@ -594,11 +618,11 @@ footer div.footer-contact {
   left: 0;
   margin-bottom: 50px;
 }
-/* line 541, ../sass/index.scss */
+/* line 566, ../sass/index.scss */
 .timeline-circle.circle_active img {
   box-shadow: 5px 5px 13px 3px black;
 }
-/* line 546, ../sass/index.scss */
+/* line 571, ../sass/index.scss */
 .timeline-circle img {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
@@ -608,7 +632,7 @@ footer div.footer-contact {
   -webkit-border-radius: 50px;
   border-radius: 50px;
 }
-/* line 551, ../sass/index.scss */
+/* line 576, ../sass/index.scss */
 .timeline-circle .bubble {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
@@ -627,7 +651,7 @@ footer div.footer-contact {
   text-align: center;
 }
 
-/* line 565, ../sass/index.scss */
+/* line 590, ../sass/index.scss */
 .timeline-line {
   width: 7%;
   height: 3px;
@@ -636,7 +660,7 @@ footer div.footer-contact {
   vertical-align: -20px;
   position: relative;
 }
-/* line 573, ../sass/index.scss */
+/* line 598, ../sass/index.scss */
 .timeline-line .timeline-date {
   position: absolute;
   height: 20px;
@@ -644,43 +668,43 @@ footer div.footer-contact {
   background-color: white;
   top: -10px;
 }
-/* line 580, ../sass/index.scss */
+/* line 605, ../sass/index.scss */
 .timeline-line .timeline-date span.date {
   position: absolute;
   top: -27px;
   left: 0px;
 }
 
-/* line 588, ../sass/index.scss */
+/* line 613, ../sass/index.scss */
 .all-projects {
   margin-bottom: 50px;
 }
 
-/* line 592, ../sass/index.scss */
+/* line 617, ../sass/index.scss */
 .project-picture {
   vertical-align: top;
   display: inline-block;
   width: 315px;
 }
 
-/* line 598, ../sass/index.scss */
+/* line 623, ../sass/index.scss */
 .project-content {
   vertical-align: top;
   display: inline-block;
   width: 500px;
 }
-/* line 603, ../sass/index.scss */
+/* line 628, ../sass/index.scss */
 .project-content .project-description {
   text-align: justify;
 }
 
-/* line 608, ../sass/index.scss */
+/* line 633, ../sass/index.scss */
 .next {
   float: left;
   cursor: pointer;
 }
 
-/* line 612, ../sass/index.scss */
+/* line 637, ../sass/index.scss */
 .previous {
   float: right;
   cursor: pointer;
@@ -689,12 +713,12 @@ footer div.footer-contact {
 /*
 * 
 * ABOUT */
-/* line 622, ../sass/index.scss */
+/* line 647, ../sass/index.scss */
 .type-about {
   display: inline-block;
 }
 
-/* line 626, ../sass/index.scss */
+/* line 651, ../sass/index.scss */
 .w {
   margin-bottom: 50px;
   width: 750px;
@@ -703,7 +727,7 @@ footer div.footer-contact {
   position: relative;
 }
 
-/* line 634, ../sass/index.scss */
+/* line 659, ../sass/index.scss */
 .bloc-about {
   display: block;
   cursor: pointer;
@@ -719,7 +743,7 @@ footer div.footer-contact {
   -webkit-transform: rotate(45deg);
   opacity: 0.3;
 }
-/* line 646, ../sass/index.scss */
+/* line 671, ../sass/index.scss */
 .bloc-about div {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
@@ -733,15 +757,15 @@ footer div.footer-contact {
   background-size: cover;
   background-image: none;
 }
-/* line 657, ../sass/index.scss */
+/* line 682, ../sass/index.scss */
 .bloc-about.bloc-about-selected {
   opacity: 1;
 }
-/* line 660, ../sass/index.scss */
+/* line 685, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover {
   z-index: 2;
 }
-/* line 662, ../sass/index.scss */
+/* line 687, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
@@ -753,124 +777,124 @@ footer div.footer-contact {
   width: 100%;
   height: 100%;
 }
-/* line 671, ../sass/index.scss */
+/* line 696, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.x_plus_150 {
   background-position-x: 150px;
   background-position-y: -150px;
 }
-/* line 675, ../sass/index.scss */
+/* line 700, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.x_moins_150 {
   background-position-x: -150px;
   background-position-y: 150px;
 }
-/* line 679, ../sass/index.scss */
+/* line 704, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.y_plus_150 {
   background-position-y: 150px;
   background-position-x: 150px;
 }
-/* line 683, ../sass/index.scss */
+/* line 708, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.y_moins_150 {
   background-position-y: -150px;
   background-position-x: -150px;
 }
-/* line 690, ../sass/index.scss */
+/* line 715, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.xy_moins_150 {
   background-position-y: -150px;
 }
-/* line 693, ../sass/index.scss */
+/* line 718, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.xy_plus_150 {
   background-position-x: 150px;
 }
-/* line 696, ../sass/index.scss */
+/* line 721, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.yx_moins_150 {
   background-position-y: 150px;
 }
-/* line 699, ../sass/index.scss */
+/* line 724, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.yx_plus_150 {
   background-position-x: -150px;
 }
-/* line 705, ../sass/index.scss */
+/* line 730, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-onepiece {
   background-image: url("../img/about/onepiece.jpg");
 }
-/* line 708, ../sass/index.scss */
+/* line 733, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-kenshin {
   background-image: url("../img/about/kenshin.jpg");
 }
-/* line 711, ../sass/index.scss */
+/* line 736, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-deathnote {
   background-image: url("../img/about/deathnote.jpg");
 }
-/* line 714, ../sass/index.scss */
+/* line 739, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-eyeshield {
   background-image: url("../img/about/eyeshield.jpg");
 }
-/* line 717, ../sass/index.scss */
+/* line 742, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-toriko {
   background-image: url("../img/about/toriko.jpg");
 }
-/* line 720, ../sass/index.scss */
+/* line 745, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-asterix {
   background-image: url("../img/about/asterix.jpg");
 }
-/* line 723, ../sass/index.scss */
+/* line 748, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-irobot {
   background-image: url("../img/about/irobot.jpg");
 }
-/* line 726, ../sass/index.scss */
+/* line 751, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-meninblack {
   background-image: url("../img/about/mib.jpg");
 }
-/* line 729, ../sass/index.scss */
+/* line 754, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-vendetta {
   background-image: url("../img/about/v.jpg");
 }
-/* line 732, ../sass/index.scss */
+/* line 757, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-disiz {
   background-image: url("../img/about/disiz.jpg");
 }
-/* line 735, ../sass/index.scss */
+/* line 760, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-orelsan {
   background-image: url("../img/about/orelsan.jpg");
 }
-/* line 738, ../sass/index.scss */
+/* line 763, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-tryo {
   background-image: url("../img/about/tryo.jpg");
 }
-/* line 741, ../sass/index.scss */
+/* line 766, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-eminem {
   background-image: url("../img/about/smackthat.jpg");
 }
-/* line 744, ../sass/index.scss */
+/* line 769, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-erb {
   background-image: url("../img/about/erb.jpg");
 }
-/* line 747, ../sass/index.scss */
+/* line 772, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-zelda {
   background-image: url("../img/about/zelda.jpg");
 }
-/* line 750, ../sass/index.scss */
+/* line 775, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-metroid {
   background-image: url("../img/about/metroid.jpg");
 }
-/* line 753, ../sass/index.scss */
+/* line 778, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-pokemon {
   background-image: url("../img/about/pokemon.jpg");
 }
-/* line 756, ../sass/index.scss */
+/* line 781, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div.bloc-infamous {
   background-image: url("../img/about/infamous.jpg");
 }
-/* line 760, ../sass/index.scss */
+/* line 785, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover div span {
   display: none;
 }
-/* line 764, ../sass/index.scss */
+/* line 789, ../sass/index.scss */
 .bloc-about.bloc-about-selected:hover img {
   display: block;
 }
 
-/* line 773, ../sass/index.scss */
+/* line 798, ../sass/index.scss */
 .menu_mobile {
   display: none;
   text-align: center;
@@ -881,64 +905,64 @@ footer div.footer-contact {
   width: 100%;
   z-index: 15;
 }
-/* line 783, ../sass/index.scss */
+/* line 808, ../sass/index.scss */
 .menu_mobile .div-menu {
   cursor: pointer;
 }
-/* line 787, ../sass/index.scss */
+/* line 812, ../sass/index.scss */
 .menu_mobile ul {
   margin: 0;
 }
-/* line 790, ../sass/index.scss */
+/* line 815, ../sass/index.scss */
 .menu_mobile ul li a {
   display: block;
   padding: 10px 0px;
 }
-/* line 794, ../sass/index.scss */
+/* line 819, ../sass/index.scss */
 .menu_mobile ul li a:hover {
   color: #bbb;
   background: #222;
 }
 
 @media only screen and (max-width: 1000px) {
-  /* line 804, ../sass/index.scss */
+  /* line 829, ../sass/index.scss */
   .bloc {
     height: auto;
   }
-  /* line 806, ../sass/index.scss */
+  /* line 831, ../sass/index.scss */
   .bloc:first-child {
     margin-top: 30px;
   }
 }
 @media only screen and (max-width: 600px) {
-  /* line 813, ../sass/index.scss */
+  /* line 838, ../sass/index.scss */
   .menu {
     display: none;
   }
 
-  /* line 816, ../sass/index.scss */
+  /* line 841, ../sass/index.scss */
   .menu_mobile {
     display: block;
   }
 
-  /* line 819, ../sass/index.scss */
+  /* line 844, ../sass/index.scss */
   #navigation {
     height: 70px;
   }
 
-  /* line 822, ../sass/index.scss */
+  /* line 847, ../sass/index.scss */
   .logo_mobile {
     display: block;
     margin: 20px 0;
     text-align: center;
   }
 
-  /* line 827, ../sass/index.scss */
+  /* line 852, ../sass/index.scss */
   canvas {
     display: none;
   }
 
-  /* line 830, ../sass/index.scss */
+  /* line 855, ../sass/index.scss */
   .bloc-one {
     background: none;
   }
@@ -946,12 +970,12 @@ footer div.footer-contact {
   /*
   *	BLOG
   */
-  /* line 839, ../sass/index.scss */
+  /* line 864, ../sass/index.scss */
   .article-preview p {
     display: none;
   }
 
-  /* line 844, ../sass/index.scss */
+  /* line 869, ../sass/index.scss */
   .cover {
     display: inline-block;
     width: 150px;
@@ -961,17 +985,17 @@ footer div.footer-contact {
   /*
   *	CONTACT
   */
-  /* line 853, ../sass/index.scss */
+  /* line 878, ../sass/index.scss */
   .div-contact {
     width: 90%;
   }
 
-  /* line 856, ../sass/index.scss */
+  /* line 881, ../sass/index.scss */
   .infos-contact-tel {
     display: none;
   }
 
-  /* line 859, ../sass/index.scss */
+  /* line 884, ../sass/index.scss */
   .call {
     display: block;
   }
@@ -979,25 +1003,25 @@ footer div.footer-contact {
   /*
   *	FOOTER
   */
-  /* line 868, ../sass/index.scss */
+  /* line 893, ../sass/index.scss */
   footer div {
     display: inline-block;
     vertical-align: top;
     width: 100%;
   }
-  /* line 873, ../sass/index.scss */
+  /* line 898, ../sass/index.scss */
   footer div.separator {
     width: 0%;
   }
 }
 @media only screen and (max-width: 550px) {
-  /* line 882, ../sass/index.scss */
+  /* line 907, ../sass/index.scss */
   .index p {
     display: none;
   }
 }
 @media only screen and (min-width: 1000px) {
-  /* line 892, ../sass/index.scss */
+  /* line 917, ../sass/index.scss */
   .socials li a:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
@@ -1008,28 +1032,28 @@ footer div.footer-contact {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-  /* line 898, ../sass/index.scss */
+  /* line 923, ../sass/index.scss */
   .socials .facebook a:hover {
     background: #3b5998;
   }
-  /* line 901, ../sass/index.scss */
+  /* line 926, ../sass/index.scss */
   .socials .twitter a:hover {
     background: #55acee;
   }
-  /* line 904, ../sass/index.scss */
+  /* line 929, ../sass/index.scss */
   .socials .linkedin a:hover {
     background: #1c6ca2;
   }
-  /* line 907, ../sass/index.scss */
+  /* line 932, ../sass/index.scss */
   .socials .deezer a:hover {
     background: #111;
   }
-  /* line 910, ../sass/index.scss */
+  /* line 935, ../sass/index.scss */
   .socials .github a:hover {
     background: black;
   }
 
-  /* line 919, ../sass/index.scss */
+  /* line 944, ../sass/index.scss */
   .menu li .link-nav:hover:before, .menu li .link-nav:hover:after {
     opacity: 1;
     -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
@@ -1037,7 +1061,7 @@ footer div.footer-contact {
     transform: translateX(-50%) translateY(-50%) scale(1);
   }
 
-  /* line 937, ../sass/index.scss */
+  /* line 962, ../sass/index.scss */
   .btn_article:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
@@ -1047,7 +1071,7 @@ footer div.footer-contact {
     color: white;
   }
 
-  /* line 946, ../sass/index.scss */
+  /* line 971, ../sass/index.scss */
   .style-input input[type=submit]:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
@@ -1057,28 +1081,28 @@ footer div.footer-contact {
     color: #222;
   }
 
-  /* line 954, ../sass/index.scss */
+  /* line 979, ../sass/index.scss */
   .timeline-circle {
     box-sizing: border-box;
   }
-  /* line 956, ../sass/index.scss */
+  /* line 981, ../sass/index.scss */
   .timeline-circle:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-  /* line 959, ../sass/index.scss */
+  /* line 984, ../sass/index.scss */
   .timeline-circle:hover img {
     box-shadow: 5px 5px 13px 3px black;
   }
-  /* line 963, ../sass/index.scss */
+  /* line 988, ../sass/index.scss */
   .timeline-circle:hover .bubble {
     display: block;
   }
 }
 /* END MEDIA QUERY */
-/* line 976, ../sass/index.scss */
+/* line 1001, ../sass/index.scss */
 .cbutton {
   position: relative;
   display: inline-block;
@@ -1093,7 +1117,7 @@ footer div.footer-contact {
   transition: color 0.7s;
   -webkit-tap-highlight-color: transparent;
 }
-/* line 990, ../sass/index.scss */
+/* line 1015, ../sass/index.scss */
 .cbutton:after {
   position: absolute;
   top: 50%;
@@ -1106,11 +1130,11 @@ footer div.footer-contact {
   opacity: 0;
   pointer-events: none;
 }
-/* line 1004, ../sass/index.scss */
+/* line 1029, ../sass/index.scss */
 .cbutton.cbutton--effect-milan:before, .cbutton.cbutton--effect-milan:after {
   border: 4px solid rgba(111, 148, 182, 0.2);
 }
-/* line 1007, ../sass/index.scss */
+/* line 1032, ../sass/index.scss */
 .cbutton.cbutton--effect-milan:before {
   content: "";
   position: absolute;
@@ -1123,7 +1147,7 @@ footer div.footer-contact {
   opacity: 0;
   pointer-events: none;
 }
-/* line 1021, ../sass/index.scss */
+/* line 1046, ../sass/index.scss */
 .cbutton.cbutton--effect-milan.cbutton--click:before, .cbutton.cbutton--effect-milan.cbutton--click:after {
   -webkit-animation-duration: 8s, 2s;
   animation-duration: 8s, 2s;
@@ -1134,12 +1158,12 @@ footer div.footer-contact {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* line 1031, ../sass/index.scss */
+/* line 1056, ../sass/index.scss */
 .cbutton.cbutton--effect-milan.cbutton--click:before {
   -webkit-animation-name: anim-effect-milan-3, anim-effect-milan-2;
   animation-name: anim-effect-milan-3, anim-effect-milan-2;
 }
-/* line 1035, ../sass/index.scss */
+/* line 1060, ../sass/index.scss */
 .cbutton.cbutton--effect-milan.cbutton--click:after {
   -webkit-animation-name: anim-effect-milan-3, anim-effect-milan-1;
   animation-name: anim-effect-milan-3, anim-effect-milan-1;
