@@ -149,7 +149,15 @@ $(document).ready(function() {
 	   		$('.warp-zone').height($(window).height());
 
 	   		$('.warp-zone').fadeIn(800);
-	   		typewriter();
+	   		
+	   		$('#warp').append('<video class="warpzonevideo" src="img/warpzone.mp4" style="position: fixed; right: 0; bottom: 0;min-width: 100%; min-height: 100%;width: auto; height: auto; z-index: -100;background: url(img/prev.png) no-repeat;background-size: cover;" autoplay="true" />');
+	   		$('html, body').css('overflow', 'hidden');
+
+	   		setTimeout(function() {
+	   			$('html, body').css('overflow', 'auto');
+	   			$('.warpzonevideo').remove();
+	   			typewriter();
+	   		}, 3000);
 
 	   		//TweenLite.to($('.warp-zone h1'), 2, {text:"~ Vous venez d\'entrer dans la Warp Zone ~", ease:Linear.easeNone});
 

@@ -1,4 +1,4 @@
-<?= $this->Html->css('build/reveal_default') ?>
+<!--<?= $this->Html->css('build/reveal_default') ?>-->
 <div class="page-skills"></div>
 
 <section class="wrapper">

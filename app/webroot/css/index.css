@@ -362,7 +362,7 @@ footer div.footer-contact {
 /* line 338, ../sass/index.scss */
 .warp-zone {
   z-index: 2000;
-  background: red;
+  background: black;
   color: white;
   position: fixed;
   top: 0;
