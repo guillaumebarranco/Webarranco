@@ -62,8 +62,81 @@ $(document).ready(function() {
 	// CHEAT CODE
 
 	var cheat = 0;
+	var love = 0;
 
 	$(document).keydown(function(e) {
+
+		if(love == 0) {
+			if(e.which == 74) {
+				love = 1;
+			} else {
+				love = 0;
+			}
+		} else if(love == 1) {
+			if(e.which == 69) {
+				love = 2;
+			} else {
+				love = 0;
+			}
+		} else if(love == 2) {
+			if(e.which == 84) {
+				love = 3;
+			} else {
+				love = 0;
+			}
+		} else if(love == 3) {
+			if(e.which == 52) {
+				love = 4;
+			} else {
+				love = 0;
+			}
+		} else if(love == 4) {
+			if(e.which == 65) {
+				love = 5;
+			} else {
+				love = 0;
+			}
+		} else if(love == 5) {
+			if(e.which == 73) {
+				love = 6;
+			} else {
+				love = 0;
+			}
+		} else if(love == 6) {
+			if(e.which == 77) {
+				love = 7;
+			} else {
+				love = 0;
+			}
+		} else if(love == 7) {
+			if(e.which == 69) {
+				$('.bloc').css('background', '#EF597B');
+				$('.bloc').css('color', 'black');
+				$('.willchange').fadeOut(700).attr('src', 'img/cass.png')
+				$('.willchange').fadeIn(700);
+				var picture_check = 1;
+
+				setInterval(function() {
+					if(picture_check == 0) {
+						picture_check = 1;
+						$('.willchange').fadeOut(700).attr('src', 'img/cass.png')
+						$('.willchange').fadeIn(700);
+					} else {
+						picture_check = 0;
+						$('.willchange').fadeOut(700).attr('src', 'img/build/myPicture.jpg')
+						$('.willchange').fadeIn(700);
+					}
+					
+				},1400);
+			} else {
+				love = 0;
+			}
+		}
+
+		
+		
+
+
 		if(cheat === 1) {
 			if(e.which == 40) {
 				cheat = 2;

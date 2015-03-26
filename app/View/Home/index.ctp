@@ -17,7 +17,7 @@
 		<div class="bloc large-4 columns">
 			<h2>Qui suis-je ?</h2>
 			<div>
-				<img src="img/build/myPicture.jpg" alt="Photo de Guillaume Barranco" width="140" class="myPicture" />
+				<img class="willchange" src="img/build/myPicture.jpg" alt="Photo de Guillaume Barranco" width="140" class="myPicture" />
 			</div>
 			<p>
 				Un jeune développeur passionné par le web depuis des années et actuellement en Licence Chef de Projet Multimedia travaillant pour l'entreprise <a href="http://www.playapp.net">Playapp</a>. <br />
