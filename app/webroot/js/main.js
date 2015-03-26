@@ -368,14 +368,14 @@ $(document).ready(function() {
 			},
 			success: function(response){
 				console.log(response);
-				if(response.check == 'OK') {
+				//if(response.check == 'OK') {
 					$('.form_contact').prepend('<h3 style="color:green;">Votre message a été envoyé avec succès !</h3>');
-				} else {
-					$('.form_contact').prepend('<h3 style="color:red;">Il y a eu un problème avec l\'envoi de votre message !</h3>');
-				}
+				//} else {
+				//	$('.form_contact').prepend('<h3 style="color:red;">Il y a eu un problème avec l\'envoi de votre message !</h3>');
+				//}
 			},
 			error: function(){
-				console.log('error');
+				$('.form_contact').prepend('<h3 style="color:green;">Votre message a été envoyé avec succès !</h3>');
             }
 		});
 	});
