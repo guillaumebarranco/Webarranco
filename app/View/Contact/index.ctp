@@ -36,7 +36,8 @@
 		</ul>
 
 		<!-- envoyer en Ajax  -->
-		<form action="" method="post">
+		<form action="" method="post" class="form_contact">
+
 			<div class="style-input">
 				<label for="name">Nom</label>
 				<input type="text" name="name" />
@@ -53,10 +54,10 @@
 			</div>
 			
 			<div class="style-input style-submit">
-				<label for=""></label>
 				<input type="submit" value="Envoyer" />
 			</div>
-			
+
 		</form>
+
 	</section>
 </div>

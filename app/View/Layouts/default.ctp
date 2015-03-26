@@ -18,11 +18,14 @@
 		<?= $this->Html->css('index') ?>
 		<?= $this->Html->css('lightbox') ?>
 
-		<?= $this->Html->script('build/min') ?>
+		<!--<?= $this->Html->script('build/min') ?>-->
 
 		<!--<?= $this->Html->script('modernizr.custom') ?>-->
 
-		<!--<?= $this->Html->script('jquery-1.11.1') ?>-->
+		<!---->
+			<?= $this->Html->script('jquery-1.11.1') ?>
+			<?= $this->Html->script('main') ?>
+		<!---->
 
 	</head>
 
@@ -90,7 +93,6 @@
 			</div>
 		</footer>
 
-		<!--<?= $this->Html->script('main') ?>-->
 		<?= $this->Html->script('lightbox.min') ?>
 
 		<!-- For links nav hover effect -->
