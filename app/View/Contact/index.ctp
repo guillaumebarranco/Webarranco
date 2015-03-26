@@ -14,6 +14,8 @@
 			<a href="tel:+33633086883">06 33 08 68 83</a>
 		</div>
 
+		<a class="download_CV" target="_blank" href="img/CV_Barranco_Guillaume.pdf">Voir mon CV</a>
+
 		<br />
 		<ul class="socials">
 			<li class="twitter">
