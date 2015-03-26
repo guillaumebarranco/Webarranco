@@ -347,4 +347,37 @@ $(document).ready(function() {
        .animate({scrollTop: to}, 1000 );
 	});
 
+	/*
+	*	CONTACT
+	*/
+
+	$('.form_contact').on('submit', function(e) {
+		e.preventDefault();
+
+		var name = $(this).find('input[name=name]').val();
+		var email = $(this).find('input[name=email]').val();
+		var message = $(this).find('textarea[name=message]').val();
+
+		$.ajax({
+			type : "POST",
+			url : "/contact/sendMessage",
+			data : {
+				name : name,
+				email : email,
+				message : message
+			},
+			success: function(response){
+				console.log(response);
+				if(response.check == 'OK') {
+					$('.form_contact').prepend('<h3 style="color:green;">Votre message a été envoyé avec succès !</h3>');
+				} else {
+					$('.form_contact').prepend('<h3 style="color:red;">Il y a eu un problème avec l\'envoi de votre message !</h3>');
+				}
+			},
+			error: function(){
+				console.log('error');
+            }
+		});
+	});
+
 });

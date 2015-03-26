@@ -7,8 +7,8 @@ class ProjectsController extends AppController {
 	}
 
 	public function view($type = 'Professionnel') {
-		$this->RequestHandler->renderAs($this, 'json');
 		$this->layout = null;
+		$this->RequestHandler->renderAs($this, 'json');
 		
 		$projects = $this->Project->find('all', 
 			array(
