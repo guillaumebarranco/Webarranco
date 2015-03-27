@@ -35,13 +35,12 @@ $(document).ready(function() {
 
 	// Fonction utilisée par la réussite du Cheat Code
 
-	var letexte = '~ Vous venez d\'entrer dans la Warp Zone ~';
-	var cmpt = 0;
-	var koko = 0;
-	var courant;
+	function typewriter(letexte, check_courant, cmpt, koko){
+		if(check_courant == 0) {
+			var courant;
+		}
 
-	function typewriter(){
-	  lelien = document.getElementById('warp');
+		lelien = document.getElementById('warp');
 		  if(cmpt < letexte.length) {
 		     courant = lelien.innerHTML.substring(0, lelien.innerHTML.length -1);
 		     courant += letexte.charAt(cmpt)+"_";
@@ -55,7 +54,7 @@ $(document).ready(function() {
 		     }
 		  }
 		  cmpt++;
-		  setTimeout(function(){typewriter();},80);
+		  setTimeout(function(){typewriter(letexte, 1, cmpt, koko);},80);
 
 	}
 
@@ -218,18 +217,28 @@ $(document).ready(function() {
 	   	} else if(cheat === 6) {
 
 	   		$('body').append('<div class="warp-zone"><h1 id="warp"></h1></div>');
+	   		$('html, body').css('overflow', 'hidden');
 	   		$('.warp-zone').width($(window).width());
 	   		$('.warp-zone').height($(window).height());
 
 	   		$('.warp-zone').fadeIn(800);
 	   		
-	   		$('#warp').append('<video class="warpzonevideo" src="img/warpzone.mp4" style="position: fixed; right: 0; bottom: 0;min-width: 100%; min-height: 100%;width: auto; height: auto; z-index: -100;background: url(img/prev.png) no-repeat;background-size: cover;" autoplay="true" />');
+	   		$('.warp-zone').append('<video class="warpzonevideo" src="img/warpzone.mp4" muted autoplay="true" />');
 	   		$('html, body').css('overflow', 'hidden');
 
 	   		setTimeout(function() {
 	   			$('html, body').css('overflow', 'auto');
 	   			$('.warpzonevideo').remove();
-	   			typewriter();
+	   			typewriter("~ Vous venez d\'entrer dans la Warp Zone ~", 0, 0, 0);
+
+	   			setTimeout(function() {
+	   				$('.warp-zone').append('<img src="img/majora.png" class="theclip"/>');
+
+	   				setTimeout(function() {
+	   					$('.warp-zone').append('<a href="#" class="leave_warp">Quitter la Warp Zone</a>');
+	   				}, 500);
+	   			}, 3500);
+
 	   		}, 3000);
 
 	   		//TweenLite.to($('.warp-zone h1'), 2, {text:"~ Vous venez d\'entrer dans la Warp Zone ~", ease:Linear.easeNone});
@@ -243,7 +252,25 @@ $(document).ready(function() {
 	   	}
 	});
 
-	// Page About, gère les couleurs du W
+	$(document).on('click', '.leave_warp', function(e) {
+		e.preventDefault();
+		$('#warp').empty();
+		typewriter("Au revoir niark niark", 0, 0, 0);
+		setTimeout(function() {
+			$('.warp-zone').fadeOut(500);
+
+			setTimeout(function() {
+				$('.warp-zone').remove();
+				$('html,body').css('overflow', 'auto');
+			}, 500);
+		}, 2000);
+		
+		
+	});
+
+	/*
+	* Page About, gère les couleurs du W
+	*/
 
 	var bloc_width = 150;
 	var bloc_width_41 = bloc_width + 70;
