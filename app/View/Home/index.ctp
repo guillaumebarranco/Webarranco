@@ -1,4 +1,3 @@
-<!--<img src="img/build/koko.jpg" class="theclip"/>-->
 <div class="page-home"></div>
 <div id="large-header" class="bloc-one">
 	<div class="index" style="color: white;">
@@ -82,7 +81,7 @@
 			<p>
 				Dernier projet en date : 
 				<a href="<?= $newest[0]['Project']['link_website'] ?>" target="_blank" class="img-projet last_project_home">
-					<img src="<?= $newest[0]['Project']['Cover'] ?>" alt="Photo du dernier projet en date" />
+					<img src="<?= $newest[0]['Project']['Cover'] ?>" alt="Image du dernier projet en date" />
 				</a>
 				Je fais partie de ceux qui pensent que l'on fonctionne par projet. L'apprentissage d'un langage, d'un CMS, d'un framework sans son utilisation sur un projet concret ne dépassera jamais les 40% de pertinence. Se lancer un projet personnel ou professionnel, y'a que ça de vrai. Je vous invite donc à regarder <a href="/projects">mon Portfolio</a>, en espérant qu'il vous amusera !
 			</p>
