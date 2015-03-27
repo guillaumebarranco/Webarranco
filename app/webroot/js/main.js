@@ -28,7 +28,7 @@ $(document).ready(function() {
 		$('.graphic-bar-html5').width(180);
 		setTimeout(function(){$('.graphic-bar-css3').width(180);}, 200);
 		setTimeout(function(){$('.graphic-bar-js').width(150);}, 400);
-		setTimeout(function(){$('.graphic-bar-php').width(130);}, 600);
+		setTimeout(function(){$('.graphic-bar-php').width(150);}, 600);
 		setTimeout(function(){$('.graphic-bar-sql').width(130);}, 800);
 		setTimeout(function(){$('.graphic-bar-curieux').width(220);}, 1000);
 	});
@@ -55,13 +55,13 @@ $(document).ready(function() {
 		  }
 		  cmpt++;
 		  setTimeout(function(){typewriter(letexte, 1, cmpt, koko);},80);
-
 	}
 
 	// CHEAT CODE
 
 	var cheat = 0;
 	var love = 0;
+	var begin_game = 0;
 
 	$(document).keydown(function(e) {
 
@@ -133,7 +133,9 @@ $(document).ready(function() {
 		}
 
 		
-		
+		/*
+		*	CHEAT CODE
+		*/
 
 
 		if(cheat === 1) {
@@ -199,19 +201,14 @@ $(document).ready(function() {
 	    }
 
 	    if(cheat === 1) {
-	    	//console.log('one time');
 	    	$('.cheat-1').css('background', 'black');
 	    } else if(cheat === 2) {
-	    	//console.log('two times');
 	    	$('.cheat-2').css('background', 'black');
 	    } else if(cheat === 3) {
-	    	//console.log('three times');
 	    	$('.cheat-3').css('background', 'black');
 	   	} else if(cheat === 4) {
-	   		//console.log('four times');
 	   		$('.cheat-4').css('background', 'black');
 	   	} else if(cheat === 5) {
-	   		//console.log('five times');
 	   		$('.cheat-a').css('background', 'black');
 	   		$('.cheat-a').css('color', '#FAFA58');
 	   	} else if(cheat === 6) {
@@ -232,10 +229,223 @@ $(document).ready(function() {
 	   			typewriter("~ Vous venez d\'entrer dans la Warp Zone ~", 0, 0, 0);
 
 	   			setTimeout(function() {
-	   				$('.warp-zone').append('<img src="img/majora.png" class="theclip"/>');
+	   				$('.warp-zone').append('<img src="img/mask.png" class="theclip"/>');
 
 	   				setTimeout(function() {
 	   					$('.warp-zone').append('<a href="#" class="leave_warp">Quitter la Warp Zone</a>');
+
+	   					begin_game = 1;
+	   					var check_mm = 0;
+	   					var mm = 0;
+	   					var check_jo = 0;
+	   					var jo = 0;
+	   					var check_mb = 0;
+	   					var mb = 0;
+	   					var check_mi = 0;
+	   					var mi = 0;
+
+	   					//Une fois dans la warp zone
+						$(document).keydown(function(e) {
+							console.log(e.which);
+							if(begin_game === 1) {
+								if(check_mm === 0) {
+									if(mm == 0) {
+										if(e.which == 77) {
+											mm = 1;
+										} else {
+											mm = 0;
+										}
+									} else if(mm == 1) {
+										if(e.which == 65) {
+											mm = 2;
+										} else {
+											mm = 0;
+										}
+									} else if(mm == 2) {
+										if(e.which == 74) {
+											mm = 3;
+										} else {
+											mm = 0;
+										}
+									} else if(mm == 3) {
+										if(e.which == 79) {
+											mm = 4;
+										} else {
+											mm = 0;
+										}
+									} else if(mm == 4) {
+										if(e.which == 82) {
+											mm = 5;
+										} else {
+											mm = 0;
+										}
+									} else if(mm == 5) {
+										if(e.which == 65) {
+											check_mm = 1;
+											$('#warp').empty();
+											typewriter("Bien joué ! 1ère réponse trouvée !",0, 0, 0);
+											setTimeout(function() {
+												$('.theclip').attr('src', 'img/jo.jpg');
+											}, 3000);
+										} else {
+											mm = 0;
+										}
+									}
+								} else if(check_mm === 1 && check_jo === 0) {
+									if(jo == 0) {
+										if(e.which == 74) {
+											jo = 1;
+										} else {
+											jo = 0;
+										}
+									} else if(jo == 1) {
+										if(e.which == 79) {
+											jo = 2;
+										} else {
+											jo = 0;
+										}
+									} else if(jo == 2) {
+										if(e.which == 75) {
+											jo = 3;
+										} else {
+											jo = 0;
+										}
+									} else if(jo == 3) {
+										if(e.which == 69) {
+											jo = 4;
+										} else {
+											jo = 0;
+										}
+									} else if(jo == 4) {
+										if(e.which == 82) {
+											check_jo = 1;
+											$('#warp').empty();
+											typewriter("Bien joué ! 2ème réponse trouvée !",0, 0, 0);
+											setTimeout(function() {
+												$('.theclip').attr('src', 'img/smb.jpg');
+											}, 3000);
+										} else {
+											jo = 0;
+										}
+									}
+								} else if(check_jo === 1 && check_mb === 0) {
+									if(mb == 0) {
+										if(e.which == 77) {
+											mb = 1;
+										} else {
+											mb = 0;
+										}
+									} else if(mb == 1) {
+										if(e.which == 69) {
+											mb = 2;
+										} else {
+											mb = 0;
+										}
+									} else if(mb == 2) {
+										if(e.which == 65) {
+											mb = 3;
+										} else {
+											mb = 0;
+										}
+									} else if(mb == 3) {
+										if(e.which == 84) {
+											mb = 4;
+										} else {
+											mb = 0;
+										}
+									} else if(mb == 4) {
+										if(e.which == 66) {
+											mb = 5;
+										} else {
+											mb = 0;
+										}
+									} else if(mb == 5) {
+										if(e.which == 79) {
+											mb = 6;
+										} else {
+											mb = 0;
+										}
+									} else if(mb == 6) {
+										if(e.which == 89) {
+											check_mb = 1;
+											$('#warp').empty();
+											typewriter("Bien joué ! 3ème réponse trouvée !",0, 0, 0);
+											setTimeout(function() {
+												$('.theclip').attr('src', 'img/glitch.jpg');
+											}, 3000);
+										} else {
+											mb = 0;
+										}
+									}
+								} else if(check_mb === 1 && check_mi === 0) {
+									if(mi == 0) {
+										if(e.which == 77) {
+											mi = 1;
+										} else {
+											mi = 0;
+										}
+									} else if(mi == 1) {
+										if(e.which == 73) {
+											mi = 2;
+										} else {
+											mi = 0;
+										}
+									} else if(mi == 2) {
+										if(e.which == 83) {
+											mi = 3;
+										} else {
+											mi = 0;
+										}
+									} else if(mi == 3) {
+										if(e.which == 83) {
+											mi = 4;
+										} else {
+											mi = 0;
+										}
+									} else if(mi == 4) {
+										if(e.which == 73) {
+											mi = 5;
+										} else {
+											mi = 0;
+										}
+									} else if(mi == 5) {
+										if(e.which == 78) {
+											mi = 6;
+										} else {
+											mi = 0;
+										}
+									} else if(mi == 6) {
+										if(e.which == 71) {
+											mi = 7;
+										} else {
+											mi = 0;
+										}
+									} else if(mi == 7) {
+										if(e.which == 78) {
+											mi = 8;
+										} else {
+											mi = 0;
+										}
+									} else if(mi == 8) {
+										if(e.which == 79) {
+											check_mi = 1;
+											$('#warp').empty();
+											typewriter("Bien joué ! 3ème réponse trouvée !",0, 0, 0);
+											setTimeout(function() {
+												$('.theclip').attr('src', 'img/koko.jpg');
+											}, 3000);
+										} else {
+											mb = 0;
+										}
+									}
+								}
+							}
+							
+							
+						});
+
+
+
 	   				}, 500);
 	   			}, 3500);
 
@@ -251,6 +461,8 @@ $(document).ready(function() {
 	   		setTimeout(function() {$('.cheat').css('background', '#F4FA58'); $('.cheat').css('color', 'black');$('.cheat-a').css('background', '#2E64FE');$('.cheat-b').css('background', '#04B45F');}, 500);
 	   	}
 	});
+	
+
 
 	$(document).on('click', '.leave_warp', function(e) {
 		e.preventDefault();
@@ -264,7 +476,6 @@ $(document).ready(function() {
 				$('html,body').css('overflow', 'auto');
 			}, 500);
 		}, 2000);
-		
 		
 	});
 

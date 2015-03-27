@@ -29,7 +29,7 @@
 		<div class="bloc large-4 columns">
 			<h2>Mes compétences</h2>
 			<p>
-				Toutes les technologies de développement web les plus connues (HTML5, CSS3, Javascript, PHP, SQL), agrémenté des sciences d'intégration étudiées pour le plaisir de se parfaire (Référencement, Ergonomie, Accessibilité) ainsi que de frameworks bien utiles. Vous pouvez les trouver et mieux les comprendre dans une <a href="/skills">présentation originale</a>.
+				Toutes les technologies de développement web les plus connues (HTML5, CSS3, Javascript, PHP, SQL), agrémenté des sciences d'intégration étudiées pour le plaisir de se parfaire (Référencement, Ergonomie, Accessibilité) ainsi que de frameworks bien utiles. Vous pouvez les trouver et mieux les comprendre sur la <a href="/skills">page de mes compétences</a>.
 			</p>
 			<ul class="graphic">
 				<li class="li-graphic-percent">
