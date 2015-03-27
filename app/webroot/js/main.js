@@ -111,7 +111,7 @@ $(document).ready(function() {
 			if(e.which == 69) {
 				$('.bloc').css('background', '#EF597B');
 				$('.bloc').css('color', 'black');
-				$('.willchange').fadeOut(700).attr('src', 'img/cass.png')
+				/*$('.willchange').fadeOut(700).attr('src', 'img/cass.png')
 				$('.willchange').fadeIn(700);
 				var picture_check = 1;
 
@@ -126,7 +126,7 @@ $(document).ready(function() {
 						$('.willchange').fadeIn(700);
 					}
 					
-				},1400);
+				},1400);*/
 			} else {
 				love = 0;
 			}
@@ -430,7 +430,7 @@ $(document).ready(function() {
 										if(e.which == 79) {
 											check_mi = 1;
 											$('#warp').empty();
-											typewriter("Bien joué ! 3ème réponse trouvée !",0, 0, 0);
+											typewriter("Bien joué ! 4ème réponse trouvée !",0, 0, 0);
 											setTimeout(function() {
 												$('.theclip').attr('src', 'img/koko.jpg');
 											}, 3000);
