@@ -20,7 +20,7 @@
 			</div>
 			<p>
 				Un jeune développeur passionné par le web depuis des années et actuellement en Licence Chef de Projet Multimedia travaillant pour l'entreprise <a href="http://www.playapp.net">Playapp</a>. <br />
-				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="/about">la liste ici</a> !<br />
+				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="/about">un exemple ici</a> !<br />
 				Un pro avant tout, un jeune curieux et avide de connaissances qui ne demande qu'à apprendre et transmettre après.
 			</p>
 		</div>
