@@ -51,10 +51,6 @@
 		<div class="bloc-about bloc-about-film" data-name="meninblack">
 			<div class="txt-bloc-about bloc-meninblack"><span>Men In Black</span></div>
 		</div>
-		<!-- <div class="bloc-about bloc-about-film">
-			<img src="img/build/about/bruce.jpg" alt="Image Bruce-tout-puissant" />
-			<div class="txt-bloc-about">Bruce Tout-Puissant</div>
-		</div> -->
 	</div>
 
 	<div class="about-musique">
@@ -88,9 +84,5 @@
 		<div class="bloc-about bloc-about-jeux" data-name="infamous">
 			<div class="txt-bloc-about bloc-infamous"><span>Infamous</span></div>
 		</div>
-		<!-- <div class="bloc-about bloc-about-jeux">
-			<img src="img/build/about/supermeatboy.jpg" alt="Image Super Meat Boy" />
-			<div class="txt-bloc-about">Super Meat Boy</div>
-		</div> -->
 	</div>
 </div>

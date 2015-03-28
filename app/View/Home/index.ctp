@@ -1,4 +1,3 @@
-<!--<img src="img/build/koko.jpg" class="theclip"/>-->
 <div class="page-home"></div>
 <div id="large-header" class="bloc-one">
 	<div class="index" style="color: white;">
@@ -21,7 +20,7 @@
 			</div>
 			<p>
 				Un jeune développeur passionné par le web depuis des années et actuellement en Licence Chef de Projet Multimedia travaillant pour l'entreprise <a href="http://www.playapp.net">Playapp</a>. <br />
-				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="/about">la liste ici</a> !<br />
+				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="/about">un exemple ici</a> !<br />
 				Un pro avant tout, un jeune curieux et avide de connaissances qui ne demande qu'à apprendre et transmettre après.
 			</p>
 		</div>
@@ -82,7 +81,7 @@
 			<p>
 				Dernier projet en date : 
 				<a href="<?= $newest[0]['Project']['link_website'] ?>" target="_blank" class="img-projet last_project_home">
-					<img src="<?= $newest[0]['Project']['Cover'] ?>" alt="Photo du dernier projet en date" />
+					<img src="<?= $newest[0]['Project']['Cover'] ?>" alt="Image du dernier projet en date" />
 				</a>
 				Je fais partie de ceux qui pensent que l'on fonctionne par projet. L'apprentissage d'un langage, d'un CMS, d'un framework sans son utilisation sur un projet concret ne dépassera jamais les 40% de pertinence. Se lancer un projet personnel ou professionnel, y'a que ça de vrai. Je vous invite donc à regarder <a href="/projects">mon Portfolio</a>, en espérant qu'il vous amusera !
 			</p>

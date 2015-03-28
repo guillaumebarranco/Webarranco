@@ -30,18 +30,18 @@
 	</head>
 
 	<body>
-		
 		<header id="header">
+
 			<nav id="navigation">
 				<ul class="menu">
 					<li>
-						<a class="link-nav link-home cbutton cbutton--effect-milan" href="/home">Accueil</a>
+						<a class="link-nav link-home cbutton" href="/home">Accueil</a>
 					</li>
 					<li>
-						<a class="link-nav link-blog cbutton cbutton--effect-milan" href="/blog">Blog</a>
+						<a class="link-nav link-blog cbutton" href="/blog">Blog</a>
 					</li>
 					<li>
-						<a class="link-nav link-skills cbutton cbutton--effect-milan" href="/skills">Compétences</a>
+						<a class="link-nav link-skills cbutton" href="/skills">Compétences</a>
 					</li>
 					<li class="logo">
 						<a href="/home">
@@ -49,13 +49,13 @@
 						</a>
 					</li>
 					<li>
-						<a class="link-nav link-projects cbutton cbutton--effect-milan" href="/projects">Projets</a>
+						<a class="link-nav link-projects cbutton" href="/projects">Projets</a>
 					</li>
 					<li>
-						<a class="link-nav link-about cbutton cbutton--effect-milan" href="/about">A Propos</a>
+						<a class="link-nav link-about cbutton" href="/about">A Propos</a>
 					</li>
 					<li>
-						<a class="link-nav link-contact cbutton cbutton--effect-milan" href="/contact">Contact</a>
+						<a class="link-nav link-contact cbutton" href="/contact">Contact</a>
 					</li>
 				</ul>
 
@@ -110,6 +110,7 @@
 			})();
 		</script>
 		<!-- end nav links hover effect -->
+
 	</body>
 
 </html>

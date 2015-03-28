@@ -473,7 +473,8 @@ $(document).ready(function() {
 
 			setTimeout(function() {
 				$('.warp-zone').remove();
-				$('html,body').css('overflow', 'auto');
+				$('html,body').css('overflow', 'initial');
+				$('html').css('overflow-x', 'hidden');
 			}, 500);
 		}, 2000);
 		
