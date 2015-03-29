@@ -60,8 +60,11 @@
 				</ul>
 
 				<div class="menu_mobile">
+					<div class="traits_menu">
+					</div>
 
-					<div class="div-menu">Menu</div>
+
+					<div class="div_menu">Menu</div>
 
 					<ul class="list-menu">
 						<li><a class="link-nav link-home" href="/">Accueil</a></li>
