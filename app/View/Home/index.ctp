@@ -132,7 +132,9 @@
 				<li>- Le café</li>
 				<li>- M'ennuyer</li>
 			</ul>
-			Pour plus d'informations sur moi, mes passions, mes mangas favoris, je vous invite à regarder <a href="/about">ma page perso</a>.
+			<p>
+				Pour plus d'informations sur moi, mes passions, mes mangas favoris, je vous invite à regarder <a href="/about">ma page perso</a>.
+			</p>
 			<div class="txt-cheat-code">Toujours plus marrant d'avoir un cheat code !</div>
 			<div class="cheat-code">
 				<div class="cheat-1 cheat"><div></div></div>

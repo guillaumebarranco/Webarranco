@@ -636,14 +636,18 @@ $(document).ready(function() {
 	// S'occupe de gérer les clicks sur le menu mobile
 
 	var check_menu = 0;
+	$('.menu_mobile').find('.traits_menu').append('<span></span><span></span><span></span>');
 
 	$('.menu_mobile ul').hide();
 	$('.menu_mobile').click(function() {
+		$(this).find('.traits_menu').empty();
 		if(check_menu === 0) {
+			$(this).find('.traits_menu').append('X');
 			$('.menu_mobile ul').slideDown();
 			$(this).css('height', 'auto');
 			check_menu = 1;
 		} else {
+			$(this).find('.traits_menu').append('<span></span><span></span><span></span>');
 			$('.menu_mobile ul').slideUp();
 			$(this).css('height', 'auto');
 			check_menu = 0;

@@ -48,6 +48,8 @@ $(document).ready(function() {
 			  }, 500, function() {
 			});
 
+			$('body,html').animate({scrollTop:0},200);
+
 		});
 		
 	});
@@ -89,7 +91,7 @@ $(document).ready(function() {
 	function displayProjects(type, callback) {
 		$.ajax({
 			type : "POST",
-			url : "/projects/view/"+type,
+			url : "/Webarranco/projects/view/"+type,
 			success: function(response){
 
 				var tab_dates = new Array();
@@ -99,7 +101,7 @@ $(document).ready(function() {
 					projects_content = 
 						'<div class="project" data-project="'+(p+1)+'">'+
 							'<div class="project-picture">' +
-								'<img width="300" src="'+response.projects[p].Project.Cover +'" alt="'+response.projects[p].Project.Alt +'" />' +
+								'<img src="'+response.projects[p].Project.Cover +'" alt="'+response.projects[p].Project.Alt +'" />' +
 							'</div>' +
 							'<div class="project-content">' +
 								'<h2 class="project-title">'+response.projects[p].Project.Name +'</h2>' +
@@ -137,8 +139,8 @@ $(document).ready(function() {
 						'</div>' +
 
 						'<div class="timeline-circle" data-timeline="'+(p+1)+'">'+
-							'<img width="70" src="'+response.projects[p].Project.Cover +'" alt="'+response.projects[p].Project.Alt +'"/>' +
 							'<div class="bubble">'+response.projects[p].Project.Name +'</div>' +
+							'<img src="'+response.projects[p].Project.Cover +'" alt="'+response.projects[p].Project.Alt +'"/>' +
 						'</div>' +
 						'<div class="timeline-line"></div>'
 					;

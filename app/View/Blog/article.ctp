@@ -8,7 +8,7 @@
 		<i class="date">Ecrit le <?= substr($article['Article']['created'], 0, 10) ?></i>
 		<p><?= $article['Article']['Content'] ?></p>
 
-		<p>
+		<!-- <p>
 			"Qu'est-ce qu'un infinite scroll ? Je veux dire, je comprends le concept, mais globalement, comment ça se code ?"
 
 			C'est la question que je me suis posé en cherchant à en créer un, une question probablement logique. Je n'avais pas eu le déclic de compréhension pour savoir comment le faire, du coup, j'ai bloqué. Je n'ai pas trouvé de vrai tuto compréhensible à l'époque, je n'ai pas recherché de nouveau aujourd'hui, mais en tout cas, c'est un tuto qui pourra (j'espère) aider ceux qui en cherche un :)
@@ -50,26 +50,6 @@
 
 
 
-		</p>
+		</p> -->
 	</div>
 </div>
-
-1
-3
-2//
-2//
-3
-1
-2
-1//
-1//
-2//
-2//
-3//
-3//
-2
-3
-
-465
-
-addfg h kss
