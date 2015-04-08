@@ -147,5 +147,3 @@
 		</div>
 	</div>
 </section>
-
-<?= $this->Html->script('bubbles') ?>
