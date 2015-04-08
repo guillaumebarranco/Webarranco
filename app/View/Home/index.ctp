@@ -1,4 +1,3 @@
-<!--<img src="img/build/koko.jpg" class="theclip"/>-->
 <div class="page-home"></div>
 <div id="large-header" class="bloc-one">
 	<div class="index" style="color: white;">
@@ -6,7 +5,7 @@
 
 		<p>
 			Un projet à proposer, une idée impossible à mettre en oeuvre ? <br />
-			Rien n'est impossible ! N'hésitez pas à <a href="/Webarranco/Contact">me contacter</a> pour n'importe quelle demande que ce soit !
+			Rien n'est impossible ! N'hésitez pas à <a href="/contact">me contacter</a> pour n'importe quelle demande que ce soit !
 		</p>
 	</div>
 
@@ -17,11 +16,11 @@
 		<div class="bloc large-4 columns">
 			<h2>Qui suis-je ?</h2>
 			<div>
-				<img src="img/build/myPicture.jpg" alt="Photo de Guillaume Barranco" width="140" class="myPicture" />
+				<img class="willchange" src="img/build/myPicture.jpg" alt="Photo de Guillaume Barranco" width="140" class="myPicture" />
 			</div>
 			<p>
 				Un jeune développeur passionné par le web depuis des années et actuellement en Licence Chef de Projet Multimedia travaillant pour l'entreprise <a href="http://www.playapp.net">Playapp</a>. <br />
-				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="/Webarranco/About">la liste ici</a> !<br />
+				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="/about">un exemple ici</a> !<br />
 				Un pro avant tout, un jeune curieux et avide de connaissances qui ne demande qu'à apprendre et transmettre après.
 			</p>
 		</div>
@@ -29,7 +28,7 @@
 		<div class="bloc large-4 columns">
 			<h2>Mes compétences</h2>
 			<p>
-				Toutes les technologies de développement web les plus connues (HTML5, CSS3, Javascript, PHP, SQL), agrémenté des sciences d'intégration étudiées pour le plaisir de se parfaire (Référencement, Ergonomie, Accessibilité) ainsi que de frameworks bien utiles. Vous pouvez les trouver et mieux les comprendre dans une <a href="/Webarranco/Skills">présentation originale</a>.
+				Toutes les technologies de développement web les plus connues (HTML5, CSS3, Javascript, PHP, SQL), agrémenté des sciences d'intégration étudiées pour le plaisir de se parfaire (Référencement, Ergonomie, Accessibilité) ainsi que de frameworks bien utiles. Vous pouvez les trouver et mieux les comprendre sur la <a href="/skills">page de mes compétences</a>.
 			</p>
 			<ul class="graphic">
 				<li class="li-graphic-percent">
@@ -68,7 +67,7 @@
 		<div class="bloc large-4 columns">
 			<h2>Blog de Webarranco</h2>
 			<p>
-				Lorsqu'on a appris sur le web, avec des tutoriels, des vidéos, des supers articles qu'on a vite gardé dans les favoris, on a envie de partager son évolution avec les autres. L'expérience, les avis professionnels peuvent aider bon nombre de jeunes développeurs. C'est ainsi qu'est né <a href="/Webarranco/Blog">mon Blog</a>, que vous pourrez observer se remplir au fur et à mesure.
+				Lorsqu'on a appris sur le web, avec des tutoriels, des vidéos, des supers articles qu'on a vite gardé dans les favoris, on a envie de partager son évolution avec les autres. L'expérience, les avis professionnels peuvent aider bon nombre de jeunes développeurs. C'est ainsi qu'est né <a href="/blog">mon Blog</a>, que vous pourrez observer se remplir au fur et à mesure.
 			</p>
 			<div>
 				<img src="img/build/linkou3.png" alt="Photo de moi version Link" width="200" />
@@ -81,17 +80,17 @@
 			<h2>Mes Projets</h2>
 			<p>
 				Dernier projet en date : 
-				<a href="/Webarranco/Other/quizz" class="img-projet">
-					<img src="img/build/zelda.jpg" alt="Photo du dernier projet en date" width="200" />
+				<a href="<?= $newest[0]['Project']['link_website'] ?>" target="_blank" class="img-projet last_project_home">
+					<img src="<?= $newest[0]['Project']['Cover'] ?>" alt="Image du dernier projet en date" />
 				</a>
-				Je fais partie de ceux qui pensent que l'on fonctionne par projet. L'apprentissage d'un langage, d'un CMS, d'un framework sans son utilisation sur un projet concret ne dépassera jamais les 40% de pertinence. Se lancer un projet personnel ou professionnel, y'a que ça de vrai. Je vous invite donc à regarder <a href="/Webarranco/Projects">mon Portfolio</a>, en espérant qu'il vous amusera !
+				Je fais partie de ceux qui pensent que l'on fonctionne par projet. L'apprentissage d'un langage, d'un CMS, d'un framework sans son utilisation sur un projet concret ne dépassera jamais les 40% de pertinence. Se lancer un projet personnel ou professionnel, y'a que ça de vrai. Je vous invite donc à regarder <a href="/projects">mon Portfolio</a>, en espérant qu'il vous amusera !
 			</p>
 		</div>
 
 		<div class="bloc large-4 columns">
 			<h2>Me Contacter</h2>
 			<div>guillaume.barranco@playapp.net</div>
-			<a href="/Webarranco/Contact" class="mail">
+			<a href="/contact" class="mail">
 				<i class="fi-mail size-80"></i>
 			</a>
 			<ul class="socials">
@@ -133,7 +132,9 @@
 				<li>- Le café</li>
 				<li>- M'ennuyer</li>
 			</ul>
-			Pour plus d'informations sur moi, mes passions, mes mangas favoris, je vous invite à regarder <a href="/Webarranco/About">ma page perso</a>.
+			<p>
+				Pour plus d'informations sur moi, mes passions, mes mangas favoris, je vous invite à regarder <a href="/about">ma page perso</a>.
+			</p>
 			<div class="txt-cheat-code">Toujours plus marrant d'avoir un cheat code !</div>
 			<div class="cheat-code">
 				<div class="cheat-1 cheat"><div></div></div>

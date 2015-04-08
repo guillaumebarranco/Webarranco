@@ -542,22 +542,22 @@ this.dessineTerrain = function() {
 	
 
 	_this.data.link = new Image();
-	_this.data.link.src = '/Webarranco/img/zelda/sprite.png';
+	_this.data.link.src = '/img/zelda/sprite.png';
 
 	_this.data.sword = new Image();
-	_this.data.sword.src = '/Webarranco/img/zelda/sword.png';
+	_this.data.sword.src = '/img/zelda/sword.png';
 
 	_this.data.joyaux = new Image();
-	_this.data.joyaux.src = '/Webarranco/img/zelda/sprite_joyaux.png';
+	_this.data.joyaux.src = '/img/zelda/sprite_joyaux.png';
 	_this.data.triforce = new Image();
-	_this.data.triforce.src = '/Webarranco/img/zelda/triforce.png';
+	_this.data.triforce.src = '/img/zelda/triforce.png';
 
 	_this.data.black = new Image();
-	_this.data.black.src = '/Webarranco/img/zelda/black.png';
+	_this.data.black.src = '/img/zelda/black.png';
 	_this.data.black2 = new Image();
-	_this.data.black2.src = '/Webarranco/img/zelda/black2.png';
+	_this.data.black2.src = '/img/zelda/black2.png';
 	_this.data.black3 = new Image();
-	_this.data.black3.src = '/Webarranco/img/zelda/black3.png';
+	_this.data.black3.src = '/img/zelda/black3.png';
 };
 
 this.onloadAll = function() {
@@ -610,7 +610,7 @@ window.onload = function() {
 				_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x, _this.data.y-5, 20, 26);
 				_this.data.ctx.drawImage(_this.data.link, 20, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
 
-				setTimeout(function(){h2.innerHTML = ''; _this.data.stop_game = 0;_this.data.has_sword = 1;_this.data.link.src = '/Webarranco/img/zelda/sprite_sword.png';}, 3000);
+				setTimeout(function(){h2.innerHTML = ''; _this.data.stop_game = 0;_this.data.has_sword = 1;_this.data.link.src = '/img/zelda/sprite_sword.png';}, 3000);
 			}	
 		}
 
@@ -754,7 +754,7 @@ window.onload = function() {
 				_this.data.ctx.drawImage(_this.data.black, 0, 0, 20, 26, _this.data.x, _this.data.y-5, 20, 26);
 				_this.data.ctx.drawImage(_this.data.link, 20, 0, 20, 26, _this.data.x, _this.data.y, 20, 26);
 
-				setTimeout(function(){h2.innerHTML = '';window.location = '/Webarranco/';_this.data.triforce = 1;}, 3000);
+				setTimeout(function(){h2.innerHTML = '';window.location = '/';_this.data.triforce = 1;}, 3000);
 			}
 		}
 		

@@ -45,7 +45,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.registerTask('all', ['jshint', 'cssmin', 'uglify', 'imagemin']);
-	grunt.registerTask('compress', ['jshint', 'cssmin', 'uglify']);
+	grunt.registerTask('compress', ['cssmin', 'uglify']);
 	grunt.registerTask('js', ['jshint', 'uglify']);
 	grunt.registerTask('css', ['cssmin']);
 }
