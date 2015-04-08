@@ -1037,6 +1037,12 @@ canvas {
     vertical-align: top;
   }
 
+  /* line 928, ../sass/index.scss */
+  .all_skills .skill {
+    display: block;
+    width: 80%;
+  }
+
   /*
   *	CONTACT
   */
