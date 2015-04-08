@@ -60,7 +60,6 @@
 					<div class="traits_menu">
 					</div>
 
-
 					<div class="div_menu">Menu</div>
 
 					<ul class="list-menu">
@@ -93,29 +92,16 @@
 			</div>
 		</footer>
 
-		<?= $this->Html->script('main') ?>
+		<?= $this->Html->script('min') ?>
 
-		<?= $this->Html->script('lightbox.min') ?>
-		<!--<?= $this->Html->script('build/min') ?>-->
+		<!--
+			<?= $this->Html->script('main') ?>
+			<?= $this->Html->script('modernizr.custom') ?>
+			<?= $this->Html->script('lightbox.min') ?>
 
-		<!--<?= $this->Html->script('modernizr.custom') ?>-->
-		
-
-		<!-- For links nav hover effect -->
-		<?= $this->Html->script('classie') ?>
-		<script>
-			(function() {
-				[].slice.call( document.querySelectorAll( '.cbutton' ) ).forEach( function(el) {
-					el.addEventListener( 'mouseenter', function(ev) {
-						classie.add( el, 'cbutton--click' );
-					});
-					el.addEventListener( 'mouseleave', function(ev) {
-						classie.remove( el, 'cbutton--click' );
-					});
-				});
-			})();
-		</script>
-		<!-- end nav links hover effect -->
+			For links nav hover effect 
+			<?= $this->Html->script('classie') ?>
+		-->
 
 	</body>
 

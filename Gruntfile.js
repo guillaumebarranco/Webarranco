@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 		uglify: {
 		    fusionJS: {
 				files: {
-					'app/webroot/js/build/min.js': ['app/webroot/js/jquery-1.11.1.js', 'app/webroot/js/main.js']
+					'app/webroot/js/min.js': ['app/webroot/js/main.js', 'app/webroot/js/classie.js', 'app/webroot/js/bubbles.js', 'app/webroot/js/modernizr.js', 'app/webroot/js/lightbox.min.js']
 				}
 		    },
 		    zeldaJS: {
