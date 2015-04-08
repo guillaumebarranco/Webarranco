@@ -13,19 +13,16 @@
 		<meta property="og:title" content="Portefolio d'un Développeur Full Stack - Guillaume Barranco" />
 		<meta name="twitter:creator" content="@Webarranco"/>
 
-		<?= $this->Html->css('foundation') ?>
-		<?= $this->Html->css('foundation-icons/foundation-icons') ?>
-		<?= $this->Html->css('index') ?>
-		<?= $this->Html->css('lightbox') ?>
+		<!--
+			<?= $this->Html->css('foundation') ?>
+			<?= $this->Html->css('foundation-icons/foundation-icons') ?>
+			<?= $this->Html->css('lightbox') ?>
+			<?= $this->Html->css('index') ?>
+		-->
 
-		<!--<?= $this->Html->script('build/min') ?>-->
+		<?= $this->Html->css('min') ?>
 
-		<!--<?= $this->Html->script('modernizr.custom') ?>-->
-
-		<!---->
-			<?= $this->Html->script('jquery-1.11.1') ?>
-			<?= $this->Html->script('main') ?>
-		<!---->
+		<?= $this->Html->script('jquery-1.11.1') ?>
 
 	</head>
 
@@ -96,7 +93,13 @@
 			</div>
 		</footer>
 
+		<?= $this->Html->script('main') ?>
+
 		<?= $this->Html->script('lightbox.min') ?>
+		<!--<?= $this->Html->script('build/min') ?>-->
+
+		<!--<?= $this->Html->script('modernizr.custom') ?>-->
+		
 
 		<!-- For links nav hover effect -->
 		<?= $this->Html->script('classie') ?>

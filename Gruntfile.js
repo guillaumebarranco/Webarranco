@@ -9,8 +9,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			combine: {
 				files: {
-					'app/webroot/css/build/min.css': ['app/webroot/css/foundation.css', 'app/webroot/css/foundation-icons/foundation-icons.css', 'app/webroot/css/index.css'],
-					'app/webroot/css/build/reveal_default.css' : ['app/webroot/css/reveal.css', 'app/webroot/css/default.css']
+					'app/webroot/css/min.css': ['app/webroot/css/foundation.css', 'app/webroot/css/foundation-icons/foundation-icons.css', 'app/webroot/css/lightbox.css', 'app/webroot/css/index.css']
 				}
 			}
 		},
