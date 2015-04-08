@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" href="img/favicon.ico.png" type="image/x-icon"/> 
 		<link rel="icon" href="img/favicon.ico.png" type="image/x-icon"/>
 		
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="yes" />
 		<meta name="description" content="Découvrez le Portefolio d'un développeur passionné par son métier qui cherche sans cesse à parfaire sa curiosité Web !" />
 		<meta property="og:title" content="Portefolio d'un Développeur Full Stack - Guillaume Barranco" />
 		<meta name="twitter:creator" content="@Webarranco"/>
