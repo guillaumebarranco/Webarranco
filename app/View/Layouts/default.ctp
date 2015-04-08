@@ -8,24 +8,22 @@
 		<link rel="shortcut icon" href="img/favicon.ico.png" type="image/x-icon"/> 
 		<link rel="icon" href="img/favicon.ico.png" type="image/x-icon"/>
 		
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="yes" />
 		<meta name="description" content="Découvrez le Portefolio d'un développeur passionné par son métier qui cherche sans cesse à parfaire sa curiosité Web !" />
 		<meta property="og:title" content="Portefolio d'un Développeur Full Stack - Guillaume Barranco" />
 		<meta name="twitter:creator" content="@Webarranco"/>
+		<link rel="publisher" href="https://plus.google.com/105422105949000889772">
 
-		<?= $this->Html->css('foundation') ?>
-		<?= $this->Html->css('foundation-icons/foundation-icons') ?>
-		<?= $this->Html->css('index') ?>
-		<?= $this->Html->css('lightbox') ?>
+		<!--
+			<?= $this->Html->css('foundation') ?>
+			<?= $this->Html->css('foundation-icons/foundation-icons') ?>
+			<?= $this->Html->css('lightbox') ?>
+			<?= $this->Html->css('index') ?>
+		-->
 
-		<!--<?= $this->Html->script('build/min') ?>-->
+		<?= $this->Html->css('min') ?>
 
-		<!--<?= $this->Html->script('modernizr.custom') ?>-->
-
-		<!---->
-			<?= $this->Html->script('jquery-1.11.1') ?>
-			<?= $this->Html->script('main') ?>
-		<!---->
+		<?= $this->Html->script('jquery-1.11.1') ?>
 
 	</head>
 
@@ -63,7 +61,6 @@
 					<div class="traits_menu">
 					</div>
 
-
 					<div class="div_menu">Menu</div>
 
 					<ul class="list-menu">
@@ -96,23 +93,16 @@
 			</div>
 		</footer>
 
-		<?= $this->Html->script('lightbox.min') ?>
+		<?= $this->Html->script('min') ?>
 
-		<!-- For links nav hover effect -->
-		<?= $this->Html->script('classie') ?>
-		<script>
-			(function() {
-				[].slice.call( document.querySelectorAll( '.cbutton' ) ).forEach( function(el) {
-					el.addEventListener( 'mouseenter', function(ev) {
-						classie.add( el, 'cbutton--click' );
-					});
-					el.addEventListener( 'mouseleave', function(ev) {
-						classie.remove( el, 'cbutton--click' );
-					});
-				});
-			})();
-		</script>
-		<!-- end nav links hover effect -->
+		<!--
+			<?= $this->Html->script('main') ?>
+			<?= $this->Html->script('modernizr.custom') ?>
+			<?= $this->Html->script('lightbox.min') ?>
+
+			For links nav hover effect 
+			<?= $this->Html->script('classie') ?>
+		-->
 
 	</body>
 

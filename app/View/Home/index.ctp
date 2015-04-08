@@ -129,7 +129,6 @@
 				<li>- Le Coca Cherry</li>
 			</ul>
 			<ul class="dislike">Je n'aime pas :
-				<li>- Le café</li>
 				<li>- M'ennuyer</li>
 			</ul>
 			<p>
@@ -147,5 +146,3 @@
 		</div>
 	</div>
 </section>
-
-<?= $this->Html->script('bubbles') ?>

@@ -9,8 +9,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			combine: {
 				files: {
-					'app/webroot/css/build/min.css': ['app/webroot/css/foundation.css', 'app/webroot/css/foundation-icons/foundation-icons.css', 'app/webroot/css/index.css'],
-					'app/webroot/css/build/reveal_default.css' : ['app/webroot/css/reveal.css', 'app/webroot/css/default.css']
+					'app/webroot/css/min.css': ['app/webroot/css/foundation.css', 'app/webroot/css/foundation-icons.css', 'app/webroot/css/lightbox.css', 'app/webroot/css/index.css']
 				}
 			}
 		},
@@ -18,7 +17,7 @@ module.exports = function(grunt) {
 		uglify: {
 		    fusionJS: {
 				files: {
-					'app/webroot/js/build/min.js': ['app/webroot/js/jquery-1.11.1.js', 'app/webroot/js/main.js']
+					'app/webroot/js/min.js': ['app/webroot/js/main.js', 'app/webroot/js/classie.js', 'app/webroot/js/bubbles.js', 'app/webroot/js/modernizr.js', 'app/webroot/js/lightbox.min.js']
 				}
 		    },
 		    zeldaJS: {

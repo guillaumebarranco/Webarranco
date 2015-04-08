@@ -78,3 +78,14 @@ if ( typeof define === 'function' && define.amd ) {
 }
 
 })( window );
+
+(function() {
+  [].slice.call( document.querySelectorAll( '.cbutton' ) ).forEach( function(el) {
+    el.addEventListener( 'mouseenter', function(ev) {
+      classie.add( el, 'cbutton--click' );
+    });
+    el.addEventListener( 'mouseleave', function(ev) {
+      classie.remove( el, 'cbutton--click' );
+    });
+  });
+})();
