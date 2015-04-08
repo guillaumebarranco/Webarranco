@@ -91,7 +91,7 @@ $(document).ready(function() {
 	function displayProjects(type, callback) {
 		$.ajax({
 			type : "POST",
-			url : "/Webarranco/projects/view/"+type,
+			url : "/projects/view/"+type,
 			success: function(response){
 
 				var tab_dates = new Array();
