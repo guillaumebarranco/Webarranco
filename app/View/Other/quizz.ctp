@@ -130,7 +130,7 @@ var myApp = angular.module('myApp', []);
 	            		$scope.offset = $scope.offset + 1; // On passe à la question suivante
 		            	$scope.myValue.this = null;
 		            	$scope.myDatas = null;
-		                var response = $http.get("/Webarranco/Other/question/"+$scope.qu+'/'+$scope.offset);
+		                var response = $http.get("/Other/question/"+$scope.qu+'/'+$scope.offset);
 
 		                response.success(function(data, status, headers, config) {
 		                	//console.log(data);
@@ -141,7 +141,7 @@ var myApp = angular.module('myApp', []);
 		                    alert("AJAX failed!");
 		                });
 	            	} else { // L'utilisateur n'a plus de vies
-	            		$http.get("/Webarranco/Score/insertScore/"+$scope.pseudo+"/"+$scope.score+"/"+$scope.myDatas['0']['Question']['type_name']);
+	            		$http.get("/Score/insertScore/"+$scope.pseudo+"/"+$scope.score+"/"+$scope.myDatas['0']['Question']['type_name']);
 	            		//insertScore($name = "", $score = 1, $quizz ="")
 	            	}
 	            } else { // L'utilisateur n'a rien rentré dans l'input
@@ -160,7 +160,7 @@ var myApp = angular.module('myApp', []);
 
             	$scope.myValue.this = null;
             	$scope.myDatas = null;
-                var response = $http.get("/Webarranco/Other/question/"+$scope.qu+'/1');
+                var response = $http.get("/Other/question/"+$scope.qu+'/1');
 
                 response.success(function(data, status, headers, config) {
                 	//console.log(data);
