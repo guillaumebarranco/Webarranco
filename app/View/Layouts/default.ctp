@@ -12,6 +12,7 @@
 		<meta name="description" content="Découvrez le Portefolio d'un développeur passionné par son métier qui cherche sans cesse à parfaire sa curiosité Web !" />
 		<meta property="og:title" content="Portefolio d'un Développeur Full Stack - Guillaume Barranco" />
 		<meta name="twitter:creator" content="@Webarranco"/>
+		<link rel="publisher" href="https://plus.google.com/105422105949000889772">
 
 		<!--
 			<?= $this->Html->css('foundation') ?>
