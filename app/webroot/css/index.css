@@ -1030,20 +1030,26 @@ canvas {
     vertical-align: top;
   }
 
+  /* line 928, ../sass/index.scss */
+  .all_skills .skill {
+    display: block;
+    width: 80%;
+  }
+
   /*
   *	CONTACT
   */
-  /* line 932, ../sass/index.scss */
+  /* line 937, ../sass/index.scss */
   .div-contact {
     width: 90%;
   }
 
-  /* line 935, ../sass/index.scss */
+  /* line 940, ../sass/index.scss */
   .infos-contact-tel {
     display: none;
   }
 
-  /* line 938, ../sass/index.scss */
+  /* line 943, ../sass/index.scss */
   .call {
     display: block;
   }
@@ -1051,37 +1057,37 @@ canvas {
   /*
   *	FOOTER
   */
-  /* line 947, ../sass/index.scss */
+  /* line 952, ../sass/index.scss */
   footer div {
     display: inline-block;
     vertical-align: top;
     width: 100%;
   }
-  /* line 952, ../sass/index.scss */
+  /* line 957, ../sass/index.scss */
   footer div.separator {
     width: 0%;
   }
 }
 @media only screen and (max-width: 550px) {
-  /* line 962, ../sass/index.scss */
+  /* line 967, ../sass/index.scss */
   .index p {
     display: none;
   }
 
-  /* line 966, ../sass/index.scss */
+  /* line 971, ../sass/index.scss */
   .graphic {
     padding-left: 10px;
     border: none;
   }
-  /* line 970, ../sass/index.scss */
+  /* line 975, ../sass/index.scss */
   .graphic .li-graphic-percent {
     margin-left: 0;
   }
-  /* line 974, ../sass/index.scss */
+  /* line 979, ../sass/index.scss */
   .graphic .graphic-bar {
     display: block;
   }
-  /* line 977, ../sass/index.scss */
+  /* line 982, ../sass/index.scss */
   .graphic .graphic-name {
     margin-left: -33px;
     text-align: left;
@@ -1090,26 +1096,26 @@ canvas {
   /*
   *	PROJETS
   */
-  /* line 987, ../sass/index.scss */
+  /* line 992, ../sass/index.scss */
   .project-description {
     max-width: 250px;
   }
 
-  /* line 993, ../sass/index.scss */
+  /* line 998, ../sass/index.scss */
   .project-picture img {
     max-width: 180px;
   }
 
-  /* line 998, ../sass/index.scss */
+  /* line 1003, ../sass/index.scss */
   .previous, .next {
     display: none;
   }
 
-  /* line 1002, ../sass/index.scss */
+  /* line 1007, ../sass/index.scss */
   .timeline {
     max-height: none;
   }
-  /* line 1005, ../sass/index.scss */
+  /* line 1010, ../sass/index.scss */
   .timeline .timeline-circle {
     display: block;
     width: 150px;
@@ -1117,27 +1123,27 @@ canvas {
     margin: 0 auto;
     margin-bottom: 50px;
   }
-  /* line 1012, ../sass/index.scss */
+  /* line 1017, ../sass/index.scss */
   .timeline .timeline-circle img {
     max-width: 150px;
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px;
   }
-  /* line 1017, ../sass/index.scss */
+  /* line 1022, ../sass/index.scss */
   .timeline .bubble {
     display: block;
     position: relative;
     top: 0px;
     left: 0px;
   }
-  /* line 1024, ../sass/index.scss */
+  /* line 1029, ../sass/index.scss */
   .timeline .timeline-line {
     display: none;
   }
 }
 @media only screen and (min-width: 1000px) {
-  /* line 1035, ../sass/index.scss */
+  /* line 1040, ../sass/index.scss */
   .socials li a:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
@@ -1148,20 +1154,20 @@ canvas {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-  /* line 1041, ../sass/index.scss */
+  /* line 1046, ../sass/index.scss */
   .socials .twitter a:hover {
     background-color: #55acee;
   }
-  /* line 1044, ../sass/index.scss */
+  /* line 1049, ../sass/index.scss */
   .socials .linkedin a:hover {
     background-color: #1c6ca2;
   }
-  /* line 1047, ../sass/index.scss */
+  /* line 1052, ../sass/index.scss */
   .socials .github a:hover {
     background-color: black;
   }
 
-  /* line 1056, ../sass/index.scss */
+  /* line 1061, ../sass/index.scss */
   .menu li .link-nav:hover:before, .menu li .link-nav:hover:after {
     opacity: 1;
     -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
@@ -1169,7 +1175,7 @@ canvas {
     transform: translateX(-50%) translateY(-50%) scale(1);
   }
 
-  /* line 1068, ../sass/index.scss */
+  /* line 1073, ../sass/index.scss */
   .btn_article:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
@@ -1179,7 +1185,7 @@ canvas {
     color: white;
   }
 
-  /* line 1077, ../sass/index.scss */
+  /* line 1082, ../sass/index.scss */
   .style-input input[type=submit]:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
@@ -1189,28 +1195,28 @@ canvas {
     color: #222;
   }
 
-  /* line 1085, ../sass/index.scss */
+  /* line 1090, ../sass/index.scss */
   .timeline-circle {
     box-sizing: border-box;
   }
-  /* line 1087, ../sass/index.scss */
+  /* line 1092, ../sass/index.scss */
   .timeline-circle:hover {
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-  /* line 1090, ../sass/index.scss */
+  /* line 1095, ../sass/index.scss */
   .timeline-circle:hover img {
     box-shadow: 5px 5px 13px 3px black;
   }
-  /* line 1094, ../sass/index.scss */
+  /* line 1099, ../sass/index.scss */
   .timeline-circle:hover .bubble {
     display: block;
   }
 }
 /* END MEDIA QUERY */
-/* line 1103, ../sass/index.scss */
+/* line 1108, ../sass/index.scss */
 .cbutton {
   position: relative;
   display: inline-block;
@@ -1225,7 +1231,7 @@ canvas {
   transition: color 0.7s;
   -webkit-tap-highlight-color: transparent;
 }
-/* line 1117, ../sass/index.scss */
+/* line 1122, ../sass/index.scss */
 .cbutton:after {
   position: absolute;
   top: 50%;
@@ -1238,11 +1244,11 @@ canvas {
   opacity: 0;
   pointer-events: none;
 }
-/* line 1130, ../sass/index.scss */
+/* line 1135, ../sass/index.scss */
 .cbutton:before, .cbutton:after {
   border: 4px solid rgba(111, 148, 182, 0.2);
 }
-/* line 1133, ../sass/index.scss */
+/* line 1138, ../sass/index.scss */
 .cbutton:before {
   content: "";
   position: absolute;
@@ -1255,7 +1261,7 @@ canvas {
   opacity: 0;
   pointer-events: none;
 }
-/* line 1147, ../sass/index.scss */
+/* line 1152, ../sass/index.scss */
 .cbutton.cbutton--click:before, .cbutton.cbutton--click:after {
   -webkit-animation-duration: 8s, 2s;
   animation-duration: 8s, 2s;
@@ -1266,12 +1272,12 @@ canvas {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* line 1157, ../sass/index.scss */
+/* line 1162, ../sass/index.scss */
 .cbutton.cbutton--click:before {
   -webkit-animation-name: anim-effect-milan-3, anim-effect-milan-2;
   animation-name: anim-effect-milan-3, anim-effect-milan-2;
 }
-/* line 1161, ../sass/index.scss */
+/* line 1166, ../sass/index.scss */
 .cbutton.cbutton--click:after {
   -webkit-animation-name: anim-effect-milan-3, anim-effect-milan-1;
   animation-name: anim-effect-milan-3, anim-effect-milan-1;
@@ -1333,7 +1339,7 @@ canvas {
     opacity: 1;
   }
 }
-/* line 1230, ../sass/index.scss */
+/* line 1235, ../sass/index.scss */
 .theclip {
   -webkit-clip-path: polygon(100% 50%, 84.70057% 54.56842%, 91.05185% 60.99981%, 82.33578% 63.39392%, 93.30127% 75%, 77.76737% 71.30665%, 80.05204% 80.05204%, 71.30665% 77.76737%, 75% 93.30127%, 63.39392% 82.33578%, 60.99981% 91.05185%, 54.56842% 84.70057%, 50% 100%, 45.43158% 84.70057%, 39.00019% 91.05185%, 36.60608% 82.33578%, 25.0% 93.30127%, 28.69335% 77.76737%, 19.94796% 80.05204%, 22.23263% 71.30665%, 6.69873% 75.0%, 17.66422% 63.39392%, 8.94815% 60.99981%, 15.29943% 54.56842%, 0% 50.0%, 15.29943% 45.43158%, 8.94815% 39.00019%, 17.66422% 36.60608%, 6.69873% 25.0%, 22.23263% 28.69335%, 19.94796% 19.94796%, 28.69335% 22.23263%, 25.0% 6.69873%, 36.60608% 17.66422%, 39.00019% 8.94815%, 45.43158% 15.29943%, 50.0% 0%, 54.56842% 15.29943%, 60.99981% 8.94815%, 63.39392% 17.66422%, 75.0% 6.69873%, 71.30665% 22.23263%, 80.05204% 19.94796%, 77.76737% 28.69335%, 93.30127% 25.0%, 82.33578% 36.60608%, 91.05185% 39.00019%, 84.70057% 45.43158%);
   -webkit-animation: "clip" 1s infinite;
