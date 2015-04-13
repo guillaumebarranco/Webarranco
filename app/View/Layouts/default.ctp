@@ -1,3 +1,7 @@
+<?php 
+include_once('config_url.php');
+?>
+
 <!DOCTYPE HTML>
 <html lang="fr">
 	<head>
@@ -23,6 +27,10 @@
 
 		<?= $this->Html->css('min') ?>
 
+		<script>
+		var WEB_URL = "<?=WEB_URL?>";
+		</script>
+
 		<?= $this->Html->script('jquery-1.11.1') ?>
 
 	</head>
@@ -33,27 +41,27 @@
 			<nav id="navigation">
 				<ul class="menu">
 					<li>
-						<a class="link-nav link-home cbutton" href="/home">Accueil</a>
+						<a class="link-nav link-home cbutton" href="<?=WEB_URL?>/home">Accueil</a>
 					</li>
 					<li>
-						<a class="link-nav link-blog cbutton" href="/blog">Blog</a>
+						<a class="link-nav link-blog cbutton" href="<?=WEB_URL?>/blog">Blog</a>
 					</li>
 					<li>
-						<a class="link-nav link-skills cbutton" href="/skills">Compétences</a>
+						<a class="link-nav link-skills cbutton" href="<?=WEB_URL?>/skills">Compétences</a>
 					</li>
 					<li class="logo">
-						<a href="/home">
-							<img src="/img/build/link2.png"  width="130" alt="Logo du site" />
+						<a href="<?=WEB_URL?>/home">
+							<img src="<?=WEB_URL?>/img/build/link2.png"  width="130" alt="Logo du site" />
 						</a>
 					</li>
 					<li>
-						<a class="link-nav link-projects cbutton" href="/projects">Projets</a>
+						<a class="link-nav link-projects cbutton" href="<?=WEB_URL?>/projects">Projets</a>
 					</li>
 					<li>
-						<a class="link-nav link-about cbutton" href="/about">A Propos</a>
+						<a class="link-nav link-about cbutton" href="<?=WEB_URL?>/about">A Propos</a>
 					</li>
 					<li>
-						<a class="link-nav link-contact cbutton" href="/contact">Contact</a>
+						<a class="link-nav link-contact cbutton" href="<?=WEB_URL?>/contact">Contact</a>
 					</li>
 				</ul>
 
@@ -64,19 +72,19 @@
 					<div class="div_menu">Menu</div>
 
 					<ul class="list-menu">
-						<li><a class="link-nav link-home" href="/">Accueil</a></li>
-						<li><a class="link-nav link-blog" href="/blog">Blog</a></li>
-						<li><a class="link-nav link-skills" href="/skills">Compétences</a></li>
-						<li><a class="link-nav link-projects" href="/projects">Projets</a></li>
-						<li><a class="link-nav link-about" href="/about">A Propos</a></li>
-						<li><a class="link-nav link-contact" href="/contact">Contact</a></li>
+						<li><a class="link-nav link-home" href="<?=WEB_URL?>/">Accueil</a></li>
+						<li><a class="link-nav link-blog" href="<?=WEB_URL?>/blog">Blog</a></li>
+						<li><a class="link-nav link-skills" href="<?=WEB_URL?>/skills">Compétences</a></li>
+						<li><a class="link-nav link-projects" href="<?=WEB_URL?>/projects">Projets</a></li>
+						<li><a class="link-nav link-about" href="<?=WEB_URL?>/about">A Propos</a></li>
+						<li><a class="link-nav link-contact" href="<?=WEB_URL?>/contact">Contact</a></li>
 					</ul>
 
 				</div>
 			</nav>
 
-			<a href="/Home" class="logo_mobile">
-				<img src="/img/build/link2.png"  width="70" alt="Logo du site" />
+			<a href="<?=WEB_URL?>/home" class="logo_mobile">
+				<img src="<?=WEB_URL?>/img/build/link2.png"  width="70" alt="Logo du site" />
 			</a>
 
 		</header>
@@ -89,7 +97,7 @@
 			<div class="separator"></div>
 
 			<div class="footer-contact">
-				<a href="/contact">Contact</a>
+				<a href="<?=WEB_URL?>/contact">Contact</a>
 			</div>
 		</footer>
 

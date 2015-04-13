@@ -28,3 +28,4 @@ node_modules/
 package.json
 .sass-cache/
 app/webroot/.sass-cache/
+app/View/Layouts/config_url.php

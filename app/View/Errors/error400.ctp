@@ -14,15 +14,32 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<?= $this->Html->css('zelda'); ?>
-<h1>Oups ! La page recherchée n'a pas été trouvée !</h1>
-<p style="color: blue;">
-	Vous pouvez revenir <a href="/Webarranco/">sur l'accueil</a> Ou bien <a class="launch">tenter un petit jeu !</a>
-</p>
-<h2 id="msg"></h2>
+<?= $this->Html->css('404'); ?>
+<div class="wrapper">
+	<a href="/home">Retour à l'accueil</a style="font-size: 25px;">
+</div>
+<div class="container">
+	<div class="content">
+		<svg viewBox="0 0 700 200">
 
-<canvas id="canvas" width="1700" height="940"></canvas>
-<?= $this->Html->script('zelda/movement'); ?>
+			<symbol id="s-text">
+				<text text-anchor="middle" x="50%" y="50%" dy=".35em">
+					404
+				</text>
+			</symbol>
+
+			<!-- Duplicate symbols -->
+			<use xlink:href="#s-text" class="text"></use>
+			<use xlink:href="#s-text" class="text"></use>
+			<use xlink:href="#s-text" class="text"></use>
+			<use xlink:href="#s-text" class="text"></use>
+			<use xlink:href="#s-text" class="text"></use>
+
+		</svg>
+		
+	</div>
+</div>
+
 <!--<h2><?php echo $message; ?></h2>-->
 <!--<p class="error">
 	<strong><?php echo __d('cake', 'Error'); ?>: </strong>
