@@ -91,7 +91,7 @@ $(document).ready(function() {
 	function displayProjects(type, callback) {
 		$.ajax({
 			type : "POST",
-			url : "/projects/view/"+type,
+			url : WEB_URL+"/projects/view/"+type,
 			success: function(response){
 
 				var tab_dates = new Array();

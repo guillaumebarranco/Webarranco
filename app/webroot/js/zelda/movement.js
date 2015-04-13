@@ -542,22 +542,22 @@ this.dessineTerrain = function() {
 	
 
 	_this.data.link = new Image();
-	_this.data.link.src = '/Webarranco/img/zelda/sprite.png';
+	_this.data.link.src = WEB_URL+'/img/zelda/sprite.png';
 
 	_this.data.sword = new Image();
-	_this.data.sword.src = '/Webarranco/img/zelda/sword.png';
+	_this.data.sword.src = WEB_URL+'/img/zelda/sword.png';
 
 	_this.data.joyaux = new Image();
-	_this.data.joyaux.src = '/Webarranco/img/zelda/sprite_joyaux.png';
+	_this.data.joyaux.src = WEB_URL+'/img/zelda/sprite_joyaux.png';
 	_this.data.triforce = new Image();
-	_this.data.triforce.src = '/Webarranco/img/zelda/triforce.png';
+	_this.data.triforce.src = WEB_URL+'/img/zelda/triforce.png';
 
 	_this.data.black = new Image();
-	_this.data.black.src = '/Webarranco/img/zelda/black.png';
+	_this.data.black.src = WEB_URL+'/img/zelda/black.png';
 	_this.data.black2 = new Image();
-	_this.data.black2.src = '/Webarranco/img/zelda/black2.png';
+	_this.data.black2.src = WEB_URL+'/img/zelda/black2.png';
 	_this.data.black3 = new Image();
-	_this.data.black3.src = '/Webarranco/img/zelda/black3.png';
+	_this.data.black3.src = WEB_URL+'/img/zelda/black3.png';
 };
 
 this.onloadAll = function() {
