@@ -1,7 +1,24 @@
 <IfModule mod_rewrite.c>
    RewriteEngine on
-   RewriteRule    ^$ app/webroot/    [L]
-   RewriteRule    (.*) app/webroot/$1 [L]
-   RewriteCond %{HTTP_HOST} ^www\.webarranco\.fr [NC]
+
+   RewriteCond %{HTTP_HOST} ^www.webarranco\.fr$ [NC]
+   RewriteRule ^.*$ https://webarranco.fr%{REQUEST_URI} [R=301,L] # <-- Mind the 'L'!
+
+   RewriteCond %http://^webarranco\.fr$ [NC]
+   RewriteRule ^.*$ https://webarranco.fr%{REQUEST_URI} [R=301,L] # <-- Mind the 'L'!
+
+   RewriteRule ^$ app/webroot/ [L]
+   RewriteCond %{REQUEST_FILENAME} !projets
+   RewriteCond %{REQUEST_FILENAME} !lab
+   RewriteCond %{REQUEST_FILENAME} !games
+   RewriteCond %{REQUEST_FILENAME} !pres_april77
+   RewriteCond %{REQUEST_FILENAME} !pres_kebhub
+   RewriteCond %{REQUEST_FILENAME} !music
+   RewriteCond %{REQUEST_FILENAME} !rutorrent
+   RewriteCond %{REQUEST_FILENAME} !cakebox2
+   RewriteCond %{REQUEST_FILENAME} !old-index.php
+   RewriteCond %{REQUEST_FILENAME} !Duval
+   RewriteRule (.*) app/webroot/$1 [L]
+
    ErrorDocument 404 /404-not-found
 </IfModule>
