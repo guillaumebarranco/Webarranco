@@ -1,5 +1,5 @@
 <?php 
-include_once('config_url.php');
+require_once('config_url.php');
 ?>
 
 <!DOCTYPE HTML>
