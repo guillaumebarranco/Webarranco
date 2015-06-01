@@ -86,3 +86,12 @@
 		</div>
 	</div>
 </div>
+
+<div class="psn" style="margin-top: 50px; margin-bottom: 50px; text-align:center;">
+	<h2>API PSN</h2>
+	Trophées :
+	<div class="bronze"><span class="trophies"></span> Bronze</div>
+	<div class="silver"><span class="trophies"></span> Argent</div>
+	<div class="gold"><span class="trophies"></span> or</div>
+	<div class="platinum"><span class="trophies"></span> Platine</div>
+</div>

@@ -28,7 +28,8 @@ require_once('config_url.php');
 		<?= $this->Html->css('min') ?>
 
 		<script>
-		var WEB_URL = "<?=WEB_URL?>";
+			var WEB_URL = "<?=WEB_URL?>";
+			var SITE_URL = "<?=SITE_URL?>";
 		</script>
 
 		<?= $this->Html->script('jquery-1.11.1') ?>
@@ -101,16 +102,16 @@ require_once('config_url.php');
 			</div>
 		</footer>
 
-		<?= $this->Html->script('min') ?>
+		<!--<?= $this->Html->script('min') ?>-->
 
-		<!--
+		<!---->
 			<?= $this->Html->script('main') ?>
 			<?= $this->Html->script('modernizr.custom') ?>
 			<?= $this->Html->script('lightbox.min') ?>
 
 			For links nav hover effect 
 			<?= $this->Html->script('classie') ?>
-		-->
+		<!---->
 
 	</body>
 

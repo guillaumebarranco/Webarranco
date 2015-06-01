@@ -21,6 +21,26 @@ $(document).ready(function() {
 		$('.link-blog').addClass('active');
 	}
 
+
+	if($('.page-about').length != 0) {
+		$.ajax({
+			type : "GET",
+			url : SITE_URL+":3000/PSN/guillaumanga",
+			success: function(response){
+				console.log(response);
+				var trophies = response.trophySummary.earnedTrophies;
+				$('.bronze .trophies').append(trophies.bronze);
+				$('.silver .trophies').append(trophies.silver);
+				$('.gold .trophies').append(trophies.gold);
+				$('.platinum .trophies').append(trophies.platinum);
+			},
+			error: function(){
+				console.log('error');
+            }
+		});
+	}
+
+
 	// Déclenche l'animation des graphiques de compétences au scroll de la page
 
 	$(window).off('scroll');
