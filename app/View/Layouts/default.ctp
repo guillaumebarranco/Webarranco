@@ -102,16 +102,16 @@ require_once('config_url.php');
 			</div>
 		</footer>
 
-		<!--<?= $this->Html->script('min') ?>-->
+		<?= $this->Html->script('min') ?>
 
-		<!---->
+		<!--
 			<?= $this->Html->script('main') ?>
 			<?= $this->Html->script('modernizr.custom') ?>
 			<?= $this->Html->script('lightbox.min') ?>
 
-			For links nav hover effect 
+			<!--For links nav hover effect 
 			<?= $this->Html->script('classie') ?>
-		<!---->
+		<!--
 
 	</body>
 
