@@ -436,9 +436,34 @@ canvas {
 
 .article-page {
 	padding: 5px;
+	max-width: 600px;
 	p  {
-		width: 80%;
+		width: 90%;
 		text-align: justify;
+	}
+
+	ul {
+		width: 90%;
+		margin-top: 15px;
+
+		li {
+			//list-style: square;
+			margin-left: 15px;
+
+			ul {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.date {
+		text-align: right;
+		display: block;
+		margin-bottom: 15px;
+	}
+
+	pre {
+		margin: 15px 0 !important;
 	}
 }
 
