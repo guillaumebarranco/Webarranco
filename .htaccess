@@ -8,17 +8,26 @@
    RewriteRule ^.*$ https://webarranco.fr%{REQUEST_URI} [R=301,L] # <-- Mind the 'L'!
 
    RewriteRule ^$ app/webroot/ [L]
+
    RewriteCond %{REQUEST_FILENAME} !projets
    RewriteCond %{REQUEST_FILENAME} !lab
    RewriteCond %{REQUEST_FILENAME} !games
-   RewriteCond %{REQUEST_FILENAME} !pres_april77
-   RewriteCond %{REQUEST_FILENAME} !pres_kebhub
    RewriteCond %{REQUEST_FILENAME} !music
-   RewriteCond %{REQUEST_FILENAME} !rutorrent
-   RewriteCond %{REQUEST_FILENAME} !cakebox2
+   RewriteCond %{REQUEST_FILENAME} !Noddi
+   RewriteCond %{REQUEST_FILENAME} !image
    RewriteCond %{REQUEST_FILENAME} !old-index.php
-   RewriteCond %{REQUEST_FILENAME} !Duval
+   RewriteCond %{REQUEST_FILENAME} !bonnefetemaman
+   RewriteCond %{REQUEST_FILENAME} !read_mangas
+   RewriteCond %{REQUEST_FILENAME} !lightbox
+   RewriteCond %{REQUEST_FILENAME} !revealjs
+   RewriteCond %{REQUEST_FILENAME} !ecv
+   RewriteCond %{REQUEST_FILENAME} !iesa
+
    RewriteRule (.*) app/webroot/$1 [L]
 
    ErrorDocument 404 /404-not-found
+</IfModule>
+
+<IfModule mod_headers.c>    
+Header add Access-Control-Allow-Origin "http://webarranco.fr:8000"
 </IfModule>

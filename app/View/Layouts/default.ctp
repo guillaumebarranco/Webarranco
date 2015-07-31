@@ -52,7 +52,7 @@ require_once('config_url.php');
 					</li>
 					<li class="logo">
 						<a href="<?=WEB_URL?>/home">
-							<img src="<?=WEB_URL?>/img/build/link2.png"  width="130" alt="Logo du site" />
+							<img src="<?=WEB_URL?>/img/link2.png"  width="130" alt="Logo du site" />
 						</a>
 					</li>
 					<li>

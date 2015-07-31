@@ -87,9 +87,15 @@
 	</div>
 </div>
 
+<div class="psn" style="margin-top: 50px; text-align:center;">
+	<p>
+		Vous pouvez trouver à cette adresse la liste des mangas que j'ai lu sur un beau petit mélange d'Elasticsearch et d'Angular JS : <a href="http://webarranco.fr/read_mangas/" target="_blank">http://webarranco.fr/read_mangas/</a>
+	</p>
+</div>
+
 <div class="psn" style="margin-top: 50px; margin-bottom: 50px; text-align:center;">
 	<h2>API PSN</h2>
-	Trophées :
+	<p>Voici une récupération des trophées de mon compte Playstation via l'API PSN : </p>
 	<div class="bronze"><span class="trophies"></span> Bronze</div>
 	<div class="silver"><span class="trophies"></span> Argent</div>
 	<div class="gold"><span class="trophies"></span> or</div>
