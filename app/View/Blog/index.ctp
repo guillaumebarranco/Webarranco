@@ -6,14 +6,14 @@
 
 		<div class="article">
 			<div class="cover">
-				<img src="<?= $content[$n]['Blog']['cover'] ?>" alt="<?= $content[$n]['Blog']['alt'] ?>" />
+				<img src="<?=$this->request->base?>/<?= $content[$n]['Blog']['cover'] ?>" alt="<?= $content[$n]['Blog']['alt'] ?>" />
 			</div>
 			<div class="article-preview">
-				<h2><?= $content[$n]['Blog']['Title'] ?></h2>
-				<p><?= $content[$n]['Blog']['Content'] ?></p>
+				<h2><?= $content[$n]['Blog']['title'] ?></h2>
+				<p><?= $content[$n]['Blog']['content_pres'] ?></p>
 
 				<div class="right">
-					<a href="Blog/Article/<?= $content[$n]['Blog']['url'] ?>" class="btn_article">Voir l'article</a>
+					<a href="<?=$this->request->base?>/blog/article/<?= $content[$n]['Blog']['url'] ?>" class="btn_article">Voir l'article</a>
 				</div>
 			</div>
 		</div>

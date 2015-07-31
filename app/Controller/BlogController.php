@@ -6,9 +6,6 @@ class BlogController extends AppController {
 		
 		$content = $this->Blog->find('all');
 
-		//debug($content);
-		//die('ok');
-
 		$this->set(array(
             'content' => $content,
             '_serialize' => array('content')
@@ -17,7 +14,8 @@ class BlogController extends AppController {
 
 	public function article($url_article = '') {
 
-		$article = $this->Article->findByUrl($url_article);
+		$article = $this->Blog->findByUrl($url_article);
+
 		if (!$article) {
 	        throw new NotFoundException('Impossible de trouver cet article');
 	    }
@@ -26,10 +24,6 @@ class BlogController extends AppController {
             'article' => $article,
             '_serialize' => array('article')
         ));
-
-		//debug($article);
-		//die('ok');
-
 	}
 
 }

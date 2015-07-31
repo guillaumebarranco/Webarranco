@@ -16,7 +16,7 @@
 ?>
 <?= $this->Html->css('404'); ?>
 <div class="wrapper">
-	<a href="/home">Retour à l'accueil</a style="font-size: 25px;">
+	<a href="<?=$this->request->base?>">Retour à l'accueil</a style="font-size: 25px;">
 </div>
 <div class="container">
 	<div class="content">
