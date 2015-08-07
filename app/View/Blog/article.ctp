@@ -10,6 +10,7 @@
 		</div>
 		<h1><?= $article['Blog']['title'] ?></h1>
 		<i class="date">Ecrit le <?= substr($article['Blog']['created'], 0, 10) ?></i>
+
 		<?= $article['Blog']['content'] ?>
 	
 		<a href="<?=$this->request->base?>/<?=$article['Blog']['source']?>">Télécharger les sources</a>

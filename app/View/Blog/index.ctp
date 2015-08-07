@@ -2,22 +2,24 @@
 <div class="blog">
 	<h1>Le Blog de Webarranco</h1>
 
-	<?php for($n = 0; $n < count($content); $n++) { ?>
+	<?php foreach ($content as $article) {
 
-		<div class="article">
-			<div class="cover">
-				<img src="<?=$this->request->base?>/<?= $content[$n]['Blog']['cover'] ?>" alt="<?= $content[$n]['Blog']['alt'] ?>" />
-			</div>
-			<div class="article-preview">
-				<h2><?= $content[$n]['Blog']['title'] ?></h2>
-				<p><?= $content[$n]['Blog']['content_pres'] ?></p>
+		if($article['Blog']['content'] != null && $article['Blog']['content'] != '') { ?>
 
-				<div class="right">
-					<a href="<?=$this->request->base?>/blog/article/<?= $content[$n]['Blog']['url'] ?>" class="btn_article">Voir l'article</a>
+			<div class="article">
+				<div class="cover">
+					<img src="<?=$this->request->base?>/<?= $article['Blog']['cover'] ?>" alt="<?= $article['Blog']['alt'] ?>" />
+				</div>
+				<div class="article-preview">
+					<h2><?= $article['Blog']['title'] ?></h2>
+					<p><?= $article['Blog']['content_pres'] ?></p>
+
+					<div class="right">
+						<a href="<?=$this->request->base?>/blog/article/<?= $article['Blog']['url'] ?>" class="btn_article">Voir l'article</a>
+					</div>
 				</div>
 			</div>
-		</div>
 		
-	<?php } ?> 
+	<?php } } ?> 
 
 </div>
