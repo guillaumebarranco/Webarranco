@@ -101,6 +101,18 @@
 <?= $this->Html->script('angular.min.js') ?>
 
 <script type="text/javascript">
+
+function preg_replace (array_pattern, array_pattern_replace, my_string)  {
+	var new_string = String (my_string);
+		for (i=0; i<array_pattern.length; i++) {
+			var reg_exp= RegExp(array_pattern[i], "gi");
+			var val_to_replace = array_pattern_replace[i];
+			new_string = new_string.replace (reg_exp, val_to_replace);
+		}
+		return new_string;
+	}
+
+
 var myApp = angular.module('myApp', []);
         myApp.controller("Qctrl", function($scope, $http) {
         	$scope.vies = 3; // Compteur de vies
@@ -113,10 +125,18 @@ var myApp = angular.module('myApp', []);
             $scope.myValue = {};
             $scope.txt_error = "Veuillez proposer une réponse";
             $scope.error = false;
+
             $scope.doClick = function(item, event) {
             	if($scope.myValue.this != null) {
             		$scope.the_error = false;
-	            	if($scope.myValue.this.toLowerCase() == $scope.myValue.answer.toLowerCase()) {
+
+            		var pattern_accent = new Array("é", "è", "ê", "ë", "ç", "à", "â", "ä", "î", "ï", "ù", "ô", "ó", "ö");
+					var pattern_replace_accent = new Array("e", "e", "e", "e", "c", "a", "a", "a", "i", "i", "u", "o", "o", "o");
+
+
+	            	if(preg_replace(pattern_accent, pattern_replace_accent, $scope.myValue.this.toLowerCase()) == preg_replace(pattern_accent, pattern_replace_accent, $scope.myValue.answer.toLowerCase())) {
+
+
 	            	 // Si la réponse de l'utilisateur est bonne
 	            		$scope.good_answer = true;
 	            		$scope.score = $scope.score + 1;
@@ -130,7 +150,7 @@ var myApp = angular.module('myApp', []);
 	            		$scope.offset = $scope.offset + 1; // On passe à la question suivante
 		            	$scope.myValue.this = null;
 		            	$scope.myDatas = null;
-		                var response = $http.get("/Other/question/"+$scope.qu+'/'+$scope.offset);
+		                var response = $http.get(WEB_URL+"/other/question/"+$scope.qu+'/'+$scope.offset);
 
 		                response.success(function(data, status, headers, config) {
 		                	//console.log(data);
@@ -141,7 +161,7 @@ var myApp = angular.module('myApp', []);
 		                    alert("AJAX failed!");
 		                });
 	            	} else { // L'utilisateur n'a plus de vies
-	            		$http.get("/Score/insertScore/"+$scope.pseudo+"/"+$scope.score+"/"+$scope.myDatas['0']['Question']['type_name']);
+	            		$http.get(WEB_URL+"/Score/insertScore/"+$scope.pseudo+"/"+$scope.score+"/"+$scope.myDatas['0']['Question']['type_name']);
 	            		//insertScore($name = "", $score = 1, $quizz ="")
 	            	}
 	            } else { // L'utilisateur n'a rien rentré dans l'input
@@ -160,7 +180,7 @@ var myApp = angular.module('myApp', []);
 
             	$scope.myValue.this = null;
             	$scope.myDatas = null;
-                var response = $http.get("/Other/question/"+$scope.qu+'/1');
+                var response = $http.get(WEB_URL+"/Other/question/"+$scope.qu+'/1');
 
                 response.success(function(data, status, headers, config) {
                 	//console.log(data);
