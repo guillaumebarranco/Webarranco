@@ -716,7 +716,12 @@ $(document).ready(function() {
 		});
 	});
 
-<<<<<<< HEAD
+	var x;
+    var y;
+    var width;
+    var div;
+    var uniqid;
+
 	$('a').click(function(e) {
 		e.stopPropagation();
 	}); 
