@@ -716,4 +716,72 @@ $(document).ready(function() {
 		});
 	});
 
+	$('a').click(function(e) {
+		e.stopPropagation();
+	}); 
+
+	$(document).on('click', function(e) {
+        x = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft; 
+  		y = e.clientY + document.body.scrollTop + document.documentElement.scrollTop; 
+
+        width = 20;
+
+        //console.log(x);
+        console.log(y);
+
+        x = x - (width/2);
+        y = y - (width/2);
+
+        uniqid = (new Date()).getTime()
+
+        div =
+            '<div class="koko" data-id="'+uniqid+'" style="position:absolute;top:'+y+'px; left:'+x+'px;width:'+width+'px;height:'+width+'px; background-color:#008cba;border-radius:50%;opacity: .6;-webkit-transition: 0.6s;">'+
+
+            '</div>'
+        ;
+
+        $('body').append(div);
+
+        setTimeout(function() {          
+
+            // $('.koko').css('width',  (width*2)+'px');
+            // $('.koko').css('height',  (width*2)+'px');
+
+            // $('.koko').css('top',  (y-width/2)+'px');
+            // $('.koko').css('left',  (x-width/2)+'px');
+
+            // $('.koko').css('opacity',  '.3');
+
+            $('.koko[data-id='+uniqid+']').css('width',  (width*2)+'px');
+            $('.koko[data-id='+uniqid+']').css('height',  (width*2)+'px');
+
+            $('.koko[data-id='+uniqid+']').css('top',  (y-width/2)+'px');
+            $('.koko[data-id='+uniqid+']').css('left',  (x-width/2)+'px');
+
+            $('.koko[data-id='+uniqid+']').css('opacity',  '.3');
+
+            setTimeout(function() {
+                $('.koko[data-id='+uniqid+']').remove();
+
+                $('.koko').each(function() {
+
+                    if(parseInt($(this).attr('data-id')) != uniqid) {
+                        if(parseInt($(this).attr('data-id')) < (uniqid+350)) {
+                            $(this).remove();
+                        }
+                    }
+                    
+                });
+
+            }, 350);
+
+        }, 20);
+
+        
+        // $('.koko').css('left',  $('.koko').css('left')+(width+'px'));
+        // $('.koko').css('width',  $('.koko').css('width')+((width*2)+'px'));
+        // $('.koko').css('height',  $('.koko').css('height')+((width*2)+'px'));
+
+    });
+
 });
