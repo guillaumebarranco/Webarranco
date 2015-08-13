@@ -22,6 +22,7 @@
    RewriteCond %{REQUEST_FILENAME} !revealjs
    RewriteCond %{REQUEST_FILENAME} !ecv
    RewriteCond %{REQUEST_FILENAME} !iesa
+   RewriteCond %{REQUEST_FILENAME} !MI-Jump
 
    RewriteRule (.*) app/webroot/$1 [L]
 
@@ -29,5 +30,8 @@
 </IfModule>
 
 <IfModule mod_headers.c>    
-Header add Access-Control-Allow-Origin "http://webarranco.fr:8000"
+#Header add Access-Control-Allow-Origin "http://webarranco.fr:8000"
+Header add Access-Control-Allow-Origin "http://localhost"
+
+
 </IfModule>
