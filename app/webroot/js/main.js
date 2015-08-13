@@ -716,6 +716,7 @@ $(document).ready(function() {
 		});
 	});
 
+<<<<<<< HEAD
 	$('a').click(function(e) {
 		e.stopPropagation();
 	}); 
@@ -783,5 +784,19 @@ $(document).ready(function() {
         // $('.koko').css('height',  $('.koko').css('height')+((width*2)+'px'));
 
     });
+
+	if($('.page-about').length != 0) {
+		$.ajax({
+			type : "GET",
+			url : "http://www.webarranco:3000/PSN/guillaumanga",
+			success: function(response){
+				console.log(response);
+			},
+			error: function(){
+				console.log('error');
+            }
+		});
+	}
+	
 
 });

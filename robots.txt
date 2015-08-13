@@ -1,2 +1,6 @@
 User-agent: *
 Sitemap: http://www.webarranco.fr/sitemap.xml
+Disallow: ecv/
+Disallow: /ecv/
+Disallow: iesa/
+Disallow: /iesa/

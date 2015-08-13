@@ -1,13 +1,20 @@
 <div ng-app="myApp" style="margin: 0 auto;width:500px;">
+
 	<div ng-controller="Qctrl">
+
 		<div ng-hide="showall">
 			<h1>Bienvenue sur la page Quizz de Webarranco !</h1>
 			<label for="pseudo">Veuillez choisir un pseudo</label>
 			<input type="text" name="pseudo" id="pseudo" style="width:300px;" ng-model="pseudo" />
 			<button ng-click="showall=true;">Commencer</button>
 		</div>
+		
 		<div ng-show="showall">
 			<h2 ng-hide="showme">Choisissez un Quizz</h2>
+			<p ng-hide="showme">
+				Chaque réponse doit être en UN SEUL MOT ou un seul nombre. <br /><br />
+				Lorsque la question demande "combien" ou que la réponse peut être faite en chiffre/nombre, il faut répondre ainsi.
+			</p>
 		</div>
 			
 		<?php foreach ($quizz as $key => $this_quizz) { ?>
@@ -98,6 +105,8 @@
 	</div>
 </div>
 
+<br><br>
+
 <?= $this->Html->script('angular.min.js') ?>
 
 <script type="text/javascript">
@@ -144,7 +153,6 @@ var myApp = angular.module('myApp', []);
 	            		$scope.bad_answer = true;
 	            		$scope.vies = $scope.vies - 1;
 	            	}
-	            	//console.log($scope.myValue);
 
 	            	if($scope.vies != 0) { // Si l'utilisateur a encore des vies
 	            		$scope.offset = $scope.offset + 1; // On passe à la question suivante
@@ -153,7 +161,6 @@ var myApp = angular.module('myApp', []);
 		                var response = $http.get(WEB_URL+"/other/question/"+$scope.qu+'/'+$scope.offset);
 
 		                response.success(function(data, status, headers, config) {
-		                	//console.log(data);
 		                    $scope.myDatas = data.questions;
 		                    setTimeout(function(){$scope.bad_answer = false;$scope.good_answer = false;}, 500);
 		                });
@@ -165,7 +172,6 @@ var myApp = angular.module('myApp', []);
 	            		//insertScore($name = "", $score = 1, $quizz ="")
 	            	}
 	            } else { // L'utilisateur n'a rien rentré dans l'input
-	            	//console.log('error');
 	            	$scope.the_error = true;
 	            }
             }
@@ -183,7 +189,6 @@ var myApp = angular.module('myApp', []);
                 var response = $http.get(WEB_URL+"/Other/question/"+$scope.qu+'/1');
 
                 response.success(function(data, status, headers, config) {
-                	//console.log(data);
                     $scope.myDatas = data.questions;
                 });
                 response.error(function(data, status, headers, config) {
