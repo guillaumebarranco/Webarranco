@@ -18,14 +18,15 @@ require_once('config_url.php');
 		<meta name="twitter:creator" content="@Webarranco"/>
 		<link rel="publisher" href="https://plus.google.com/105422105949000889772">
 
-		
+		<!--
 			<?= $this->Html->css('foundation') ?>
 			<?= $this->Html->css('foundation-icons') ?>
 			<?= $this->Html->css('lightbox') ?>
 			<?= $this->Html->css('index') ?>
+			-->
 		
 
-		<!--<?= $this->Html->css('min') ?>-->
+		<?= $this->Html->css('min') ?>
 
 		<script>
 			var WEB_URL = "<?=WEB_URL?>";
@@ -102,16 +103,16 @@ require_once('config_url.php');
 			</div>
 		</footer>
 
+		
 		<?= $this->Html->script('min') ?>
-
-		<!--
-			<?= $this->Html->script('main') ?>
-			<?= $this->Html->script('modernizr.custom') ?>
-			<?= $this->Html->script('lightbox.min') ?>
-
-			<!--For links nav hover effect 
-			<?= $this->Html->script('classie') ?>
-		<!--
+	
+		<!--<?= $this->Html->script('main') ?>
+		<?= $this->Html->script('modernizr.custom') ?>
+		<?= $this->Html->script('lightbox.min') ?>
+		
+		<?= $this->Html->script('classie') ?>-->
+		<!--For links nav hover effect -->
+		
 
 	</body>
 
