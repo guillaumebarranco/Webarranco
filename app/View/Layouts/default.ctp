@@ -24,6 +24,7 @@ require_once('config_url.php');
 			<?= $this->Html->css('lightbox') ?>
 			<?= $this->Html->css('index') ?>
 		
+		
 
 		<!--<?= $this->Html->css('min') ?>-->
 
@@ -102,16 +103,16 @@ require_once('config_url.php');
 			</div>
 		</footer>
 
+		
 		<?= $this->Html->script('min') ?>
-
-		<!--
-			<?= $this->Html->script('main') ?>
-			<?= $this->Html->script('modernizr.custom') ?>
-			<?= $this->Html->script('lightbox.min') ?>
-
-			<!--For links nav hover effect 
-			<?= $this->Html->script('classie') ?>
-		<!--
+	
+		<!--<?= $this->Html->script('main') ?>
+		<?= $this->Html->script('modernizr.custom') ?>
+		<?= $this->Html->script('lightbox.min') ?>
+		
+		<?= $this->Html->script('classie') ?>-->
+		<!--For links nav hover effect -->
+		
 
 	</body>
 

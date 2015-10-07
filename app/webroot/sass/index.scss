@@ -28,6 +28,10 @@ $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
   @return #{$pixels/$context}em;
 }
+.restcool {
+	height: 310px;
+	padding-left: 10px;
+}
 
 /*
 *	GENERAL
@@ -235,6 +239,29 @@ canvas {
 	}
 }
 
+
+
+.logo_svg {
+	width: 26px;
+    height: 49px;	
+}
+
+.logo_npm {
+	width: 26px;
+    height: 49px;
+
+    path {
+    	fill: $blanc;
+    }
+}
+
+.outer-ring {
+	fill: $blanc;
+}
+.inner-box {
+	fill: $blanc;
+}
+
 .socials {
 	margin: 0;
 	margin-bottom: 20px;
@@ -245,6 +272,17 @@ canvas {
 		display: inline-block;
 		margin-left: 10px;
 		cursor: pointer;
+
+
+			&.codepen, &.npm {
+				position: relative;
+				top: 7px;
+
+				svg {
+					position: relative;
+					top: 2px;
+				}
+			}
 
 		a {
 			@include transition(0.4s);
@@ -1081,6 +1119,14 @@ $width_bloc : 150px;
 		}
 		.github a:hover {
 			background-color: black;
+		}
+
+		.codepen a:hover {
+			background-color: black;
+		}
+
+		.npm a:hover {
+			background-color: #cb3837;
 		}
 	}
 

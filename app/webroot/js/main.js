@@ -722,7 +722,7 @@ $(document).ready(function() {
     var div;
     var uniqid;
 
-	$('a').click(function(e) {
+	$('a, button, input, p').click(function(e) {
 		e.stopPropagation();
 	}); 
 

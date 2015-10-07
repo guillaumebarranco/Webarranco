@@ -15,6 +15,7 @@
    RewriteCond %{REQUEST_FILENAME} !music
    RewriteCond %{REQUEST_FILENAME} !Noddi
    RewriteCond %{REQUEST_FILENAME} !image
+   RewriteCond %{REQUEST_FILENAME} !docweb
    RewriteCond %{REQUEST_FILENAME} !old-index.php
    RewriteCond %{REQUEST_FILENAME} !bonnefetemaman
    RewriteCond %{REQUEST_FILENAME} !read_mangas
@@ -22,7 +23,11 @@
    RewriteCond %{REQUEST_FILENAME} !revealjs
    RewriteCond %{REQUEST_FILENAME} !ecv
    RewriteCond %{REQUEST_FILENAME} !iesa
-   RewriteCond %{REQUEST_FILENAME} !MI-Jump
+   RewriteCond %{REQUEST_FILENAME} !MIJump
+   RewriteCond %{REQUEST_FILENAME} !angye
+   RewriteCond %{REQUEST_FILENAME} !elastique
+   RewriteCond %{REQUEST_FILENAME} !appart
+   RewriteCond %{REQUEST_FILENAME} !crypte
 
    RewriteRule (.*) app/webroot/$1 [L]
 
