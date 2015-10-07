@@ -19,7 +19,7 @@
 				<img class="willchange" src="img/build/myPicture.jpg" alt="Photo de Guillaume Barranco" width="140" class="myPicture" />
 			</div>
 			<p>
-				Un jeune développeur passionné par le web depuis des années et actuellement en Licence Chef de Projet Multimedia travaillant pour l'entreprise <a href="http://www.playapp.net">Playapp</a>. <br />
+				Un jeune développeur passionné par le web depuis des années et actuellement en Licence Chef de Projet Multimedia travaillant pour l'entreprise <a href="http://weblib.eu/">Weblib</a>. <br />
 				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="/about">un exemple ici</a> !<br />
 				Un pro avant tout, un jeune curieux et avide de connaissances qui ne demande qu'à apprendre et transmettre après.
 			</p>
@@ -89,7 +89,7 @@
 
 		<div class="bloc large-4 columns">
 			<h2>Me Contacter</h2>
-			<div>guillaume.barranco@playapp.net</div>
+			<div>guillaume.barranco8@hotmail.fr</div>
 			<a href="/contact" class="mail">
 				<i class="fi-mail size-80"></i>
 			</a>

@@ -28,6 +28,10 @@ $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
   @return #{$pixels/$context}em;
 }
+.restcool {
+	height: 310px;
+	padding-left: 10px;
+}
 
 /*
 *	GENERAL

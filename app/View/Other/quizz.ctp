@@ -1,6 +1,6 @@
 <div ng-app="myApp" style="margin: 0 auto;width:500px;">
 
-	<div ng-controller="Qctrl">
+	<div ng-controller="Qctrl" class="restcool">
 
 		<div ng-hide="showall">
 			<h1>Bienvenue sur la page Quizz de Webarranco !</h1>

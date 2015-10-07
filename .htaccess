@@ -26,6 +26,8 @@
    RewriteCond %{REQUEST_FILENAME} !MIJump
    RewriteCond %{REQUEST_FILENAME} !angye
    RewriteCond %{REQUEST_FILENAME} !elastique
+   RewriteCond %{REQUEST_FILENAME} !appart
+   RewriteCond %{REQUEST_FILENAME} !crypte
 
    RewriteRule (.*) app/webroot/$1 [L]
 

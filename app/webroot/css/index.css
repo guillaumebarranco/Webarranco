@@ -98,7 +98,10 @@ ul li {
   top: 0;
   margin: 5px 20px 0 20px;
 }
-
+.restcool {
+  height: 310px;
+  padding-left: 10px;
+}
 /* line 110, ../sass/index.scss */
 .wrapper {
   max-width: 1200px;
