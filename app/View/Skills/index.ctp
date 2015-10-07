@@ -15,7 +15,7 @@
 			<ul>
 				<li>HTML5/CSS3</li>
 				<li>Préprocesseurs : SASS(Compass) / LESS</li>
-				<li>Frameworks ! Zurb Foundation / Bootstrap</li>
+				<li>Frameworks : Zurb Foundation / Bootstrap</li>
 				<li>Compatibilité IE / Responsive</li>
 			</ul>
 		</li>
@@ -25,7 +25,7 @@
 			<ul>
 				<li>Librairies : JQuery / Underscore.js</li>
 				<li>Frameworks : Angular JS / Node.js</li>
-				<li>Outils : Grunt/Gulp/Bower</li>
+				<li>Outils : Grunt/Gulp/Bower/Babel</li>
 				<li>WebGL : Three.js (experiments)</li>
 			</ul>
 		</li>
@@ -36,7 +36,7 @@
 				<li>POO / PHP5</li>
 				<li>Modèle MVC</li>
 				<li>Frameworks : ZF2 / CakePHP / Symfony2</li>
-				<li>Doctrine</li>
+				<li>Doctrine et autres ORM</li>
 				<li>MySQL / NoSQL (experiments)</li>
 			</ul>
 		</li>

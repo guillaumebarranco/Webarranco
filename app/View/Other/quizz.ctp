@@ -1,12 +1,15 @@
-<div ng-app="myApp" style="margin: 0 auto;width:500px;">
+<div ng-app="myApp" style="margin: 0 auto;" class="myApp">
 
 	<div ng-controller="Qctrl" class="restcool">
 
 		<div ng-hide="showall">
 			<h1>Bienvenue sur la page Quizz de Webarranco !</h1>
-			<label for="pseudo">Veuillez choisir un pseudo</label>
-			<input type="text" name="pseudo" id="pseudo" style="width:300px;" ng-model="pseudo" />
-			<button ng-click="showall=true;">Commencer</button>
+
+			<div class="center">
+				<label for="pseudo">Veuillez choisir un pseudo</label>
+				<input type="text" name="pseudo" id="pseudo" ng-model="pseudo" />
+				<button ng-click="showall=true;">Commencer</button>
+			</div>
 		</div>
 		
 		<div ng-show="showall">
@@ -71,16 +74,16 @@
 				
 				<div ng-repeat="myData in myDatas">
 
-					<div ng-if="vies > 0">
+					<div class="the_data" ng-if="vies > 0">
 						{{'Question '+(offset)}}
-						<p style="width:450px;">
+						<p>
 							{{myData.Question.name}}
 						</p>
 						<div style="color: red;" ng-show="the_error">
 							{{txt_error}}
 						</div>
 						
-						<input ng-focus="" type="text" style="width:300px;" ng-model="myValue.this" required="required" />
+						<input ng-focus="" type="text" ng-model="myValue.this" required="required" />
 
 						<button ng-click="
 						myValue.answer = myData.Question.answer;

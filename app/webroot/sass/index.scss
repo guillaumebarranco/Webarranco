@@ -28,9 +28,42 @@ $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
   @return #{$pixels/$context}em;
 }
-.restcool {
-	height: 310px;
-	padding-left: 10px;
+
+.animate-show {
+	margin-bottom: 20px;
+}
+
+.myApp {
+	min-height: 310px;
+	padding: 10px;
+	max-width: 500px;
+	margin: 0 auto;
+
+	h1 {
+		text-align: center;
+	}
+
+	input {
+		max-width: 300px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	input[name=pseudo] {
+		max-width: 300px;
+		margin: 0 auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.the_data {
+		margin-top: 20px;
+	}
+
+	.center {
+		margin: 0 auto;
+		text-align: center;
+	}
 }
 
 /*

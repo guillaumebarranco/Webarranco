@@ -94,10 +94,12 @@
 </div>
 
 <div class="psn" style="margin-top: 50px; margin-bottom: 50px; text-align:center;">
-	<h2>API PSN</h2>
+	<!-- <h2>API PSN</h2>
 	<p>Voici une récupération des trophées de mon compte Playstation via l'API PSN : </p>
 	<div class="bronze"><span class="trophies"></span> Bronze</div>
 	<div class="silver"><span class="trophies"></span> Argent</div>
 	<div class="gold"><span class="trophies"></span> or</div>
-	<div class="platinum"><span class="trophies"></span> Platine</div>
+	<div class="platinum"><span class="trophies"></span> Platine</div> -->
+	PSN : 16 Trophées Platine <br />
+	Mangas : 453 mangas
 </div>

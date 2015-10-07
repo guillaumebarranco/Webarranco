@@ -175,12 +175,5 @@
 			</div>
 		</div>
 	</div>
-	<?php
-                // $tab = "Ackerman, Aokiji', Astria, Barbe . Pourpre, ben422, chefbonheur, Cygheks, Daikhi, darkpotatoes, Diable D Sanji, Eishi, G-rome974, Gear 2nd, Getsu, Gohanssj3, HashiRonan, Hiken', Hyorin, hypnotiser, inuyasha190, Jaaws, Journey, Kakashi D Reborn, kevv, Kptain-Ussopeuh, KURAMA-Naruto, Le seigneur dés kabyles, LeBaka, Linelia, Lucifer, Maddog, madman, Master of Madness, Mervix, MONKEY D KOALA, Monkey D. Julio, Monkey.D Tôshiro, Monkey.D.64, Mrs-Fatale, natsu45, Ninarbi, Nono D Broly, OMEGA97, panini_no_nutella, pepiin, Perona Sama, pikel999, Raleygh 009, Rijix, Samael, Santarashi, Say D. Dorian, Shika', Shiro_38, Skull_joke, Strix, Sun guardian, sygfried94, Tobias, Tobiuo Riders, totor92, Uchiwa-Luffy, Udine, Und3r, Unholyscream, Zetsu-yan, Zoltal";
 
-                // $the_tab = explode(',', $tab);
-                // var_dump(count($the_tab));
-
-
-            ?>
 </section>
