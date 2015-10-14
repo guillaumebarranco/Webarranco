@@ -20,6 +20,9 @@ $(document).ready(function() {
 				'contact': function() {
 					window.location.href =  SITE_URL+"/contact";
 				},
+				'about': function() {
+					window.location.href =  SITE_URL+"/about";
+				},
 				'superman': function() {
 					window.location.href =  SITE_URL+"/games/superman";
 				},
