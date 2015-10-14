@@ -1,5 +1,20 @@
 $(document).ready(function() {
 
+	if (annyang) {
+	  // Let's define our first command. First the text we expect, and then the function it should call
+	  var commands = {
+	    'home': function() {
+	    	window.location.href =  SITE_URL+"/home";
+	    }
+	  };
+
+	  // Add our commands to annyang
+	  annyang.addCommands(commands);
+
+	  // Start listening. You can call this here, or attach this call to an event, button, etc.
+	  annyang.start();
+	}
+
 	// Gère les classes actives des liens du menu en fonction de la page courant
 
 	if($('.page-about').length !== 0) {

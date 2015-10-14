@@ -1,4 +1,4 @@
-<div ng-app="myApp" style="margin: 0 auto;" class="myApp">
+<div ng-app="myApp" class="myApp">
 
 	<div ng-controller="Qctrl" class="restcool">
 

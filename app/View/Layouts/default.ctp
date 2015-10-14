@@ -102,6 +102,8 @@ require_once('config_url.php');
 			</div>
 		</footer>
 
+		<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.0.0/annyang.min.js"></script>
+
 		<?php if(ENV === 'dev') { ?>
 			<?= $this->Html->script('main') ?>
 			<?= $this->Html->script('modernizr.custom') ?>
