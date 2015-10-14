@@ -1,18 +1,36 @@
 $(document).ready(function() {
 
-	if (annyang) {
-	  // Let's define our first command. First the text we expect, and then the function it should call
-	  var commands = {
-	    'home': function() {
-	    	window.location.href =  SITE_URL+"/home";
-	    }
-	  };
+	if($(window).width() < 900) {
 
-	  // Add our commands to annyang
-	  annyang.addCommands(commands);
+		if (annyang) {
 
-	  // Start listening. You can call this here, or attach this call to an event, button, etc.
-	  annyang.start();
+			var commands = {
+				'home': function() {
+					window.location.href =  SITE_URL+"/home";
+				},
+				'blog': function() {
+					window.location.href =  SITE_URL+"/blog";
+				},
+				'skills': function() {
+					window.location.href =  SITE_URL+"/skills";
+				},
+				'projects': function() {
+					window.location.href =  SITE_URL+"/projects";
+				},
+				'contact': function() {
+					window.location.href =  SITE_URL+"/contact";
+				},
+				'superman': function() {
+					window.location.href =  SITE_URL+"/games/superman";
+				},
+				'quizz': function() {
+					window.location.href =  SITE_URL+"/other/quizz";
+				}
+			};
+
+			annyang.addCommands(commands);
+			annyang.start();
+		}
 	}
 
 	// Gère les classes actives des liens du menu en fonction de la page courant
