@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	if($(window).width() < 900) {
+	//if($(window).width() < 900) {
 
 		if (annyang) {
 
@@ -26,7 +26,7 @@ $(document).ready(function() {
 				'superman': function() {
 					window.location.href =  SITE_URL+"/games/superman";
 				},
-				'quizz': function() {
+				'question': function() {
 					window.location.href =  SITE_URL+"/other/quizz";
 				}
 			};
@@ -34,7 +34,7 @@ $(document).ready(function() {
 			annyang.addCommands(commands);
 			annyang.start();
 		}
-	}
+	//}
 
 	// Gère les classes actives des liens du menu en fonction de la page courant
 
