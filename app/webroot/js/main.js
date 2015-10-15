@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	//if($(window).width() < 900) {
 
-		if (annyang) {
+		if (annyang && $('.page-home').length !== 0) {
 
 			var commands = {
 				'home': function() {
