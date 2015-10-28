@@ -30,7 +30,6 @@ $(document).ready(function() {
 					window.location.href =  SITE_URL+"/other/quizz";
 				},
 				'tony': function() {
-					window.location.href =  SITE_URL+"/other/quizz";
 					$('body').empty().append('<h1>Alléééééééééééééééééé totoooooooooooooooooooo !</h1>');
 				}
 			};
