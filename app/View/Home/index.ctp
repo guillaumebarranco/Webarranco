@@ -20,7 +20,7 @@
 			</div>
 			<p>
 				Un jeune développeur passionné par le web depuis des années et actuellement en Licence Chef de Projet Multimedia travaillant pour l'entreprise <a target="_blank" href="http://weblib.eu/">Weblib</a>. <br />
-				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="<?=$this->request->base?>/about">un exemple ici</a> !<br />
+				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="http://webarranco.fr/read_mangas/">un exemple ici</a> !<br />
 				Un pro avant tout, un jeune curieux et avide de connaissances qui ne demande qu'à apprendre et transmettre après.
 			</p>
 		</div>
@@ -162,7 +162,7 @@
 				<li>- M'ennuyer</li>
 			</ul>
 			<p>
-				Pour plus d'informations sur moi, mes passions, mes mangas favoris, je vous invite à regarder <a href="/about">ma page perso</a>.
+				Pour plus d'informations sur moi, mes passions, mes mangas favoris, je vous invite à regarder <a href="<?=$this->request->base?>/about">ma page perso</a>.
 			</p>
 			<div class="txt-cheat-code">Toujours plus marrant d'avoir un cheat code !</div>
 			<div class="cheat-code">
