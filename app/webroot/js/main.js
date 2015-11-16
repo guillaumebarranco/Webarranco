@@ -66,6 +66,8 @@ $(document).ready(function() {
 		}
 	}
 
+	putActiveOnLink();
+
 	function getPSN() {
 		$.ajax({
 			type : "GET",
