@@ -10,6 +10,7 @@ $(document).ready(function() {
 
 	$('.project-type li a').off('click');
 	$('.project-type li a').on('click', function(e) {
+
 		e.preventDefault();
 		$('.project-type li a').removeClass('active-project');
 		$(this).addClass('active-project');
@@ -22,7 +23,6 @@ $(document).ready(function() {
 			data_type = $(this).attr('data-type');
 			displayProjects(data_type);
 		}
-
 	});
 
 	$(document).off('click', '.timeline-circle');
@@ -89,6 +89,7 @@ $(document).ready(function() {
 	});
 
 	function displayProjects(type, callback) {
+		
 		$.ajax({
 			type : "POST",
 			url : WEB_URL+"/projects/view/"+type,

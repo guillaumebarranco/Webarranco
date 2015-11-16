@@ -5,7 +5,7 @@
 
 		<p>
 			Un projet à proposer, une idée impossible à mettre en oeuvre ? <br />
-			Rien n'est impossible ! N'hésitez pas à <a href="/contact">me contacter</a> pour n'importe quelle demande que ce soit !
+			Rien n'est impossible ! N'hésitez pas à <a href="<?=$this->request->base?>/contact">me contacter</a> pour n'importe quelle demande que ce soit !
 		</p>
 	</div>
 
@@ -90,7 +90,7 @@
 		<div class="bloc large-4 columns">
 			<h2>Me Contacter</h2>
 			<div>guillaume.barranco8@hotmail.fr</div>
-			<a href="/contact" class="mail">
+			<a href="<?=$this->request->base?>/contact" class="mail">
 				<i class="fi-mail size-80"></i>
 			</a>
 			<ul class="socials">
