@@ -1,9 +1,8 @@
-<?php 
-require_once('config_url.php');
-?>
+<?php require_once('config_url.php'); ?>
 
 <!DOCTYPE HTML>
 <html lang="fr">
+
 	<head>
 		<meta charset="UTF-8" />
 	
@@ -28,8 +27,8 @@ require_once('config_url.php');
 		<?php } ?>
 		
 		<script>
-			var WEB_URL = "<?=WEB_URL?>";
-			var SITE_URL = "<?=SITE_URL?>";
+			var WEB_URL = "<?=WEB_URL?>",
+				SITE_URL = "<?=SITE_URL?>";
 		</script>
 
 		<?= $this->Html->script('jquery-1.11.1') ?>
@@ -37,9 +36,10 @@ require_once('config_url.php');
 	</head>
 
 	<body>
-		<header id="header">
 
-			<nav id="navigation">
+		<header id="header" role="banner">
+			<nav id="navigation" role="navigation">
+
 				<ul class="menu">
 					<li>
 						<a class="link-nav link-home cbutton" href="<?=WEB_URL?>/home">Accueil</a>
@@ -80,19 +80,17 @@ require_once('config_url.php');
 						<li><a class="link-nav link-about" href="<?=WEB_URL?>/about">A Propos</a></li>
 						<li><a class="link-nav link-contact" href="<?=WEB_URL?>/contact">Contact</a></li>
 					</ul>
-
 				</div>
 			</nav>
 
-			<a href="<?=WEB_URL?>/home" class="logo_mobile">
+			<a href="<?=WEB_URL?>/home" class="logo_mobile" title="Retour à l'accueil">
 				<img src="<?=WEB_URL?>/img/build/link2.png"  width="70" alt="Logo du site" />
 			</a>
-
 		</header>
 
 		<?= $this->fetch('content'); ?>
 
-		<footer id="footer">
+		<footer id="footer" role="contentinfo">
 			<div>© Copyright Webarranco 2015</div>
 			
 			<div class="separator"></div>

@@ -1,5 +1,4 @@
-<div class="page-home"></div>
-<div id="large-header" class="bloc-one">
+<div id="large-header" class="bloc-one" class="page-home">
 	<div class="index" style="color: white;">
 		<h1>Un développeur web pétillant pour vous !</h1>
 
@@ -11,7 +10,9 @@
 
 	<canvas id="demo-canvas" style="position: absolute;left: 0;top: 0;"></canvas>
 </div>
-<section class="wrapper">
+
+<section class="wrapper" role="main">
+
 	<div class="row">
 		<div class="bloc large-4 columns">
 			<h2>Qui suis-je ?</h2>
@@ -175,5 +176,4 @@
 			</div>
 		</div>
 	</div>
-
 </section>

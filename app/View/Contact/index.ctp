@@ -1,9 +1,6 @@
-<div class="page-contact"></div>
-<section class="wrapper">
+<section class="wrapper page-contact div-contact" role="main">
 
 	<h1>Contactez-moi</h1>
-
-	<div class="div-contact">
 
 		<div class="infos-contact">Guillaume Barranco - Développeur Web</div>
 		<div class="infos-contact">10 Allée des Hautes tiges, 93160 Noisy Le Grand</div>
@@ -58,6 +55,4 @@
 			</div>
 
 		</form>
-
-	</section>
 </div>
