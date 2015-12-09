@@ -15,7 +15,7 @@
 						<p><?= $article['Blog']['content_pres'] ?></p>
 
 						<div class="right">
-							<a href="<?=$this->request->base?>/blog/article/<?= $article['Blog']['url'] ?>" class="btn_article">Voir l'article</a>
+							<a href="<?=$this->request->base?>/blog/article/<?= $article['Blog']['url'] ?>" title="Voir l'article" aria-label="<?= $article['Blog']['title'] ?> (Voir l'article)" class="btn_article">Voir l'article</a>
 						</div>
 					</div>
 				</div>

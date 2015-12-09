@@ -39,7 +39,6 @@
 
 		<header id="header" role="banner">
 			<nav id="navigation" role="navigation">
-
 				<ul class="menu">
 					<li>
 						<a class="link-nav link-home cbutton" href="<?=WEB_URL?>/home">Accueil</a>
@@ -96,7 +95,7 @@
 			<div class="separator"></div>
 
 			<div class="footer-contact">
-				<a href="<?=WEB_URL?>/contact">Contact</a>
+				<a href="<?=WEB_URL?>/contact" title="Se rendre sur la page de contact">Contact</a>
 			</div>
 		</footer>
 

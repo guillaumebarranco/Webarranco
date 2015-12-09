@@ -5,7 +5,7 @@
 	<div class="article-page">
 
 		<div class="right">
-			<a href="/Webarranco/Blog">Retour</a>
+			<a href="/Webarranco/Blog" title="Retour sur la liste des articles">Retour</a>
 		</div>
 
 		<h1><?= $article['Blog']['title'] ?></h1>
@@ -13,6 +13,6 @@
 
 		<?= $article['Blog']['content'] ?>
 	
-		<a href="<?=$this->request->base?>/<?=$article['Blog']['source']?>">Télécharger les sources</a>
+		<a href="<?=$this->request->base?>/<?=$article['Blog']['source']?>" title="Télécharger les sources">Télécharger les sources</a>
 	</div>
 </div>
