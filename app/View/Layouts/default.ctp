@@ -28,8 +28,15 @@
 		
 		<script>
 			var WEB_URL = "<?=WEB_URL?>",
-				SITE_URL = "<?=SITE_URL?>";
+				SITE_URL = "<?=SITE_URL?>",
+				autorisedMic = false;
 		</script>
+
+		<?php  if(isset($_GET['micro'])) {
+			echo '<script>autorisedMic = true;</script>';
+		} ?>
+
+		<script>console.log('autorisedMic', autorisedMic);</script>
 
 		<?= $this->Html->script('jquery-1.11.1') ?>
 

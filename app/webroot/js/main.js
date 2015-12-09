@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 		//if($(window).width() < 900) {
 
-			if (annyang && $('.page-home').length !== 0) {
+			if (annyang && autorisedMic) {
 
 				var commands = {
 					'home': function() {
