@@ -162,6 +162,9 @@
 				<li>- Faire du sport</li>
 				<li>- Ecrire</li>
 				<li>- Le Coca Cherry</li>
+				<li style="margin-bottom: 15px;">
+					<span style="font-size:10px; position: absolute;">- Utiliser un paramètre GET "micro" pour naviguer entre mes pages à la voix</span>
+				</li>
 			</ul>
 			<ul class="dislike">Je n'aime pas :
 				<li>- M'ennuyer</li>

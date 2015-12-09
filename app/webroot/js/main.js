@@ -33,7 +33,11 @@ $(document).ready(function() {
 					},
 					'tony': function() {
 						$('body').empty().append('<h1>Alléééééééééééééééééé totoooooooooooooooooooo !</h1>');
+					},
+					'warp': function() {
+						afterWarp();
 					}
+					
 				};
 
 				annyang.addCommands(commands);
