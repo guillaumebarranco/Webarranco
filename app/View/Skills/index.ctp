@@ -1,7 +1,7 @@
 <!--<?= $this->Html->css('build/reveal_default') ?>-->
 <div class="page-skills"></div>
 
-<section class="wrapper">
+<section class="wrapper" role="main">
 
 	<h1>Le développeur Full Stack : Un couteau suisse</h1>
 
@@ -52,12 +52,7 @@
 			</ul>
 		</li>
 	</ul>
-	
 </section>
-
-
-
-
 
 <!--
 <style>

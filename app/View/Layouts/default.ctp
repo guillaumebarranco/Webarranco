@@ -1,9 +1,8 @@
-<?php 
-require_once('config_url.php');
-?>
+<?php require_once('config_url.php'); ?>
 
 <!DOCTYPE HTML>
 <html lang="fr">
+
 	<head>
 		<meta charset="UTF-8" />
 	
@@ -14,9 +13,12 @@ require_once('config_url.php');
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="yes" />
 		<meta name="description" content="Découvrez le Portefolio d'un développeur passionné par son métier qui cherche sans cesse à parfaire sa curiosité Web !" />
+
 		<meta property="og:title" content="Portefolio d'un Développeur Full Stack - Guillaume Barranco" />
 		<meta name="twitter:creator" content="@Webarranco"/>
 		<link rel="publisher" href="https://plus.google.com/105422105949000889772">
+
+		<!-- En fonction de l'environnement défini dans config_url.php, on met en place la version minifiée du CSS ou non -->
 
 		<?php if(ENV === 'dev') { ?>
 			<?= $this->Html->css('foundation') ?>
@@ -26,20 +28,27 @@ require_once('config_url.php');
 		<?php } else { ?>
 			<?= $this->Html->css('min') ?>
 		<?php } ?>
+
+		<!-- Grâce au config_url avec laquelle on spécifie l'url courante en PHP, on affecte des variables au JS pour les utiliser dans les scripts -->
 		
 		<script>
-			var WEB_URL = "<?=WEB_URL?>";
-			var SITE_URL = "<?=SITE_URL?>";
+			var WEB_URL = "<?=WEB_URL?>",
+				SITE_URL = "<?=SITE_URL?>",
+				autorisedMic = false;
 		</script>
 
-		<?= $this->Html->script('jquery-1.11.1') ?>
+		<!-- Si un paramètre GET "micro" est précisé, on passe autorisedMic à true, ce qui aura pour effet de donner la possibilité d'utiliser le micro et ses fonctionnalités pour naviguer -->
 
+		<?php  if(isset($_GET['micro'])) echo '<script>autorisedMic = true;</script>'; ?>
+
+		<!-- On inclue JQuery dans le head étant donné que certains scripts sont appelés par des pages spécifiques dans le content servi dynamiquement -->
+		<?= $this->Html->script('jquery-1.11.1') ?>
 	</head>
 
 	<body>
-		<header id="header">
 
-			<nav id="navigation">
+		<header id="header" role="banner">
+			<nav id="navigation" role="navigation">
 				<ul class="menu">
 					<li>
 						<a class="link-nav link-home cbutton" href="<?=WEB_URL?>/home">Accueil</a>
@@ -80,29 +89,30 @@ require_once('config_url.php');
 						<li><a class="link-nav link-about" href="<?=WEB_URL?>/about">A Propos</a></li>
 						<li><a class="link-nav link-contact" href="<?=WEB_URL?>/contact">Contact</a></li>
 					</ul>
-
 				</div>
 			</nav>
 
-			<a href="<?=WEB_URL?>/home" class="logo_mobile">
+			<a href="<?=WEB_URL?>/home" class="logo_mobile" title="Retour à l'accueil">
 				<img src="<?=WEB_URL?>/img/build/link2.png"  width="70" alt="Logo du site" />
 			</a>
-
 		</header>
 
 		<?= $this->fetch('content'); ?>
 
-		<footer id="footer">
+		<footer id="footer" role="contentinfo">
 			<div>© Copyright Webarranco 2015</div>
 			
 			<div class="separator"></div>
 
 			<div class="footer-contact">
-				<a href="<?=WEB_URL?>/contact">Contact</a>
+				<a href="<?=WEB_URL?>/contact" title="Se rendre sur la page de contact">Contact</a>
 			</div>
 		</footer>
 
+		<!-- Script qui va permettre d'écouter le micro de l'utilisateur si celui-ci l'a voulu, et lui permettre de naviguer en fonction des pages qu'il énoncera -->
 		<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.0.0/annyang.min.js"></script>
+
+		<!-- En fonction de l'environnement défini dans config_url.php, on met en place la version minifiée du JS ou non -->
 
 		<?php if(ENV === 'dev') { ?>
 			<?= $this->Html->script('main') ?>

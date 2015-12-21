@@ -1,5 +1,4 @@
-<div class="page-home"></div>
-<div id="large-header" class="bloc-one">
+<div id="large-header" class="bloc-one" class="page-home">
 	<div class="index" style="color: white;">
 		<h1>Un développeur web pétillant pour vous !</h1>
 
@@ -11,7 +10,9 @@
 
 	<canvas id="demo-canvas" style="position: absolute;left: 0;top: 0;"></canvas>
 </div>
-<section class="wrapper">
+
+<section class="wrapper" role="main">
+
 	<div class="row">
 		<div class="bloc large-4 columns">
 			<h2>Qui suis-je ?</h2>
@@ -19,8 +20,8 @@
 				<img class="willchange" src="img/build/myPicture.jpg" alt="Photo de Guillaume Barranco" width="140" class="myPicture" />
 			</div>
 			<p>
-				Un jeune développeur passionné par le web depuis des années et actuellement en Licence Chef de Projet Multimedia travaillant pour l'entreprise <a target="_blank" href="http://weblib.eu/">Weblib</a>. <br />
-				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="http://webarranco.fr/read_mangas/">un exemple ici</a> !<br />
+				Un jeune développeur passionné par le web depuis des années et actuellement en Licence Chef de Projet Multimedia travaillant pour l'entreprise <a target="_blank" title="Site de l'entreprise Weblib" href="http://weblib.eu/">Weblib</a>. <br />
+				Un inconditionnel fan de manga, les plus curieux et passionnés pourront en trouver <a href="http://webarranco.fr/read_mangas/" title="Liste des mangas lus">un exemple ici</a> !<br />
 				Un pro avant tout, un jeune curieux et avide de connaissances qui ne demande qu'à apprendre et transmettre après.
 			</p>
 		</div>
@@ -67,7 +68,7 @@
 		<div class="bloc large-4 columns">
 			<h2>Blog de Webarranco</h2>
 			<p>
-				Lorsqu'on a appris sur le web, avec des tutoriels, des vidéos, des supers articles qu'on a vite gardé dans les favoris, on a envie de partager son évolution avec les autres. L'expérience, les avis professionnels peuvent aider bon nombre de jeunes développeurs. C'est ainsi qu'est né <a href="/blog">mon Blog</a>, que vous pourrez observer se remplir au fur et à mesure.
+				Lorsqu'on a appris sur le web, avec des tutoriels, des vidéos, des supers articles qu'on a vite gardé dans les favoris, on a envie de partager son évolution avec les autres. L'expérience, les avis professionnels peuvent aider bon nombre de jeunes développeurs. C'est ainsi qu'est né <a href="/blog" title="Aller sur le Blog">mon Blog</a>, que vous pourrez observer se remplir au fur et à mesure.
 			</p>
 			<div>
 				<img src="img/build/linkou3.png" alt="Photo de moi version Link" width="200" />
@@ -80,37 +81,42 @@
 			<h2>Mes Projets</h2>
 			<p>
 				Dernier projet en date : 
-				<a href="<?= $newest[0]['Project']['link_website'] ?>" target="_blank" class="img-projet last_project_home">
+				<a href="<?= $newest[0]['Project']['link_website'] ?>" target="_blank" class="img-projet last_project_home" title="Voir le dernier projet en date">
 					<img src="<?= $newest[0]['Project']['Cover'] ?>" alt="Image du dernier projet en date" />
 				</a>
-				Je fais partie de ceux qui pensent que l'on fonctionne par projet. L'apprentissage d'un langage, d'un CMS, d'un framework sans son utilisation sur un projet concret ne dépassera jamais les 40% de pertinence. Se lancer un projet personnel ou professionnel, y'a que ça de vrai. Je vous invite donc à regarder <a href="/projects">mon Portfolio</a>, en espérant qu'il vous amusera !
+				Je fais partie de ceux qui pensent que l'on fonctionne par projet. L'apprentissage d'un langage, d'un CMS, d'un framework sans son utilisation sur un projet concret ne dépassera jamais les 40% de pertinence. Se lancer un projet personnel ou professionnel, y'a que ça de vrai. Je vous invite donc à regarder <a href="/projects" title="Voir les projets">mon Portfolio</a>, en espérant qu'il vous amusera !
 			</p>
 		</div>
 
 		<div class="bloc large-4 columns">
 			<h2>Me Contacter</h2>
+
 			<div>guillaume.barranco8@hotmail.fr</div>
-			<a href="<?=$this->request->base?>/contact" class="mail">
+			<a href="<?=$this->request->base?>/contact" title="Se rendre sur la page de contact" class="mail">
 				<i class="fi-mail size-80"></i>
 			</a>
+
 			<ul class="socials">
 				<li class="twitter">
-					<a href="https://twitter.com/Webarranco" target="_blank">
+					<a href="https://twitter.com/Webarranco" target="_blank" title="Voir mon Twitter">
 						<i class="fi-social-twitter size-34"></i>
 					</a>
 				</li>
+
 				<li class="linkedin">
-					<a href="https://www.linkedin.com/profile/view?id=224191169&trk=nav_responsive_tab_profile" target="_blank">
+					<a href="https://www.linkedin.com/profile/view?id=224191169&trk=nav_responsive_tab_profile" target="_blank" title="Voir mon LinkedIn">
 						<i class="fi-social-linkedin size-34"></i>
 					</a>
 				</li>
+
 				<li class="github">
-					<a href="https://github.com/guillaumebarranco/" target="_blank">
+					<a href="https://github.com/guillaumebarranco/" target="_blank" title="Voir mon Github">
 						<i class="fi-social-github size-34"></i>
 					</a>
 				</li>
+
 				<li class="codepen">
-					<a href="http://codepen.io/Webarranco/" target="_blank">
+					<a href="http://codepen.io/Webarranco/" target="_blank" title="Voir mes Codepen">
 						<svg style="display: none;" xmlns="http://www.w3.org/2000/svg" style="color: white;width:120px;">
 							<symbol id="codepen-logo" viewBox="0 0 120 120">
 								<path class="outer-ring" d="M60.048 0C26.884 0 0 26.9 0 60.048s26.884 60 60 60.047c33.163 0 60.047-26.883 60.047-60.047 S93.211 0 60 0z M60.048 110.233c-27.673 0-50.186-22.514-50.186-50.186S32.375 9.9 60 9.9 c27.672 0 50.2 22.5 50.2 50.186S87.72 110.2 60 110.233z"/>
@@ -125,8 +131,7 @@
 				</li>
 
 				<li class="npm">
-					<a href="https://www.npmjs.com/~webarranco" target="_blank">
-
+					<a href="https://www.npmjs.com/~webarranco" target="_blank" title="Voir mon profil sur NPM">
 						<svg class="logo_npm" height="195px" viewBox="0 0 500 195" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
 						    <title>npm-logo</title>
 						    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
@@ -135,15 +140,15 @@
 						        <path d="M0,0 L500,0 L500,168 L250,168 L250,195 L139,195 L139,168 L0,168 Z M28.304251,139.493165 L83.536238,139.49349 L83.5362388,55.5592922 L111.304251,55.5592922 L111.304251,139.493491 L138.822477,139.493491 L138.822477,28.4929443 L28.304251,28.4929443 Z M166.333333,28 L166.666667,168 L221.666667,168 L221.666667,140.067308 L277.345845,140.067308 L277.345845,28 Z M221,55 L250,55 L250,112 L221,112 Z M305.333333,28 L305.333333,139 L360.664651,139 L360.664651,55.666008 L388.33133,55.666008 L388.33133,139.000547 L415.967888,139.000547 L415.967888,56 L443.664659,56 L443.664659,139 L471.338699,139 L471.338699,28 Z M305.333333,28" id="Rectangle 1" fill="#CD3632"></path>
 						    </g>
 						</svg>
-
 					</a>
 				</li>
-
 			</ul>
-			<a href="img/build/CV.jpg" data-lightbox="roadtrip" class="myCV">
+
+			<a href="img/build/CV.jpg" data-lightbox="roadtrip" title="Aperçu de mon CV" class="myCV">
 				<img src="img/build/CV.jpg" width="100" alt="Miniature de mon CV"/>
 			</a>
-			<a class="download_CV" target="_blank" href="img/CV_Barranco_Guillaume.pdf">Télécharger mon CV</a>
+
+			<a class="download_CV" title="Télécharger mon CV" target="_blank" href="img/CV_Barranco_Guillaume.pdf">Télécharger mon CV</a>
 		</div>
 
 		<div class="bloc large-4 columns">
@@ -157,6 +162,9 @@
 				<li>- Faire du sport</li>
 				<li>- Ecrire</li>
 				<li>- Le Coca Cherry</li>
+				<li style="margin-bottom: 15px;">
+					<span style="font-size:10px; position: absolute;">- Utiliser un paramètre GET "micro" pour naviguer entre mes pages à la voix</span>
+				</li>
 			</ul>
 			<ul class="dislike">Je n'aime pas :
 				<li>- M'ennuyer</li>
@@ -175,5 +183,4 @@
 			</div>
 		</div>
 	</div>
-
 </section>
