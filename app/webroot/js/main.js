@@ -488,7 +488,7 @@ $(document).ready(function() {
 	}
 
 
-	$(document).on('click', '.leave_warp', function() {
+	$(document).on('click', '.leave_warp', function(e) {
 		leaveWarp(e);
 	});
 
