@@ -28,6 +28,7 @@
    RewriteCond %{REQUEST_FILENAME} !elastique
    RewriteCond %{REQUEST_FILENAME} !appart
    RewriteCond %{REQUEST_FILENAME} !crypte
+   RewriteCond %{REQUEST_FILENAME} !thevoice
 
    RewriteRule (.*) app/webroot/$1 [L]
 

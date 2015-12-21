@@ -9,8 +9,8 @@ require_once('config_url.php');
 	
 		<title>Porfolio Guillaume Barranco - Développeur Web Full Stack</title>
 
-		<link rel="shortcut icon" href="img/favicon.ico.png" type="image/x-icon"/> 
-		<link rel="icon" href="img/favicon.ico.png" type="image/x-icon"/>
+		<link rel="shortcut icon" href="http://webarranco.fr/img/favicon.ico.png" type="image/x-icon"/> 
+		<link rel="icon" href="http://webarranco.fr/img/favicon.ico.png" type="image/x-icon"/>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="yes" />
 		<meta name="description" content="Découvrez le Portefolio d'un développeur passionné par son métier qui cherche sans cesse à parfaire sa curiosité Web !" />
