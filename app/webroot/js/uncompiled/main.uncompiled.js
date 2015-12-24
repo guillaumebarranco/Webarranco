@@ -67,7 +67,7 @@ $(document).ready(() => {
 	function getPSN() {
 		$.ajax({
 			type : "GET",
-			url : SITE_URL+":3000/PSN/guillaumanga",
+			url : "http://webarranco:3000/PSN/guillaumanga",
 			success: function(response){
 				console.log(response);
 				const trophies = response.trophySummary.earnedTrophies;
@@ -82,7 +82,8 @@ $(document).ready(() => {
 		});
 	}
 
-	// if($('.page-about').length != 0) getPSN();
+
+	if($('.page-about').length != 0) getPSN();
 
 
 	// Déclenche l'animation des graphiques de compétences au scroll de la page

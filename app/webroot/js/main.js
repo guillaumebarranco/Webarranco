@@ -62,7 +62,7 @@ $(document).ready(function () {
 	function getPSN() {
 		$.ajax({
 			type: "GET",
-			url: SITE_URL + ":3000/PSN/guillaumanga",
+			url: "http://webarranco:3000/PSN/guillaumanga",
 			success: function success(response) {
 				console.log(response);
 				var trophies = response.trophySummary.earnedTrophies;
@@ -77,7 +77,7 @@ $(document).ready(function () {
 		});
 	}
 
-	// if($('.page-about').length != 0) getPSN();
+	if ($('.page-about').length != 0) getPSN();
 
 	// Déclenche l'animation des graphiques de compétences au scroll de la page
 	$(window).off('scroll');
@@ -408,7 +408,7 @@ $(document).ready(function () {
 		}, 2000);
 	}
 
-	$(document).on('click', '.leave_warp', function(e) {
+	$(document).on('click', '.leave_warp', function () {
 		leaveWarp(e);
 	});
 
