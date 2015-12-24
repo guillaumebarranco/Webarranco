@@ -70,6 +70,7 @@ $(document).ready(() => {
 			url : "http://webarranco.fr:3000/PSN/guillaumanga",
 			success: function(response){
 				console.log(response);
+				
 				const trophies = response.trophySummary.earnedTrophies;
 				$('.bronze .trophies').append(trophies.bronze);
 				$('.silver .trophies').append(trophies.silver);
