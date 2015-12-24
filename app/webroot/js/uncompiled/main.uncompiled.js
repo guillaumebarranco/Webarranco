@@ -67,7 +67,7 @@ $(document).ready(() => {
 	function getPSN() {
 		$.ajax({
 			type : "GET",
-			url : "http://webarranco:3000/PSN/guillaumanga",
+			url : "http://webarranco.fr:3000/PSN/guillaumanga",
 			success: function(response){
 				console.log(response);
 				const trophies = response.trophySummary.earnedTrophies;
